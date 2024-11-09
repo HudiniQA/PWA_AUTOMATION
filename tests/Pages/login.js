@@ -5,21 +5,29 @@ export class Login extends BaseClass {
     #passwordTxtBx;
     #loginBtn;
 
-    constructor() {
+    constructor(page) {
         super();
-    }
-
-    // Initialize locators after the page is set up
-    initializeLocators() {
+        this.page = page;
         this.#userNameTxtBx = this.page.locator('#Email');
         this.#passwordTxtBx = this.page.locator('#password');
         this.#loginBtn = this.page.getByRole('button', { name: 'LOGIN' });
     }
 
+    getUserNameTxtBx() {
+        return this.#userNameTxtBx;
+    }
+
+    getPasswordTxtBx() {
+        return this.#passwordTxtBx;
+    }
+
+    getLoginBtn() {
+        return this.#loginBtn;
+    }
+
     async loginAsUser(username, password) {
-        this.initializeLocators(); // Ensure locators are initialized
-        await this.#userNameTxtBx.fill(username);
-        await this.#passwordTxtBx.fill(password);
-        await this.#loginBtn.click({count:3});
+        await this.getUserNameTxtBx().fill(username);
+        await this.getPasswordTxtBx().fill(password);
+        await this.getLoginBtn().click();
     }
 }
