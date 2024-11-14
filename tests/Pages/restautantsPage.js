@@ -1,5 +1,6 @@
 import { BaseClass } from './baseClass';
 import { test, expect } from '@playwright/test';
+const testData=JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
 export class RestaurantPage extends BaseClass {
     #hamburgerMenu;
@@ -35,13 +36,13 @@ export class RestaurantPage extends BaseClass {
     }
 
     // Call initializeSelectors before using any selectors
-    async navigateToRestaurantsPage() {
+    async verifyRestaurantDetails() {
         await this.initializeSelectors();  // Ensure selectors are initialized first
         await this.getHamburgerMenu().click();
         await this.getRestaurantsAndBars().click();
-        const restaurantsResponse = await this.page.waitForResponse('https://api-properties-a.hudini.io/graphql');
+        const restaurantsResponse = await this.page.waitForResponse(testData.fairmontMakkahPWA.getRestaurantDetailsEndpoint);//https://api-properties-a.hudini.io/graphql
         const responseBody = await restaurantsResponse.json();
-        console.dir(responseBody,{depth:null})
+        // console.dir(responseBody,{depth:null})
         const restaurantDetails = responseBody.data.getRestaurantDetails.restaurant;
         for (let index = 0; index < restaurantDetails.length; index++) {
             const restaurant = restaurantDetails[index];

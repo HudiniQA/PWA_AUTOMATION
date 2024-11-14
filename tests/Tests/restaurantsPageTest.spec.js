@@ -1,5 +1,6 @@
 import { RestaurantPage } from '../Pages/restautantsPage'; // Corrected import name
 import { test, expect } from '@playwright/test';
+const testData=JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
 test.describe('To verify the restaurants are displayed', () => {
     let restaurantPage;
@@ -7,7 +8,7 @@ test.describe('To verify the restaurants are displayed', () => {
     test.beforeEach(async ({ browser }) => {
         restaurantPage = new RestaurantPage();  // Instantiate the RestaurantPage class
         await restaurantPage.setup('Chrome');  // Call setup to initialize the browser and page
-        await restaurantPage.navigateToUrl('https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/'); // Navigate to the URL
+        await restaurantPage.navigateToUrl(testData.fairmontMakkahPWA.endPoint); // Navigate to the URL
     });
 
     test.afterEach(async () => {
@@ -17,7 +18,7 @@ test.describe('To verify the restaurants are displayed', () => {
     });
 
     test('Verify the restaurants', async () => {
-        await restaurantPage.navigateToRestaurantsPage(); // Perform restaurant page navigation and verification
+        await restaurantPage.verifyRestaurantDetails(); // Perform restaurant page navigation and verification
     });
 });
 

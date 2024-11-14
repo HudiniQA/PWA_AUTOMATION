@@ -1,0 +1,7 @@
+{
+    "fairmontMakkahPWA":
+    {
+        "endPoint":"https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/",
+        "getRestaurantDetailsEndpoint":"https://api-properties-a.hudini.io/graphql"
+    }
+}
