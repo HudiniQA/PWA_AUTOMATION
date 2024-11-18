@@ -34,7 +34,8 @@
       size: { width: 1920, height: 1080 }
     },
    },
- 
+   outputDir: 'test-results/videos',
+   
    /* Configure projects for major browsers */
    projects: [
      {

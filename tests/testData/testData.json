@@ -1,7 +1,16 @@
 {
     "fairmontMakkahPWA":
     {
+        "hotelId": "9bcdef3a-e0b7-45bd-908d-d555db8bd4be",
         "endPoint":"https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/",
-        "getRestaurantDetailsEndpoint":"https://api-properties-a.hudini.io/graphql"
+        "getRestaurantDetailsEndpoint":"https://api-properties-a.hudini.io/graphql",
+        "getPropertyDetailsByHotelIdEndpont":"https://api-properties-a.hudini.io/graphql",
+        "aboutHotel":
+        {
+            "getPropertyDetailsByHotelIdQuery":"query MyQuery($hotelId:String!) { getPropertyDetailsByHotelId(input: {hotelId: $hotelId}) { brand { code createdAt createdBy description groupId gsi1pk gsi1sk id images { fileName index master ratio16to9 ratio1to1 ratio21to9 } name pk sk updatedAt updatedBy version } group { code createdAt createdBy customSenderEmail description firebaseToken id name sk pk updatedAt updatedBy version whiteLabellingConfigurations { appConfigs region userPoolId userPoolWebClientId } } hotel { brandId cancellationPolicy { name type url } checkInTime checkOutTime code covid19Regulations { name type url } createdAt createdBy currency dataProtection { name type url } description devicesEndpoint features groupId gsi1pk gsi1sk gsi2pk gsi2sk id images { fileName index master ratio16to9 ratio1to1 ratio21to9 } information { displayTitle field index type value } interests isDevicesEnabled isUIBuilderEnabled location { addressLine1 addressLine2 area city country latitude longitude postalCode state timezone } maxdevices name phoneNumber pk privacyLaws { name type url } sk starRating termsAndConditions { name type url } travelType updatedAt version updatedBy } } }",
+            "getPropertyDetailsByHotelIdApiKey":"da2-6czgvkngsrhenerfydlymzprsa",
+            "hotelTitle":"Fairmont Makkah",
+            "hotelDescription":"Makkah Clock Royal Tower A Fairmont Hotel is a beacon for pilgrims in the heart of the Holy City. It overlooks al-Kaaba and al-Masjid al-Haram, making it the closest accommodation to the Kaaba and the city’s best hotel for Umrah and Hajj. As the focal point of the Clock Towers Complex, the tower offers 76 floors of exquisitely designed luxury, including 1,650 rooms and suites, many with sweeping views of Makkah’s revered religious sites. Choose a Fairmont Gold room or stay on the Fairmont Royal Floor for the most luxurious experience imaginable."
+        }
     }
 }
