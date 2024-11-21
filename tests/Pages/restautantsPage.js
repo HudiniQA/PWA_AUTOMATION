@@ -7,6 +7,9 @@ export class RestaurantPage extends BaseClass {
     #restaurantsAndBars;
     #restaurantTitle;
     #restaurantDescription;
+    #phoneCTA
+    #emailCTA
+    #menuCTA
 
     constructor() {
         super(); // Calls the BaseClass constructor to initialize browser, context, and page
@@ -17,6 +20,9 @@ export class RestaurantPage extends BaseClass {
         this.#restaurantsAndBars = this.page.getByText('Restaurants & Bars');
         this.#restaurantTitle = this.page.locator("//div[@class='RestaurantDetails_listComponentData__eVZli']//h2[1]");
         this.#restaurantDescription = this.page.locator("//div[@class='RestaurantDetails_gapList__EaE_B']//p[1]");
+        this.#phoneCTA=this.page.getByRole('link', { name: 'Phone' })
+        this.#emailCTA=this.page.getByRole('link', { name: 'Email' })
+        this.#menuCTA=this.page.getByRole('button', { name: 'Menu' })
     }
 
     getHamburgerMenu() {
@@ -33,6 +39,15 @@ export class RestaurantPage extends BaseClass {
 
     getRestaurantDescription() {
         return this.#restaurantDescription;
+    }
+    getphoneCTA() {
+        return this.#phoneCTA;
+    }
+    getemailCTA() {
+        return this.#emailCTA;
+    }
+    getmenuCTA() {
+        return this.#menuCTA;
     }
 
     // Call initializeSelectors before using any selectors
@@ -58,6 +73,22 @@ export class RestaurantPage extends BaseClass {
 
                 expect(restaurantName).toEqual(actualRestaurantName);
                 expect(restaurantDescription).toEqual(actualRestaurantDescription);
+
+                if(restaurant.contactNumber)
+                {  
+                    const phoneCTA=this.getphoneCTA()
+                    expect(phoneCTA).toBeVisible()
+                }
+                else if(restaurant.email)
+                {
+                    const emailCTA=this.getemailCTA()
+                    expect(emailCTA).toBeVisible()
+                }
+                else if(restaurant.menu)
+                {
+                    const menuCTA=this.getmenuCTA()
+                    expect(menuCTA).toBeVisible()
+                }
             }
         }
     }
