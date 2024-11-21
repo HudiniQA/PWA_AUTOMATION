@@ -61,20 +61,23 @@ export class AboutHotel extends BaseClass {
         await this.initializeSelectors();
         await this.gethamburgerMenu().click();
         await this.getaboutHotelIcon().click();
+        const endPoint=testData.fairmontMakkahPWA.getPropertyDetailsByHotelIdEndpont;
+        const apiKey=testData.fairmontMakkahPWA.aboutHotel.getPropertyDetailsByHotelIdApiKey;
         const query = testData.fairmontMakkahPWA.aboutHotel.getPropertyDetailsByHotelIdQuery;
+        const hotelId=testData.fairmontMakkahPWA.hotelId
         const variables = {
-            hotelId: testData.fairmontMakkahPWA.hotelId
+            hotelId:hotelId
         };
 
         // Make API request to capture the actual data
-        const response = await this.page.request.post(testData.fairmontMakkahPWA.getPropertyDetailsByHotelIdEndpont, {
+        const response = await this.page.request.post(endPoint, {
             data: {
                 query: query,
                 variables: variables
             },
             headers: {
                 'Content-Type': 'application/json',
-                'x-api-key': testData.fairmontMakkahPWA.aboutHotel.getPropertyDetailsByHotelIdApiKey
+                'x-api-key':apiKey
             }
         });
         const responseBody = await response.json();
@@ -114,7 +117,7 @@ export class AboutHotel extends BaseClass {
 
         //Validating Location CTA button
         const hotelLocation=responseBody.data.getPropertyDetailsByHotelId.hotel.location;
-        console.log(hotelLocation)
+        // console.log(hotelLocation)
         if (hotelLocation.latitude && hotelLocation.longitude) 
         {
             await expect(this.getlocationPinCTA()).toBeVisible();
