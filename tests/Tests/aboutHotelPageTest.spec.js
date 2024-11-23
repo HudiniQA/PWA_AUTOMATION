@@ -1,6 +1,6 @@
-import { AboutHotel } from '../Pages/aboutHotel'; 
-import { test,request} from '@playwright/test';
-const testData=JSON.parse(JSON.stringify(require('../testData/testData.json')));
+import { AboutHotel } from '../Pages/aboutHotel';
+import { test, request } from '@playwright/test';
+const testData = JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
 test.describe('To verify the hotel info ', () => {
     let aboutHotePage;

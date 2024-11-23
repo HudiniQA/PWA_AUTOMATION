@@ -7,8 +7,16 @@
         "getPropertyDetailsByHotelIdEndpont":"https://api-properties-a.hudini.io/graphql",
         "aboutHotel":
         {
+            "getPropertyDetailsByHotelIdEndpont":"https://api-properties-a.hudini.io/graphql",
             "getPropertyDetailsByHotelIdQuery":"query MyQuery($hotelId:String!) { getPropertyDetailsByHotelId(input: {hotelId: $hotelId}) { brand { code createdAt createdBy description groupId gsi1pk gsi1sk id images { fileName index master ratio16to9 ratio1to1 ratio21to9 } name pk sk updatedAt updatedBy version } group { code createdAt createdBy customSenderEmail description firebaseToken id name sk pk updatedAt updatedBy version whiteLabellingConfigurations { appConfigs region userPoolId userPoolWebClientId } } hotel { brandId cancellationPolicy { name type url } checkInTime checkOutTime code covid19Regulations { name type url } createdAt createdBy currency dataProtection { name type url } description devicesEndpoint features groupId gsi1pk gsi1sk gsi2pk gsi2sk id images { fileName index master ratio16to9 ratio1to1 ratio21to9 } information { displayTitle field index type value } interests isDevicesEnabled isUIBuilderEnabled location { addressLine1 addressLine2 area city country latitude longitude postalCode state timezone } maxdevices name phoneNumber pk privacyLaws { name type url } sk starRating termsAndConditions { name type url } travelType updatedAt version updatedBy } } }",
             "getPropertyDetailsByHotelIdApiKey":"da2-6czgvkngsrhenerfydlymzprsa"
+        },
+        "thingsToDo":
+        {
+            "getHotelAmenityDetailsEndpoint":"https://api-properties-a.hudini.io/graphql",
+            "getHotelAmenityDetailsQuery": "query MyQuery($hotelId: String!, $lang: String) {\n  getHotelAmenityDetails(input: {hotelId: $hotelId, lang: $lang}) {\n    amenities {\n      categoryId\n      categoryIds\n      createdAt\n      createdBy\n      description\n      highlights\n      hotelId\n      id\n      images {\n        fileName\n        index\n        master\n        ratio16to9\n        ratio1to1\n        ratio21to9\n      }\n      information {\n        displayTitle\n        field\n        index\n        type\n        value\n      }\n      isActive\n      name\n      pk\n      sk\n      updatedAt\n      updatedBy\n      version\n    }\n    categories {\n      createdAt\n      createdBy\n      hotelId\n      id\n      name\n      sk\n      pk\n      updatedAt\n      updatedBy\n      version\n    }\n  }\n}",
+            "getHotelAmenityDetailsApiKey":"da2-6czgvkngsrhenerfydlymzprsa"
         }
+
     }
 }

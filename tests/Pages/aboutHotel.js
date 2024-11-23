@@ -61,7 +61,7 @@ export class AboutHotel extends BaseClass {
         await this.initializeSelectors();
         await this.gethamburgerMenu().click();
         await this.getaboutHotelIcon().click();
-        const endPoint=testData.fairmontMakkahPWA.getPropertyDetailsByHotelIdEndpont;
+        const endPoint=testData.fairmontMakkahPWA.aboutHotel.getPropertyDetailsByHotelIdEndpont;
         const apiKey=testData.fairmontMakkahPWA.aboutHotel.getPropertyDetailsByHotelIdApiKey;
         const query = testData.fairmontMakkahPWA.aboutHotel.getPropertyDetailsByHotelIdQuery;
         const hotelId=testData.fairmontMakkahPWA.hotelId
