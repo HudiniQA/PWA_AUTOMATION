@@ -45,7 +45,7 @@ export class ThingsToDoPage extends BaseClass {
         return this.#phoneCTA;
     }
     async verifyThingsToDoDetails() {
-        await this.initializeSelectors(); 
+        await this.initializeSelectors();
         await this.gethamburgerMenu().click();
         await this.getthingsToDoIcon().click();
         const endPoint = testData.fairmontMakkahPWA.thingsToDo.getHotelAmenityDetailsEndpoint;
@@ -76,10 +76,30 @@ export class ThingsToDoPage extends BaseClass {
         for (const category of categories) {
             const { name: categoryName, id: categoryId } = category;
             // Click to change the category if not default
-            if ((await this.getcategoryBtn().textContent()).trim() !== categoryName) {
-                await this.getcategoryBtn().click();
-                await this.page.getByText(categoryName,{exact:true}).click();
+
+            if (await this.getcategoryBtn().isVisible()) {
+                if ((await this.getcategoryBtn().textContent()).trim() !== categoryName) {
+                    await this.getcategoryBtn().click();
+                    await this.page.getByText(categoryName, { exact: true }).click();
+                }
             }
+            else {
+                //   If not visible, scroll up and check again
+                await this.page.mouse.wheel(0, -100); // Scroll up slightly
+                await this.page.waitForTimeout(500); // Allow UI to update
+                if (await this.getcategoryBtn().isVisible()) {
+                    if ((await this.getcategoryBtn().textContent()).trim() !== categoryName) {
+                        await this.getcategoryBtn().click();
+                        await this.page.getByText(categoryName, { exact: true }).click();
+                    }
+                    else{
+                        // Throw an error if the button is still not visible
+                        throw new Error('Category button is not visible even after scrolling.');
+                    }
+
+                }
+            }
+            
             // Filter amenities for the current category based on category id
             const currentAmenities = amenities.filter((amenity) =>
                 amenity.categoryIds.includes(categoryId)
@@ -90,6 +110,7 @@ export class ThingsToDoPage extends BaseClass {
 
                 const { name: activityName, description, information } = amenity;
                 // Click on the activity
+                await this.page.waitForTimeout(500); 
                 const activityLink = this.page.getByRole('heading', { name: activityName });
                 await activityLink.click();
 
@@ -118,3 +139,24 @@ export class ThingsToDoPage extends BaseClass {
         }
     }
 }
+
+
+// if ((await this.getcategoryBtn().textContent()).trim() !== categoryName) {
+            //     if (await this.getcategoryBtn().isVisible()) {
+            //         // If the category button is visible, click it
+            //         await this.getcategoryBtn().click();
+            //     } else {
+            //         // If not visible, scroll up and check again
+            //         await this.page.mouse.wheel(0, -100); // Scroll up slightly
+            //         await this.page.waitForTimeout(500); // Allow UI to update
+
+            //         if (await this.getcategoryBtn().isVisible()) {
+            //             // Click the button if it becomes visible after scrolling
+            //             await this.getcategoryBtn().click();
+            //         } else {
+            //             // Throw an error if the button is still not visible
+            //             throw new Error('Category button is not visible even after scrolling.');
+            //         }
+            //     }                
+            //     await this.page.getByText(categoryName,{exact:true}).click();
+            // }

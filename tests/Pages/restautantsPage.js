@@ -1,3 +1,4 @@
+import { error } from 'console';
 import { BaseClass } from './baseClass';
 import { test, expect } from '@playwright/test';
 const testData=JSON.parse(JSON.stringify(require('../testData/testData.json')));
@@ -5,6 +6,8 @@ const testData=JSON.parse(JSON.stringify(require('../testData/testData.json')));
 export class RestaurantPage extends BaseClass {
     #hamburgerMenu;
     #restaurantsAndBars;
+    #restaurants
+    #restaurantsAndBar
     #restaurantTitle;
     #restaurantDescription;
     #phoneCTA
@@ -18,6 +21,8 @@ export class RestaurantPage extends BaseClass {
     async initializeSelectors() {
         this.#hamburgerMenu = this.page.locator('.hamburger-react');
         this.#restaurantsAndBars = this.page.getByText('Restaurants & Bars');
+        this.#restaurants=this.page.getByText('Restaurants')
+        this.#restaurantsAndBar=this.page.getByText('Restaurants & Bar')
         this.#restaurantTitle = this.page.locator("//div[@class='RestaurantDetails_listComponentData__eVZli']//h2[1]");
         this.#restaurantDescription = this.page.locator("//div[@class='RestaurantDetails_gapList__EaE_B']//p[1]");
         this.#phoneCTA=this.page.getByRole('link', { name: 'Phone' })
@@ -32,7 +37,12 @@ export class RestaurantPage extends BaseClass {
     getRestaurantsAndBars() {
         return this.#restaurantsAndBars;
     }
-
+    getrestaurants() {
+        return this.#restaurants;
+    }
+    getrestaurantsAndBar() {
+        return this.#restaurantsAndBar;
+    }
     getRestaurantTitle() {
         return this.#restaurantTitle;
     }
@@ -54,7 +64,22 @@ export class RestaurantPage extends BaseClass {
     async verifyRestaurantDetails() {
         await this.initializeSelectors();  // Ensure selectors are initialized first
         await this.getHamburgerMenu().click();
-        await this.getRestaurantsAndBars().click();
+        // await this.getRestaurantsAndBars().click();
+        if(await this.getRestaurantsAndBars().isVisible())
+        {
+            await this.getRestaurantsAndBars().click()
+        }
+        else if(await this.getrestaurantsAndBar().isVisible())
+        {
+            await this.getrestaurantsAndBar().click()
+        }
+        else if(await this.getrestaurants().isVisible())
+        {
+            await this.getrestaurants().click()
+        }
+        else{
+            throw new Error('No restaurants available for this hotel')
+        }
         const restaurantsResponse = await this.page.waitForResponse(testData.fairmontMakkahPWA.getRestaurantDetailsEndpoint);//https://api-properties-a.hudini.io/graphql
         const responseBody = await restaurantsResponse.json();
         // console.dir(responseBody,{depth:null})
@@ -69,25 +94,36 @@ export class RestaurantPage extends BaseClass {
                 await this.page.getByRole('heading', { name: `${restaurantName}` }).click();
 
                 const actualRestaurantName = await this.getRestaurantTitle().textContent();
-                const actualRestaurantDescription = await this.getRestaurantDescription().textContent();
-
+                let actualRestaurantDescription;
+                if(await this.getRestaurantDescription().nth(1).isVisible())
+                {
+                    actualRestaurantDescription = await this.getRestaurantDescription().nth(1).textContent();
+                }
+                else if (await this.getrestaurantDescription().isVisible())
+                {
+                    actualRestaurantDescription=await this.getrestaurantDescription().textContent();
+                }
+                else
+                {
+                    throw new Error(`${actualRestaurantName} does not contains description skipping the description verification.`)
+                }
                 expect(restaurantName).toEqual(actualRestaurantName);
                 expect(restaurantDescription).toEqual(actualRestaurantDescription);
 
                 if(restaurant.contactNumber)
                 {  
                     const phoneCTA=this.getphoneCTA()
-                    expect(phoneCTA).toBeVisible()
+                    await expect(phoneCTA).toBeVisible()
                 }
                 else if(restaurant.email)
                 {
                     const emailCTA=this.getemailCTA()
-                    expect(emailCTA).toBeVisible()
+                    await expect(emailCTA).toBeVisible()
                 }
                 else if(restaurant.menu)
                 {
                     const menuCTA=this.getmenuCTA()
-                    expect(menuCTA).toBeVisible()
+                    await expect(menuCTA).toBeVisible()
                 }
             }
         }

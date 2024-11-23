@@ -101,7 +101,7 @@ export class AboutHotel extends BaseClass {
             }
             else if(info.type==='PHONE')
             {
-                await expect(this.getphoneCTA()).toBeVisible()
+                await expect(this.getphoneCTA().first()).toBeVisible()
             }
             else if(info.type==='URL')
             {
