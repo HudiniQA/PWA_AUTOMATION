@@ -124,7 +124,7 @@ export class RestaurantPage extends BaseClass {
                     await expect(this.getemailCTA()).toBeVisible()
                     console.log(`Email CTA is visible for ${actualRestaurantName} restaurant✅`)
                 }
-                if(restaurant.menu)
+                if(restaurant.menu && restaurant.menu.url)
                 {
                     await expect(this.getmenuCTA()).toBeVisible()
                     console.log(`Menu CTA is visible for ${actualRestaurantName} restaurant✅ `)
