@@ -47,7 +47,7 @@ export class RestaurantPage extends BaseClass {
         return this.#restaurantTitle;
     }
 
-    getRestaurantDescription() {
+    getrestaurantDescription() {
         return this.#restaurantDescription;
     }
     getphoneCTA() {
@@ -82,6 +82,11 @@ export class RestaurantPage extends BaseClass {
         }
         const restaurantsResponse = await this.page.waitForResponse(testData.fairmontMakkahPWA.getRestaurantDetailsEndpoint);//https://api-properties-a.hudini.io/graphql
         const responseBody = await restaurantsResponse.json();
+        if (responseBody) {
+            console.log(' API call was successful.✅ ');
+        } else {
+            console.error(' API call failed. Response body is null or undefined.❌');
+        }
         // console.dir(responseBody,{depth:null})
         const restaurantDetails = responseBody.data.getRestaurantDetails.restaurant;
         for (let index = 0; index < restaurantDetails.length; index++) {
@@ -90,14 +95,13 @@ export class RestaurantPage extends BaseClass {
                 const restaurantName = restaurant.name;
                 const restaurantDescription = restaurant.description;
 
-                await this.page.keyboard.press('Escape');
                 await this.page.getByRole('heading', { name: `${restaurantName}` }).click();
 
                 const actualRestaurantName = await this.getRestaurantTitle().textContent();
                 let actualRestaurantDescription;
-                if(await this.getRestaurantDescription().nth(1).isVisible())
+                if(await this.getrestaurantDescription().nth(1).isVisible())
                 {
-                    actualRestaurantDescription = await this.getRestaurantDescription().nth(1).textContent();
+                    actualRestaurantDescription = await this.getrestaurantDescription().nth(1).textContent();
                 }
                 else if (await this.getrestaurantDescription().isVisible())
                 {
@@ -112,19 +116,21 @@ export class RestaurantPage extends BaseClass {
 
                 if(restaurant.contactNumber)
                 {  
-                    const phoneCTA=this.getphoneCTA()
-                    await expect(phoneCTA).toBeVisible()
+                    await expect(this.getphoneCTA()).toBeVisible()
+                    console.log(`Phone CTA is visible for ${actualRestaurantName} restaurant ✅ `)
                 }
-                else if(restaurant.email)
+                if(restaurant.email)
                 {
-                    const emailCTA=this.getemailCTA()
-                    await expect(emailCTA).toBeVisible()
+                    await expect(this.getemailCTA()).toBeVisible()
+                    console.log(`Email CTA is visible for ${actualRestaurantName} restaurant✅`)
                 }
-                else if(restaurant.menu)
+                if(restaurant.menu)
                 {
-                    const menuCTA=this.getmenuCTA()
-                    await expect(menuCTA).toBeVisible()
+                    await expect(this.getmenuCTA()).toBeVisible()
+                    console.log(`Menu CTA is visible for ${actualRestaurantName} restaurant✅ `)
                 }
+                await this.page.keyboard.press('Escape');
+                console.log(`Contents verified and closing the ${actualRestaurantName} restaurant Modal ✅`)
             }
         }
     }

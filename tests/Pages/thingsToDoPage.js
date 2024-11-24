@@ -68,6 +68,12 @@ export class ThingsToDoPage extends BaseClass {
             }
         });
         const responseBody = await response.json()
+        if (responseBody) {
+            console.log('✅ API call was successful.');
+        } else {
+            console.error('❌ API call failed. Response body is null or undefined.');
+        }
+        
         // Extract categories and amenities
         const { amenities, categories } = responseBody.data.getHotelAmenityDetails;
         categories.map((c) => c.name)//listing the categories into the categories array
@@ -113,7 +119,7 @@ export class ThingsToDoPage extends BaseClass {
                 await this.page.waitForTimeout(500); 
                 const activityLink = this.page.getByRole('heading', { name: activityName });
                 await activityLink.click();
-
+                console.log(`Opened the ${activityName} successfully ✅`)
                 // Validate activity details
                 const actualActivityName = await this.getactivityTitle().textContent();
                 const actualDescription = await this.getactivitytDescription().textContent();
@@ -126,15 +132,16 @@ export class ThingsToDoPage extends BaseClass {
                 const phoneInfo = information.find((info) => info.type === 'PHONE');
 
                 if (emailInfo) {
-
                     await expect(this.getemailCTA()).toBeVisible();
+                    console.log(`Email CTA is visible for ${actualActivityName}✅ `)
                 }
                 if (phoneInfo) {
-
                     await expect(this.getphoneCTA()).toBeVisible();
+                    console.log(`Phone CTA is visible for ${actualActivityName}✅ `)
                 }
                 // Closing the activity Modal
                 await this.page.keyboard.press('Escape');
+                console.log(`Contents verified and closing the ${actualActivityName} activity Modal ✅`)
             }
         }
     }

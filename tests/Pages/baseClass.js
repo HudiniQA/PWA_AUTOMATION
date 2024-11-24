@@ -10,12 +10,15 @@ export class BaseClass {
     async setup(browserType) {
         if (browserType === 'Chrome') {
             this.browser = await chromium.launch({ headless: false });
+            console.log(`${browserType} Browser launched successfully ✅ `)
         } else if (browserType === 'Firefox') {
             this.browser = await firefox.launch({ headless: false });
+            console.log(`${browserType} Browser launched successfully ✅ `)
         } else if (browserType === 'Webkit') {
             this.browser = await webkit.launch({ headless: false });
+            console.log(`${browserType} Browser launched successfully ✅ `)
         } else {
-            throw new Error("Unsupported browser type. Choose 'Chrome', 'Firefox', or 'Webkit'.");
+            throw new Error("❌ Unsupported browser type. Choose 'Chrome', 'Firefox', or 'Webkit'.");
         }
 
         this.context = await this.browser.newContext();
@@ -24,12 +27,19 @@ export class BaseClass {
 
     async teardown() {
         await this.page.close();
+        console.log(`Page has been closed ✅ `)
         await this.context.close();
+        console.log(`Context has been closed ✅ `)
         await this.browser.close();
+        console.log(`Browser has been closed ✅ `)
     }
 
     async navigateToUrl(url) {
         await this.page.goto(url);
+        if(url)
+        console.log(`Navigated to the ${url} successfully ✅ .`)
+        else
+        console.log(` ${url} is invalid ❌. Please provide fully qualified url `)
     }
 
     async captureScreenshot(name) {
