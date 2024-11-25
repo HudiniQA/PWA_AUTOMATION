@@ -26,28 +26,36 @@ export class ThingsToDoPage extends BaseClass {
     gethamburgerMenu() {
         return this.#hamburgerMenu;
     }
+    
     getthingsToDoIcon() {
         return this.#thingsToDoIcon;
     }
+
     getcategoryBtn() {
         return this.#categoryBtn;
     }
+
     getactivityTitle() {
         return this.#activityTitle;
     }
+
     getactivitytDescription() {
         return this.#activitytDescription;
     }
+
     getemailCTA() {
         return this.#emailCTA;
     }
+
     getphoneCTA() {
         return this.#phoneCTA;
     }
+
     async verifyThingsToDoDetails() {
         await this.initializeSelectors();
         await this.gethamburgerMenu().click();
         await this.getthingsToDoIcon().click();
+
         const endPoint = testData.fairmontMakkahPWA.thingsToDo.getHotelAmenityDetailsEndpoint;
         const query = testData.fairmontMakkahPWA.thingsToDo.getHotelAmenityDetailsQuery;
         const apiKey = testData.fairmontMakkahPWA.thingsToDo.getHotelAmenityDetailsApiKey;
@@ -76,51 +84,55 @@ export class ThingsToDoPage extends BaseClass {
         }
 
         // Extract categories and amenities
-        const { amenities, categories } = responseBody.data.getHotelAmenityDetails;
-        categories.map((c) => c.name)//listing the categories into the categories array
-        categories.map((a) => a.name)// listing the amenities into the amenities array
-
+        const { amenities, categories } = responseBody.data?.getHotelAmenityDetails || {};
+        if (!categories || !amenities) {
+            throw new Error('Invalid API response: missing categories or amenities.');
+            }
         for (const category of categories) {
             const { name: categoryName, id: categoryId } = category;
-            // Click to change the category if not default
 
-            if (await this.getcategoryBtn().isVisible()) {
-                if ((await this.getcategoryBtn().textContent()).trim() !== categoryName) {
-                    await this.getcategoryBtn().click();
-                    await this.page.getByText(categoryName, { exact: true }).click();
+            let maxRetries = 3;
+            let retryCount = 0;
+
+            while (retryCount < maxRetries) {
+                if (await this.getcategoryBtn().isVisible()) 
+                    {
+                    const buttonText = (await this.getcategoryBtn().textContent()).trim();
+                    if (buttonText !== categoryName)
+                         {
+                            await this.getcategoryBtn().click();
+                            await this.page.getByText(categoryName, { exact: true }).click();
+                        }
+                    break;
+                    }
+                 else
+                 {
+                    await this.page.mouse.wheel(0, -100);
+                    await this.page.waitForTimeout(500);
+                }
+                retryCount++;
+                if (retryCount === maxRetries) {
+                    throw new Error(`Category button not visible for "${categoryName}" after ${maxRetries} attempts.`);
                 }
             }
-            else {
-                //   If not visible, scroll up and check again
-                await this.page.mouse.wheel(0, -100); // Scroll up slightly
-                await this.page.waitForTimeout(500); // Allow UI to update
-                if (await this.getcategoryBtn().isVisible()) {
-                    if ((await this.getcategoryBtn().textContent()).trim() !== categoryName) {
-                        await this.getcategoryBtn().click();
-                        await this.page.getByText(categoryName, { exact: true }).click();
-                    }
-                    else{
-                        // Throw an error if the button is still not visible
-                        throw new Error('Category button is not visible even after scrolling.');
-                    }
 
-                }
-            }
-            
             // Filter amenities for the current category based on category id
             const currentAmenities = amenities.filter((amenity) =>
                 amenity.categoryIds.includes(categoryId)
             );
+
             // Validate each activity in the current category
             for (const amenity of currentAmenities) {
                 if (!amenity.isActive) continue; // Skip inactive amenities
 
                 const { name: activityName, description, information } = amenity;
+
                 // Click on the activity
-                await this.page.waitForTimeout(500); 
                 const activityLink = this.page.getByRole('heading', { name: activityName });
+                await activityLink.waitFor({ state: 'visible' });
                 await activityLink.click();
-                console.log(`Opened the ${activityName} successfully ✅`)
+                console.log(`Opened the ${activityName} activity successfully ✅`);
+ 
                 // Validate activity details
                 const actualActivityName = await this.getactivityTitle().textContent();
                 const actualDescription = await this.getactivitytDescription().textContent();
@@ -128,25 +140,27 @@ export class ThingsToDoPage extends BaseClass {
                 expect(actualActivityName).toBe(activityName);
                 expect(actualDescription).toBe(description);
 
-                //Validating email and phone CTA
+                // Validating email and phone CTA
                 const emailInfo = information.find((info) => info.type === 'EMAIL');
                 const phoneInfo = information.find((info) => info.type === 'PHONE');
 
                 if (emailInfo) {
                     await expect(this.getemailCTA()).toBeVisible();
-                    console.log(`Email CTA is visible for ${actualActivityName}✅ `)
+                    console.log(`Email CTA is visible for ${actualActivityName} ✅`);
                 }
                 if (phoneInfo) {
                     await expect(this.getphoneCTA()).toBeVisible();
-                    console.log(`Phone CTA is visible for ${actualActivityName}✅ `)
+                    console.log(`Phone CTA is visible for ${actualActivityName} ✅`);
                 }
+
                 // Closing the activity Modal
                 await this.page.keyboard.press('Escape');
-                console.log(`Contents verified and closing the ${actualActivityName} activity Modal ✅`)
+                console.log(`Contents verified and closing the ${actualActivityName} activity Modal ✅`);
             }
         }
     }
 }
+
 
 
 // if ((await this.getcategoryBtn().textContent()).trim() !== categoryName) {
