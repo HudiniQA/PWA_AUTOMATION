@@ -7,21 +7,21 @@ export class ThingsToDoPage extends BaseClass {
     #thingsToDoIcon;
     #activityTitle;
     #activitytDescription;
-    #phoneCTA
-    #emailCTA
-    #categoryBtn
+    #phoneCTA;
+    #emailCTA;
+    #categoryBtn;
 
     constructor() {
-        super()
+        super();
     }
     async initializeSelectors() {
         this.#hamburgerMenu = this.page.locator('.hamburger-react');
-        this.#thingsToDoIcon = this.page.locator('p').filter({ hasText: 'Things To Do' })
-        this.#categoryBtn = this.page.getByRole('button').first();    //locator("//button[@id=':r5:']")
-        this.#activityTitle = this.page.locator('p.hotel-compendium_title__ECdl7')
-        this.#activitytDescription = this.page.locator('p.hotel-compendium_description__n_HmG')
-        this.#emailCTA = this.page.getByRole('link', { name: 'Email' })
-        this.#phoneCTA = this.page.getByRole('link', { name: 'Phone' })
+        this.#thingsToDoIcon = this.page.locator('p').filter({ hasText: 'Things To Do' });
+        this.#categoryBtn = this.page.getByRole('button').first();
+        this.#activityTitle = this.page.locator('p.hotel-compendium_title__ECdl7');
+        this.#activitytDescription = this.page.locator('p.hotel-compendium_description__n_HmG');
+        this.#emailCTA = this.page.getByRole('link', { name: 'Email' });
+        this.#phoneCTA = this.page.getByRole('link', { name: 'Phone' });
     }
     gethamburgerMenu() {
         return this.#hamburgerMenu;
@@ -60,20 +60,21 @@ export class ThingsToDoPage extends BaseClass {
         const response = await this.page.request.post(endPoint, {
             data: {
                 query: query,
-                variables: variables
+                variables: variables,
             },
             headers: {
                 'Content-Type': 'application/json',
-                'x-api-key': apiKey
-            }
+                'x-api-key': apiKey,
+            },
         });
         const responseBody = await response.json()
         if (responseBody) {
-            console.log('✅ API call was successful.');
+            console.log(' API call was successful.✅');
         } else {
-            console.error('❌ API call failed. Response body is null or undefined.');
+            console.error('API call failed. Response body is null or undefined. ❌');
+            return; // Exit if API response is invalid
         }
-        
+
         // Extract categories and amenities
         const { amenities, categories } = responseBody.data.getHotelAmenityDetails;
         categories.map((c) => c.name)//listing the categories into the categories array
