@@ -103,8 +103,11 @@ export class AboutHotel extends BaseClass {
         //validating the hotel title and description
         const responseBody=await this.captureTheGetHotelDetailsApiResponse();
         const hotelObject = responseBody.data.getPropertyDetailsByHotelId.hotel;
-        expect(actualHotelTitle).toBe(hotelObject.name);
-        expect(actualDescription).toBe(hotelObject.description);
+        const normalizeText = (text) => text.replace(/\s+/g, ' ').trim();
+        const expectedHotelName=normalizeText(hotelObject.name)
+        const expectedHotelDescription=normalizeText(hotelObject.description)
+        expect(actualHotelTitle).toBe(expectedHotelName);
+        expect(actualDescription).toBe(expectedHotelDescription);
 
         //Validating Call,Email and URL CTA buttons
         const hotelInformation = responseBody.data.getPropertyDetailsByHotelId.hotel.information;//Extracting the information array from the response
