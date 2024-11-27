@@ -1,5 +1,6 @@
 import { BaseClass } from './baseClass';
 import { test, expect } from '@playwright/test';
+import {ElementActions} from './elementActions'
 const testData = JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
 export class ThingsToDoPage extends BaseClass {
@@ -13,6 +14,7 @@ export class ThingsToDoPage extends BaseClass {
 
     constructor() {
         super();
+        this.elementActions=new ElementActions(this.page)
     }
     async initializeSelectors() {
         this.#hamburgerMenu = this.page.locator('.hamburger-react');
@@ -50,12 +52,14 @@ export class ThingsToDoPage extends BaseClass {
     getphoneCTA() {
         return this.#phoneCTA;
     }
-
-    async verifyThingsToDoDetails() {
+    async navigateToThingsToPage()
+    {
         await this.initializeSelectors();
-        await this.gethamburgerMenu().click();
-        await this.getthingsToDoIcon().click();
-
+        await this.elementActions.click(this.gethamburgerMenu())
+        await this.elementActions.click(this.getthingsToDoIcon())
+    }
+    async catpureGetHotelAmenityDetailsApiResponse()
+    {
         const endPoint = testData.fairmontMakkahPWA.thingsToDo.getHotelAmenityDetailsEndpoint;
         const query = testData.fairmontMakkahPWA.thingsToDo.getHotelAmenityDetailsQuery;
         const apiKey = testData.fairmontMakkahPWA.thingsToDo.getHotelAmenityDetailsApiKey;
@@ -82,8 +86,12 @@ export class ThingsToDoPage extends BaseClass {
             console.error('API call failed. Response body is null or undefined. ❌');
             return; // Exit if API response is invalid
         }
-
+        return responseBody;
+    }
+    async verifyThingsToDoDetails() {
+        await this.initializeSelectors();
         // Extract categories and amenities
+        const responseBody=await this.catpureGetHotelAmenityDetailsApiResponse()
         const { amenities, categories } = responseBody.data?.getHotelAmenityDetails || {};
         if (!categories || !amenities) {
             throw new Error('Invalid API response: missing categories or amenities.');
@@ -129,27 +137,33 @@ export class ThingsToDoPage extends BaseClass {
 
                 // Click on the activity
                 const activityLink = this.page.getByRole('heading', { name: activityName });
-                await activityLink.waitFor({ state: 'visible' });
-                await activityLink.click();
+                await this.elementActions.waitForVisibility(activityLink)
+                await this.elementActions.click(activityLink)
                 console.log(`Opened the ${activityName} activity successfully ✅`);
  
                 // Validate activity details
-                const actualActivityName = await this.getactivityTitle().textContent();
-                const actualDescription = await this.getactivitytDescription().textContent();
+                const actualActivityName = (await this.elementActions.getText(this.getactivityTitle()))
+                const actualDescription = await this.elementActions.getText(this.getactivitytDescription())
 
-                expect(actualActivityName).toBe(activityName);
-                expect(actualDescription).toBe(description);
+                const normalizeText = (text) => text.replace(/\s+/g, ' ').trim();
+                const expectedDescription=normalizeText(description)
+                const expectedActivityName=normalizeText(activityName)
+                
+                expect(actualActivityName).toBe(expectedActivityName);
+                expect(actualDescription).toBe(expectedDescription);
 
                 // Validating email and phone CTA
                 const emailInfo = information.find((info) => info.type === 'EMAIL');
                 const phoneInfo = information.find((info) => info.type === 'PHONE');
 
                 if (emailInfo) {
-                    await expect(this.getemailCTA()).toBeVisible();
+                    const isEmailCTAVisible=await this.elementActions.isVisible(this.getemailCTA())
+                    expect(isEmailCTAVisible).toBeTruthy()
                     console.log(`Email CTA is visible for ${actualActivityName} ✅`);
                 }
                 if (phoneInfo) {
-                    await expect(this.getphoneCTA()).toBeVisible();
+                    const isPhoneCTAVisible=await this.elementActions.isVisible(this.getphoneCTA())
+                    expect(isPhoneCTAVisible).toBeTruthy()
                     console.log(`Phone CTA is visible for ${actualActivityName} ✅`);
                 }
 

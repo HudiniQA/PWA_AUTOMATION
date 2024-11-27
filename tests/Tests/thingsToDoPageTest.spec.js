@@ -18,6 +18,7 @@ test.describe('To verify the things to do page', () => {
   });
 
   test('Verify the things to do activities and categories', async () => {
+    await thingsToDo.navigateToThingsToPage()
     await thingsToDo.verifyThingsToDoDetails();
   });
 });

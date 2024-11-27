@@ -18,6 +18,7 @@ test.describe('To verify the hotel info ', () => {
     });
 
     test('Verify the hotel info popup', async () => {
+        await aboutHotePage.navigateToAboutHotelModal()
         await aboutHotePage.verifyTheHotelInfoPopup(); // Perform aboutHotel page navigation and verification
     });
 });

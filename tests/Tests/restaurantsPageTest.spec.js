@@ -18,6 +18,7 @@ test.describe('To verify the restaurants are displayed', () => {
     });
 
     test('Verify the restaurants', async () => {
+        await restaurantPage.navigateToRestaurantsPage();
         await restaurantPage.verifyRestaurantDetails(); // Perform restaurant page navigation and verification
     });
 });

@@ -1,5 +1,6 @@
 import { BaseClass } from './baseClass';
 import { expect } from '@playwright/test';
+import {ElementActions} from './elementActions'
 const testData = JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
 export class AboutHotel extends BaseClass {
@@ -11,10 +12,10 @@ export class AboutHotel extends BaseClass {
     #emailCTA
     #phoneCTA
     #locationPinCTA
-
+   
     constructor(page) {
         super();
-        this.page = page;
+        this.elementActions=new ElementActions(this.page)
     }
 
     async initializeSelectors() {
@@ -56,11 +57,14 @@ export class AboutHotel extends BaseClass {
     getlocationPinCTA() {
         return this.#locationPinCTA;
     }
-
-    async verifyTheHotelInfoPopup() {
+    async navigateToAboutHotelModal()
+    {
         await this.initializeSelectors();
-        await this.gethamburgerMenu().click();
-        await this.getaboutHotelIcon().click();
+        await this.elementActions.click(this.gethamburgerMenu())
+        await this.elementActions.click(this.getaboutHotelIcon())
+    }
+    async captureTheGetHotelDetailsApiResponse()
+    {
         const endPoint = testData.fairmontMakkahPWA.aboutHotel.getPropertyDetailsByHotelIdEndpont;
         const apiKey = testData.fairmontMakkahPWA.aboutHotel.getPropertyDetailsByHotelIdApiKey;
         const query = testData.fairmontMakkahPWA.aboutHotel.getPropertyDetailsByHotelIdQuery;
@@ -88,10 +92,16 @@ export class AboutHotel extends BaseClass {
         }
         // console.dir(responseBody, { depth: null });
         expect(response.ok()).toBeTruthy();
-        const actualHotelTitle = await this.gethotelTitle().textContent();
-        const actualDescription = await this.gethotelDescription().textContent();
+        return responseBody
+    }
+
+    async verifyTheHotelInfoPopup() {
+        await this.initializeSelectors();
+        const actualHotelTitle = await this.elementActions.getText(this.gethotelTitle()); // Using ElementActions
+        const actualDescription = await this.elementActions.getText(this.gethotelDescription()); // Using ElementActions
 
         //validating the hotel title and description
+        const responseBody=await this.captureTheGetHotelDetailsApiResponse();
         const hotelObject = responseBody.data.getPropertyDetailsByHotelId.hotel;
         expect(actualHotelTitle).toBe(hotelObject.name);
         expect(actualDescription).toBe(hotelObject.description);
@@ -100,17 +110,17 @@ export class AboutHotel extends BaseClass {
         const hotelInformation = responseBody.data.getPropertyDetailsByHotelId.hotel.information;//Extracting the information array from the response
         for (const info of hotelInformation) {
             if (info.type === 'EMAIl') {
-                await expect(this.getemailCTA()).toBeVisible()
+                expect(await this.elementActions.isVisible(this.getemailCTA())).toBeTruthy();
                 console.log(`Email CTA is visible for ${actualHotelTitle} ✅ `)
             }
             else if (info.type === 'PHONE') {
-                await expect(this.getphoneCTA().first()).toBeVisible()
+                expect(await this.elementActions.isVisible(this.getphoneCTA())).toBeTruthy()
                 console.log(`Phone CTA is visible for ${actualHotelTitle} ✅ `)
             }
             else if (info.type === 'URL') {
                 await expect(this.getredirectionLink()).toBeVisible();
                 const pagePromise = this.context.waitForEvent('page')
-                await this.getredirectionLink().click()
+                await this.elementActions.click(this.getredirectionLink())
                 const newPage = await pagePromise;
                 const actualRedirectUrl = newPage.url()
                 expect(actualRedirectUrl).toBe(info.value)
@@ -123,7 +133,7 @@ export class AboutHotel extends BaseClass {
         const hotelLocation = responseBody.data.getPropertyDetailsByHotelId.hotel.location;
         // console.log(hotelLocation)
         if (hotelLocation.latitude && hotelLocation.longitude) {
-            await expect(this.getlocationPinCTA()).toBeVisible();
+            expect(await this.elementActions.isVisible(this.getlocationPinCTA())).toBeTruthy();
             console.log(`Location pin is visible for ${actualHotelTitle} ✅ `)
         } else {
             console.warn('Latitude and/or Longitude is missing, skipping location pin verification.');

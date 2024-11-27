@@ -1,7 +1,8 @@
-import { error } from 'console';
 import { BaseClass } from './baseClass';
 import { test, expect } from '@playwright/test';
+import{ElementActions} from'./elementActions'
 const testData=JSON.parse(JSON.stringify(require('../testData/testData.json')));
+
 
 export class RestaurantPage extends BaseClass {
     #hamburgerMenu;
@@ -16,6 +17,7 @@ export class RestaurantPage extends BaseClass {
 
     constructor() {
         super(); // Calls the BaseClass constructor to initialize browser, context, and page
+        this.elementActions=new ElementActions(this.page)
     }
 
     async initializeSelectors() {
@@ -59,34 +61,42 @@ export class RestaurantPage extends BaseClass {
     getmenuCTA() {
         return this.#menuCTA;
     }
-
-    // Call initializeSelectors before using any selectors
-    async verifyRestaurantDetails() {
-        await this.initializeSelectors();  // Ensure selectors are initialized first
-        await this.getHamburgerMenu().click();
-        // await this.getRestaurantsAndBars().click();
-        if(await this.getRestaurantsAndBars().isVisible())
+    async navigateToRestaurantsPage()
+    {
+        await this.initializeSelectors(); 
+        await this.elementActions.click(this.getHamburgerMenu())
+        if(await this.elementActions.isVisible(this.getRestaurantsAndBars()))
         {
-            await this.getRestaurantsAndBars().click()
+            await this.elementActions.click(this.getRestaurantsAndBars());
         }
-        else if(await this.getrestaurantsAndBar().isVisible())
+        else if(await this.elementActions.isVisible(this.getrestaurantsAndBar()))
         {
-            await this.getrestaurantsAndBar().click()
+            await this.elementActions.click(this.getrestaurantsAndBar());
         }
-        else if(await this.getrestaurants().isVisible())
+        else if(await this.elementActions.isVisible(this.getrestaurants()))
         {
-            await this.getrestaurants().click()
+            await this.elementActions.click(this.getrestaurants());
         }
         else{
             throw new Error('No restaurants available for this hotel')
         }
-        const restaurantsResponse = await this.page.waitForResponse(testData.fairmontMakkahPWA.getRestaurantDetailsEndpoint);//https://api-properties-a.hudini.io/graphql
+    }
+    async captureTheGetRestaurantDetailsApiResponse()
+    {
+        const endPoint=testData.fairmontMakkahPWA.getRestaurantDetailsEndpoint
+        const restaurantsResponse = await this.page.waitForResponse(endPoint);//https://api-properties-a.hudini.io/graphql
         const responseBody = await restaurantsResponse.json();
         if (responseBody) {
             console.log(' API call was successful.✅ ');
         } else {
             console.error(' API call failed. Response body is null or undefined.❌');
         }
+        return responseBody;
+    }
+    // Call initializeSelectors before using any selectors
+    async verifyRestaurantDetails() {
+        await this.initializeSelectors();  // Ensure selectors are initialized first
+        const responseBody=await this.captureTheGetRestaurantDetailsApiResponse()
         // console.dir(responseBody,{depth:null})
         const restaurantDetails = responseBody.data.getRestaurantDetails.restaurant;
         for (let index = 0; index < restaurantDetails.length; index++) {
@@ -94,42 +104,46 @@ export class RestaurantPage extends BaseClass {
             if (restaurant.isActive) {
                 const restaurantName = restaurant.name;
                 const restaurantDescription = restaurant.description;
-
-                await this.page.getByRole('heading', { name: `${restaurantName}` }).click();
-
-                const actualRestaurantName = await this.getRestaurantTitle().textContent();
+                await this.elementActions.click(this.page.getByRole('heading', { name: `${restaurantName}` }))
+                const actualRestaurantName = await this.elementActions.getText(this.getRestaurantTitle())
                 let actualRestaurantDescription;
-                if(await this.getrestaurantDescription().nth(1).isVisible())
+                if(await this.elementActions.isVisible(this.getrestaurantDescription().nth(1)))
                 {
-                    actualRestaurantDescription = await this.getrestaurantDescription().nth(1).textContent();
+                    actualRestaurantDescription = await this.elementActions.getText(this.getrestaurantDescription().nth(1))
                 }
-                else if (await this.getrestaurantDescription().isVisible())
+               else if(await this.elementActions.isVisible(this.getrestaurantDescription()))
                 {
-                    actualRestaurantDescription=await this.getrestaurantDescription().textContent();
+                    actualRestaurantDescription=(await this.elementActions.getText(this.getrestaurantDescription()));
                 }
                 else
                 {
                     throw new Error(`${actualRestaurantName} does not contains description skipping the description verification.`)
                 }
-                expect(restaurantName).toEqual(actualRestaurantName);
-                expect(restaurantDescription).toEqual(actualRestaurantDescription);
+                const normalizeText = (text) => text.replace(/\s+/g, ' ').trim();
+                const normalizedExpectedDescription = normalizeText(restaurantDescription);//Removing extra spaces,tab spaces globally in
+
+                expect(actualRestaurantName).toEqual(restaurantName);
+                expect(actualRestaurantDescription).toEqual(normalizedExpectedDescription);
 
                 if(restaurant.contactNumber)
                 {  
-                    await expect(this.getphoneCTA()).toBeVisible()
+                    const isPhoneCTAVisible=await this.elementActions.isVisible(this.getphoneCTA())
+                    expect(isPhoneCTAVisible).toBeTruthy()
                     console.log(`Phone CTA is visible for ${actualRestaurantName} restaurant ✅ `)
                 }
                 if(restaurant.email)
                 {
-                    await expect(this.getemailCTA()).toBeVisible()
+                    const isEmailCTAVisible=await this.elementActions.isVisible(this.getemailCTA())
+                    expect(isEmailCTAVisible).toBeTruthy()
                     console.log(`Email CTA is visible for ${actualRestaurantName} restaurant✅`)
                 }
                 if(restaurant.menu && restaurant.menu.url)
                 {
-                    await expect(this.getmenuCTA()).toBeVisible()
+                    const isMenuCTAVisible=await this.elementActions.isVisible(this.getmenuCTA())
+                    expect(isMenuCTAVisible).toBeTruthy()
                     console.log(`Menu CTA is visible for ${actualRestaurantName} restaurant✅ `)
                 }
-                await this.page.keyboard.press('Escape');
+                await this.page.keyboard.press('Escape')
                 console.log(`Contents verified and closing the ${actualRestaurantName} restaurant Modal ✅`)
             }
         }
