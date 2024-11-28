@@ -58,7 +58,7 @@ export class ThingsToDoPage extends BaseClass {
         await this.elementActions.click(this.gethamburgerMenu())
         await this.elementActions.click(this.getthingsToDoIcon())
     }
-    async catpureGetHotelAmenityDetailsApiResponse()
+    async captureGetHotelAmenityDetailsApiResponse()
     {
         const endPoint = testData.fairmontMakkahPWA.thingsToDo.getHotelAmenityDetailsEndpoint;
         const query = testData.fairmontMakkahPWA.thingsToDo.getHotelAmenityDetailsQuery;
@@ -91,7 +91,7 @@ export class ThingsToDoPage extends BaseClass {
     async verifyThingsToDoDetails() {
         await this.initializeSelectors();
         // Extract categories and amenities
-        const responseBody=await this.catpureGetHotelAmenityDetailsApiResponse()
+        const responseBody=await this.captureGetHotelAmenityDetailsApiResponse()
         const { amenities, categories } = responseBody.data?.getHotelAmenityDetails || {};
         if (!categories || !amenities) {
             throw new Error('Invalid API response: missing categories or amenities.');

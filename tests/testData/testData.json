@@ -16,6 +16,12 @@
             "getHotelAmenityDetailsEndpoint":"https://api-properties-a.hudini.io/graphql",
             "getHotelAmenityDetailsQuery": "query MyQuery($hotelId: String!, $lang: String) {\n  getHotelAmenityDetails(input: {hotelId: $hotelId, lang: $lang}) {\n    amenities {\n      categoryId\n      categoryIds\n      createdAt\n      createdBy\n      description\n      highlights\n      hotelId\n      id\n      images {\n        fileName\n        index\n        master\n        ratio16to9\n        ratio1to1\n        ratio21to9\n      }\n      information {\n        displayTitle\n        field\n        index\n        type\n        value\n      }\n      isActive\n      name\n      pk\n      sk\n      updatedAt\n      updatedBy\n      version\n    }\n    categories {\n      createdAt\n      createdBy\n      hotelId\n      id\n      name\n      sk\n      pk\n      updatedAt\n      updatedBy\n      version\n    }\n  }\n}",
             "getHotelAmenityDetailsApiKey":"da2-6czgvkngsrhenerfydlymzprsa"
+        },
+        "offers":
+        {
+            "getOffersDetailsEndpoint":"https://api-properties-c.hudini.io/graphql",
+            "getOffersDetailsQuery":"query MyQuery($hotelId: String!, $lang: String) {\n  getOffersDetails(input: {hotelId: $hotelId, lang: $lang}) {\n    createdAt\n    createdBy\n    description\n    isActive\n    name\n    hotelId\n    id\n    highLights\n    customAttributes {\n      key\n      value\n    }\n    CTA {\n      URL\n      cardPlacement\n      contact\n      emailId\n      phoneCode\n      phoneNumber\n      redirectTo\n      type\n      status\n      displayCTATitle\n      redirectData\n    }\n    duration {\n      alwaysActive\n      endDate\n      endTime\n      startDate\n      startTime\n      timings {\n        day\n        offerTime\n      }\n    }\n    notification {\n      createdAt\n      description\n      devices\n      name\n    }\n    images {\n      fileName\n      index\n      master\n      ratio16to9\n      ratio1to1\n      ratio21to9\n    }\n    contact {\n      email\n      phoneNumber\n    }\n    pk\n    sk\n    type\n    updatedAt\n    updatedBy\n    version\n  }\n}",
+            "getOffersDetailsApiKey":"da2-trnqedbpgzcnhikdt4ziqmjm6q"
         }
 
     }
