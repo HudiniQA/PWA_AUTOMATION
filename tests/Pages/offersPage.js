@@ -89,35 +89,50 @@ export class OffersPage extends BaseClass {
         if (!offers || offers.length === 0) {
             throw new Error('No offers found in the response.');
         }
-    
-        const offerTypes = []; // Array to hold unique offer types
-        const today = new Date(); // Get today's date once for reusability
-    
+
+        const offerTypes = []; // Array to hold unique offer types    
         // Utility function to check if the current date lies between startDate and endDate
-        const isWithinDateRange = (duration) => {
+        function isWithinDateRange(duration) {
             if (!duration?.startDate || !duration?.endDate) return false;
-    
-            const startDate = new Date(duration.startDate.split('-').reverse().join('-'));
+        
+            // Parse the dates correctly (assuming format is DD-MM-YYYY)
+            const startDate = new Date(duration.startDate.split('-').reverse().join('-')); // "DD-MM-YYYY" -> "YYYY-MM-DD"
             const endDate = new Date(duration.endDate.split('-').reverse().join('-'));
+        
+            const today = new Date(); // Get today's date
+        
+            // Log the date comparison for debugging
+            // console.log(`Comparing Today: ${today} with Start: ${startDate} and End: ${endDate}`);
+        
+            // Ensure that today is within the range [startDate, endDate]
             return today >= startDate && today <= endDate;
-        };
-    
+        }
+        
+
+
+
         // Loop through the offers to filter based on isActive, alwaysActive, and date range
         for (const offer of offers) {
-            if (offer.isActive || (offer.duration?.alwaysActive || isWithinDateRange(offer.duration))) {
+            const isOfferTypeValid = offer.isActive && (
+                offer.duration?.alwaysActive ||
+                (!offer.duration?.alwaysActive && isWithinDateRange(offer.duration))
+            );
+
+            if (isOfferTypeValid) {
+                // Add unique offer types
                 if (!offerTypes.includes(offer.type)) {
                     offerTypes.push(offer.type);
                 }
             }
         }
-    
+
         console.log('Unique Offer Types:', offerTypes);
-    
+
         // Loop through each offer type
         for (const offerType of offerTypes) {
             let maxRetries = 3;
             let retryCount = 0;
-    
+
             while (retryCount < maxRetries) {
                 if (await this.elementActions.isVisible(this.getcategoryBtn())) {
                     const buttonTxt = await this.elementActions.getText(this.getcategoryBtn());
@@ -137,37 +152,40 @@ export class OffersPage extends BaseClass {
                     throw new Error(`Failed to select offer type "${offerType}" after ${maxRetries} attempts.`);
                 }
             }
-    
+
             // Filter offers for the current type and condition
             const currentOffers = offers.filter(
                 (offer) =>
                     offer.type === offerType &&
-                    (offer.isActive || (offer.duration?.alwaysActive || isWithinDateRange(offer.duration)))
+                    offer.isActive && (
+                        offer.duration?.alwaysActive ||
+                        (!offer.duration?.alwaysActive && isWithinDateRange(offer.duration))
+                    )
             );
-    
+
             // Loop through filtered offers
             for (const offer of currentOffers) {
                 const { name, description } = offer;
-    
+
                 const offerLink = this.page.getByRole('heading', { name, exact: true });
                 await this.elementActions.waitForVisibility(offerLink);
                 await this.elementActions.click(offerLink);
                 console.log(`Opened the ${name} offer successfully ✅`);
-    
+
                 const actualOfferName = await this.elementActions.getText(this.getofferTitle());
                 const actualOfferDescription = await this.elementActions.getText(this.getofferDescription());
-    
+
                 const normalizeText = (text) => text.replace(/\s+/g, ' ').trim();
                 const expectedOfferName = normalizeText(name);
                 const expectedOfferDescription = normalizeText(description);
-    
+
                 expect(actualOfferName).toBe(expectedOfferName);
                 expect(actualOfferDescription).toBe(expectedOfferDescription);
-    
+
                 await this.page.keyboard.press('Escape');
                 console.log(`Verified and closing the ${actualOfferName} offer modal under ${offerType}`);
             }
         }
     }
-    
+
 }
