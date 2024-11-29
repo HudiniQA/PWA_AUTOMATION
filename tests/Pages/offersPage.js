@@ -85,7 +85,7 @@ export class OffersPage extends BaseClass {
         await this.initilizeSelectors();
         const responseBody = await this.captureGetOffersDetailsApiResponse();
         const offers = responseBody.data?.getOffersDetails;
-    
+
         if (!offers || offers.length === 0) {
             throw new Error('No offers found in the response.');
         }
@@ -94,29 +94,59 @@ export class OffersPage extends BaseClass {
         // Utility function to check if the current date lies between startDate and endDate
         function isWithinDateRange(duration) {
             if (!duration?.startDate || !duration?.endDate) return false;
-        
+
             // Parse the dates correctly (assuming format is DD-MM-YYYY)
             const startDate = new Date(duration.startDate.split('-').reverse().join('-')); // "DD-MM-YYYY" -> "YYYY-MM-DD"
             const endDate = new Date(duration.endDate.split('-').reverse().join('-'));
-        
+
             const today = new Date(); // Get today's date
-        
+
             // Log the date comparison for debugging
             // console.log(`Comparing Today: ${today} with Start: ${startDate} and End: ${endDate}`);
-        
+
             // Ensure that today is within the range [startDate, endDate]
             return today >= startDate && today <= endDate;
         }
-        
+        function isWithinTimings(duration) {
+            if (!duration?.timings || duration.timings.length === 0) return false;
 
+            const now = new Date();
+            const currentDay = now.toLocaleString('en-US', { weekday: 'long' }).toUpperCase(); // E.g., "FRIDAY"
+            const currentMinutes = now.getHours() * 60 + now.getMinutes(); // Time in minutes for comparison
+
+            const startMinutes = parseTime(duration.startTime);
+            const endMinutes = parseTime(duration.endTime);
+
+            // Helper function to parse "HH:mm" to minutes
+            function parseTime(timeString) {
+                const [ hours, minutes ] = timeString.split(':').map(Number);
+                return hours * 60 + minutes;
+            }
+
+            // Check if the current time falls within the startTime and endTime range
+            if (currentMinutes < startMinutes || currentMinutes > endMinutes) return false;
+
+            // Validate against individual timings for the current day
+            for (const timing of duration.timings) {
+                if (timing.day === currentDay) {
+                    const [ offerHours, offerMinutes ] = timing.offerTime.split(':').map(Number);
+                    const offerTimeInMinutes = offerHours * 60 + offerMinutes;
+
+                    if (currentMinutes === offerTimeInMinutes) {
+                        return true; // Valid if current time matches the offer time
+                    }
+                }
+            }
+            return false;
+        }
 
 
         // Loop through the offers to filter based on isActive, alwaysActive, and date range
         for (const offer of offers) {
-            const isOfferTypeValid = offer.isActive && (
-                offer.duration?.alwaysActive ||
-                (!offer.duration?.alwaysActive && isWithinDateRange(offer.duration))
-            );
+            const isOfferTypeValid = offer.isActive &&
+                (offer.duration?.alwaysActive ||
+                    (!offer.duration?.alwaysActive && isWithinDateRange(offer.duration) && isWithinTimings(offer.duration))
+                );
 
             if (isOfferTypeValid) {
                 // Add unique offer types
@@ -157,12 +187,12 @@ export class OffersPage extends BaseClass {
             const currentOffers = offers.filter(
                 (offer) =>
                     offer.type === offerType &&
-                    offer.isActive && (
-                        offer.duration?.alwaysActive ||
-                        (!offer.duration?.alwaysActive && isWithinDateRange(offer.duration))
+                    offer.isActive &&
+                    (offer.duration?.alwaysActive || 
+                        (!offer.duration?.alwaysActive && isWithinDateRange(offer.duration) && isWithinTimings(offer.duration))
                     )
             );
-
+            
             // Loop through filtered offers
             for (const offer of currentOffers) {
                 const { name, description } = offer;
@@ -182,8 +212,7 @@ export class OffersPage extends BaseClass {
                 expect(actualOfferName).toBe(expectedOfferName);
                 expect(actualOfferDescription).toBe(expectedOfferDescription);
 
-                await this.page.keyboard.press('Escape');
-                console.log(`Verified and closing the ${actualOfferName} offer modal under ${offerType}`);
+               
 
                 // Verifying the email and phone CTAs
                 const { email, phoneNumber } = offer.contact; // Destructure email and phone from offer.contact
@@ -203,6 +232,8 @@ export class OffersPage extends BaseClass {
                 } else {
                     console.log(`No phone provided for ${actualOfferName}. Skipping phone CTA check.`);
                 }
+                await this.page.keyboard.press('Escape');
+                console.log(`Verified and closing the ${actualOfferName} offer modal under ${offerType}`);
 
             }
         }
