@@ -184,6 +184,26 @@ export class OffersPage extends BaseClass {
 
                 await this.page.keyboard.press('Escape');
                 console.log(`Verified and closing the ${actualOfferName} offer modal under ${offerType}`);
+
+                // Verifying the email and phone CTAs
+                const { email, phoneNumber } = offer.contact; // Destructure email and phone from offer.contact
+
+                if (email) {
+                    const emailCTAVisible = await this.elementActions.isVisible(this.getemailCTA());
+                    expect(emailCTAVisible).toBeTruthy();
+                    console.log(`Email CTA is visible for ${actualOfferName} ✅`);
+                } else {
+                    console.log(`No email provided for ${actualOfferName}. Skipping email CTA check.`);
+                }
+
+                if (phoneNumber) {
+                    const phoneCTAVisible = await this.elementActions.isVisible(this.getphoneCTA());
+                    expect(phoneCTAVisible).toBeTruthy();
+                    console.log(`Phone CTA is visible for ${actualOfferName} ✅`);
+                } else {
+                    console.log(`No phone provided for ${actualOfferName}. Skipping phone CTA check.`);
+                }
+
             }
         }
     }
