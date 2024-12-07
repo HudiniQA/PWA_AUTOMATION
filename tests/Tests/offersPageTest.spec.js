@@ -2,7 +2,7 @@ import { OffersPage } from '../Pages/offersPage';
 import { test, request } from '@playwright/test';
 const testData = JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
-test.describe('To verify the hotel info ', () => {
+test.describe('To verify the offers page ', () => {
     let offersPage;
 
     test.beforeEach(async ({ browser }) => {
@@ -17,7 +17,7 @@ test.describe('To verify the hotel info ', () => {
         }
     });
 
-    test('Verify the hotel info popup', async () => {
+    test('Verify the offerstypes and corrosponding offers', async () => {
         await offersPage.navigateToOffersPage()
         await offersPage.verifyTheOffersDetails() 
        

@@ -36,6 +36,7 @@
       mode: 'on',
       size: { width: 1920, height: 1080 }
     },
+    screenshot: 'only-on-failure', // Capture screenshots on test failure
    },
    outputDir: 'test-results/videos',
    

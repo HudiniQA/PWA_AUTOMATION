@@ -1,4 +1,4 @@
-import { AboutHotel } from '../Pages/aboutHotel';
+import { AboutHotel } from '../Pages/aboutHotelPage';
 import { test, request } from '@playwright/test';
 const testData = JSON.parse(JSON.stringify(require('../testData/testData.json')));
 

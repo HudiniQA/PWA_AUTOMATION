@@ -11,6 +11,7 @@ export class ThingsToDoPage extends BaseClass {
     #phoneCTA;
     #emailCTA;
     #categoryBtn;
+    #categoryOption;
 
     constructor() {
         super();
@@ -24,6 +25,7 @@ export class ThingsToDoPage extends BaseClass {
         this.#activitytDescription = this.page.locator('p.hotel-compendium_description__n_HmG');
         this.#emailCTA = this.page.getByRole('link', { name: 'Email' });
         this.#phoneCTA = this.page.getByRole('link', { name: 'Phone' });
+        this.#categoryOption= this.page.locator('p');
     }
     gethamburgerMenu() {
         return this.#hamburgerMenu;
@@ -51,6 +53,9 @@ export class ThingsToDoPage extends BaseClass {
 
     getphoneCTA() {
         return this.#phoneCTA;
+    }
+    getcategoryOption() {
+        return this.#categoryOption;
     }
     async navigateToThingsToPage()
     {
@@ -109,7 +114,8 @@ export class ThingsToDoPage extends BaseClass {
                     if (buttonText !== categoryName)
                          {
                             await this.getcategoryBtn().click();
-                            await this.page.getByText(categoryName, { exact: true }).click();
+                            // await this.page.getByText(categoryName, { exact: true }).click();
+                            await this.elementActions.click(this.getcategoryOption().filter({hasText:categoryName}));
                         }
                     break;
                     }

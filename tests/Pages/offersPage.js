@@ -1,4 +1,3 @@
-import test from 'node:test';
 import { BaseClass } from './baseClass';
 import { ElementActions } from './elementActions';
 import { expect } from '@playwright/test';

@@ -17,7 +17,7 @@ export class ElementActions extends BaseClass  {
     async click(locator) {
         await locator.waitFor({ state: 'visible' });
         await locator.click();
-        console.log(`Clicked on the element: ${locator}`);
+        // console.log(`Clicked on the element: ${locator}`);
     }
 
     /**
@@ -28,7 +28,7 @@ export class ElementActions extends BaseClass  {
     async type(locator, text) {
         await locator.waitFor({ state: 'visible' });
         await locator.fill(text);
-        console.log(`Typed '${text}' into the element: ${locator}`);
+        // console.log(`Typed '${text}' into the element: ${locator}`);
     }
 
     /**
@@ -41,7 +41,7 @@ export class ElementActions extends BaseClass  {
         const text = await locator.textContent();
         const normalizeText = (text) => text.replace(/\s+/g, ' ').trim();
         const normilizedText=normalizeText(text)
-        console.log(`Text from element: ${text}`);
+        // console.log(`Text from element: ${text}`);
         return normilizedText;
     }
 
@@ -52,7 +52,7 @@ export class ElementActions extends BaseClass  {
      */
     async isVisible(locator) {
         const visible = await locator.isVisible();
-        console.log(`Element visibility: ${visible}`);
+        // console.log(`Element visibility: ${visible}`);
         return visible;
     }
 
@@ -62,7 +62,7 @@ export class ElementActions extends BaseClass  {
      */
     async scrollToElement(locator) {
         await locator.scrollIntoViewIfNeeded();
-        console.log(`Scrolled to element: ${locator}`);
+        // console.log(`Scrolled to element: ${locator}`);
     }
 
     /**
@@ -73,7 +73,7 @@ export class ElementActions extends BaseClass  {
     async selectDropdownValue(locator, value) {
         await locator.waitFor({ state: 'visible' });
         await locator.selectOption({ value });
-        console.log(`Selected value '${value}' in dropdown: ${locator}`);
+        // console.log(`Selected value '${value}' in dropdown: ${locator}`);
     }
 
     /**
@@ -83,7 +83,7 @@ export class ElementActions extends BaseClass  {
     async hover(locator) {
         await locator.waitFor({ state: 'visible' });
         await locator.hover();
-        console.log(`Hovered over the element: ${locator}`);
+        // console.log(`Hovered over the element: ${locator}`);
     }
 
     /**
@@ -95,7 +95,7 @@ export class ElementActions extends BaseClass  {
         await source.waitFor({ state: 'visible' });
         await target.waitFor({ state: 'visible' });
         await source.dragTo(target);
-        console.log(`Dragged element ${source} to target ${target}`);
+        // console.log(`Dragged element ${source} to target ${target}`);
     }
 
     /**
@@ -107,7 +107,7 @@ export class ElementActions extends BaseClass  {
     async containsText(locator, text) {
         const elementText = await this.getText(locator);
         const contains = elementText.includes(text);
-        console.log(`Element contains text '${text}': ${contains}`);
+        // console.log(`Element contains text '${text}': ${contains}`);
         return contains;
     }
 
@@ -118,7 +118,7 @@ export class ElementActions extends BaseClass  {
      */
     async captureElementScreenshot(locator, name) {
         await locator.screenshot({ path: `screenshots/${name}.png` });
-        console.log(`Captured screenshot of element as '${name}.png'`);
+        // console.log(`Captured screenshot of element as '${name}.png'`);
     }
     /**
  * Press a key on the keyboard globally
@@ -126,7 +126,7 @@ export class ElementActions extends BaseClass  {
  */
 async pressKey(key) {
     await this.page.keyboard.press(key);
-    console.log(`Pressed the key '${key}'.`);
+    // console.log(`Pressed the key '${key}'.`);
 }
 /**
  * Wait for an element to be visible
@@ -134,7 +134,7 @@ async pressKey(key) {
  */
 async waitForVisibility(locator) {
     await locator.waitFor({ state: 'visible' });
-    console.log(`Element is visible: ${locator}`);
+    // console.log(`Element is visible: ${locator}`);
 }
 
 

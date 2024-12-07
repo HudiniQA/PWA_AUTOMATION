@@ -1,0 +1,20 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.699390999999999">
+<testsuite name="Tests\offersPageTest.spec.js" timestamp="2024-12-03T05:25:47.684Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.473" errors="0">
+<testcase name="To verify the offers page  › Verify the offerstypes and corrosponding offers" classname="Tests\offersPageTest.spec.js" time="4.473">
+<system-out>
+<![CDATA[Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .
+ API call was successful.✅ 
+Unique Offer Types: [ [32m'Stay'[39m ]
+Opened the Fairmont Makkah Advance Saver 15% offer successfully ✅
+No email provided for Fairmont Makkah Advance Saver 15%. Skipping email CTA check.
+No phone provided for Fairmont Makkah Advance Saver 15%. Skipping phone CTA check.
+Verified and closing the Fairmont Makkah Advance Saver 15% offer modal under Stay
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
