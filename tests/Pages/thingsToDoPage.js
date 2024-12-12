@@ -114,8 +114,8 @@ export class ThingsToDoPage extends BaseClass {
                     if (buttonText !== categoryName)
                          {
                             await this.getcategoryBtn().click();
-                            // await this.page.getByText(categoryName, { exact: true }).click();
-                            await this.elementActions.click(this.getcategoryOption().filter({hasText:categoryName}));
+                            await this.page.getByText(categoryName, { exact: true }).click();
+                            // await this.elementActions.click(this.getcategoryOption().filter({hasText:categoryName}));
                         }
                     break;
                     }

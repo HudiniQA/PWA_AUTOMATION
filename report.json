@@ -4,7 +4,7 @@
     "rootDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/tests",
     "forbidOnly": false,
     "fullyParallel": false,
-    "globalSetup": null,
+    "globalSetup": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\allureGlobalSetup.js",
     "globalTeardown": null,
     "globalTimeout": 0,
     "grep": {},
@@ -55,7 +55,7 @@
       {
         "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
         "repeatEach": 1,
-        "retries": 3,
+        "retries": 0,
         "metadata": {},
         "id": "chromium",
         "name": "chromium",
@@ -69,7 +69,7 @@
       {
         "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
         "repeatEach": 1,
-        "retries": 3,
+        "retries": 0,
         "metadata": {},
         "id": "firefox",
         "name": "firefox",
@@ -83,7 +83,7 @@
       {
         "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
         "repeatEach": 1,
-        "retries": 3,
+        "retries": 0,
         "metadata": {},
         "id": "webkit",
         "name": "webkit",
@@ -98,10 +98,152 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.49.0",
-    "workers": 4,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
+    {
+      "title": "Pages\\login.spec.js",
+      "file": "Pages/login.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "To verify the login functionality",
+          "file": "Pages/login.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify the login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 8345,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Chrome Browser launched successfully ✅ \n"
+                        },
+                        {
+                          "text": "Navigated to the https://cms.hudinielevate-stage.io successfully ✅ .\n"
+                        },
+                        {
+                          "text": "Page has been closed ✅ \n"
+                        },
+                        {
+                          "text": "Context has been closed ✅ \n"
+                        },
+                        {
+                          "text": "Browser has been closed ✅ \n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-12-12T07:43:22.997Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "445e329fe30acf5cc5b4-9d3c82cc6403d04ef900",
+              "file": "Pages/login.spec.js",
+              "line": 19,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Tests\\aboutHotelPageTest.spec.js",
+      "file": "Tests/aboutHotelPageTest.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "To verify the hotel info ",
+          "file": "Tests/aboutHotelPageTest.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify the hotel info popup",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 7672,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Chrome Browser launched successfully ✅ \n"
+                        },
+                        {
+                          "text": "Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .\n"
+                        },
+                        {
+                          "text": " API call was successful.✅ \n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for Fairmont Makkah ✅ \n"
+                        },
+                        {
+                          "text": "Redirect link verfied successfully ✅ \n"
+                        },
+                        {
+                          "text": "Location pin is visible for Fairmont Makkah ✅ \n"
+                        },
+                        {
+                          "text": "Page has been closed ✅ \n"
+                        },
+                        {
+                          "text": "Context has been closed ✅ \n"
+                        },
+                        {
+                          "text": "Browser has been closed ✅ \n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-12-12T07:43:31.727Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9b765dce6ad4a8a3dd7d-9c4b211b520452388428",
+              "file": "Tests/aboutHotelPageTest.spec.js",
+              "line": 20,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
     {
       "title": "Tests\\offersPageTest.spec.js",
       "file": "Tests/offersPageTest.spec.js",
@@ -130,7 +272,7 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 4473,
+                      "duration": 4706,
                       "errors": [],
                       "stdout": [
                         {
@@ -169,7 +311,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-12-03T05:25:48.407Z",
+                      "startTime": "2024-12-12T07:43:39.423Z",
                       "attachments": []
                     }
                   ],
@@ -184,13 +326,245 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Tests\\restaurantsPageTest.spec.js",
+      "file": "Tests/restaurantsPageTest.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "To verify the restaurants are displayed",
+          "file": "Tests/restaurantsPageTest.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify the restaurants",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 9272,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Chrome Browser launched successfully ✅ \n"
+                        },
+                        {
+                          "text": "Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .\n"
+                        },
+                        {
+                          "text": " API call was successful.✅ \n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for THE GRILL restaurant ✅ \n"
+                        },
+                        {
+                          "text": "Email CTA is visible for THE GRILL restaurant✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the THE GRILL restaurant Modal ✅\n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for MAZAQ EXPRESS restaurant ✅ \n"
+                        },
+                        {
+                          "text": "Email CTA is visible for MAZAQ EXPRESS restaurant✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the MAZAQ EXPRESS restaurant Modal ✅\n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for Al Dira restaurant ✅ \n"
+                        },
+                        {
+                          "text": "Email CTA is visible for Al Dira restaurant✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the Al Dira restaurant Modal ✅\n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for ATYAF restaurant ✅ \n"
+                        },
+                        {
+                          "text": "Contents verified and closing the ATYAF restaurant Modal ✅\n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for AL DAR restaurant ✅ \n"
+                        },
+                        {
+                          "text": "Contents verified and closing the AL DAR restaurant Modal ✅\n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for Aja restaurant ✅ \n"
+                        },
+                        {
+                          "text": "Email CTA is visible for Aja restaurant✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the Aja restaurant Modal ✅\n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for MAZEDAR restaurant ✅ \n"
+                        },
+                        {
+                          "text": "Email CTA is visible for MAZEDAR restaurant✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the MAZEDAR restaurant Modal ✅\n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for MIRKAZ restaurant ✅ \n"
+                        },
+                        {
+                          "text": "Email CTA is visible for MIRKAZ restaurant✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the MIRKAZ restaurant Modal ✅\n"
+                        },
+                        {
+                          "text": "Page has been closed ✅ \n"
+                        },
+                        {
+                          "text": "Context has been closed ✅ \n"
+                        },
+                        {
+                          "text": "Browser has been closed ✅ \n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-12-12T07:43:44.160Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9fc3685dcb5375ddd347-b360e9b2cfdcd31542c3",
+              "file": "Tests/restaurantsPageTest.spec.js",
+              "line": 20,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Tests\\thingsToDoPageTest.spec.js",
+      "file": "Tests/thingsToDoPageTest.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "To verify the things to do page",
+          "file": "Tests/thingsToDoPageTest.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify the things to do activities and categories",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 7288,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Chrome Browser launched successfully ✅ \n"
+                        },
+                        {
+                          "text": "Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .\n"
+                        },
+                        {
+                          "text": " API call was successful.✅\n"
+                        },
+                        {
+                          "text": "Opened the Family Travel activity successfully ✅\n"
+                        },
+                        {
+                          "text": "Email CTA is visible for Family Travel ✅\n"
+                        },
+                        {
+                          "text": "Phone CTA is visible for Family Travel ✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the Family Travel activity Modal ✅\n"
+                        },
+                        {
+                          "text": "Opened the Meetings activity successfully ✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the Meetings activity Modal ✅\n"
+                        },
+                        {
+                          "text": "Opened the Social Events activity successfully ✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the Social Events activity Modal ✅\n"
+                        },
+                        {
+                          "text": "Opened the Weddings activity successfully ✅\n"
+                        },
+                        {
+                          "text": "Contents verified and closing the Weddings activity Modal ✅\n"
+                        },
+                        {
+                          "text": "Page has been closed ✅ \n"
+                        },
+                        {
+                          "text": "Context has been closed ✅ \n"
+                        },
+                        {
+                          "text": "Browser has been closed ✅ \n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-12-12T07:43:53.460Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "98d11ed1690a35184fe7-b9c2ef0b8a8af3daae4c",
+              "file": "Tests/thingsToDoPageTest.spec.js",
+              "line": 20,
+              "column": 7
+            }
+          ]
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-12-03T05:25:47.650Z",
-    "duration": 5699.391,
-    "expected": 1,
+    "startTime": "2024-12-12T07:43:19.271Z",
+    "duration": 41598.37300000001,
+    "expected": 5,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

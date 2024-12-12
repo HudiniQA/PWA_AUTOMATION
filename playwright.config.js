@@ -11,6 +11,7 @@
   * @see https://playwright.dev/docs/test-configuration
   */
  module.exports = defineConfig({
+  globalSetup: './allureGlobalSetup.js',
   timeout: 300000,
    testDir: './tests',
    /* Run tests in files in parallel */
@@ -22,7 +23,14 @@
    /* Opt out of parallel tests on CI. */
    workers: process.env.CI ? 3 : undefined,
    /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-   reporter: 'html',
+   reporter: [
+    ['list'],                           // Standard console output
+    ['html', { open: 'always' }],        // HTML report
+    ['json', { outputFile: 'report.json' }], // JSON report for integration with other tools
+    ['junit', { outputFile: 'results.xml' }], // JUnit report (useful for CI)
+    ['allure-playwright'],// Allure reporter for Allure reporting
+    ['dot'],                            // Dot reporter (minimal output)
+  ],
    /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
    use: {
     actionTimeout:10000,
@@ -31,10 +39,10 @@
      // baseURL: 'http://127.0.0.1:3000',
  
      /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-     trace: 'on-first-retry',
+    //  trace: 'on-first-retry',
      video: {
-      mode: 'on',
-      size: { width: 1920, height: 1080 }
+      mode: 'retain-on-failure',
+      // size: { width: 1920, height: 1080 }
     },
     screenshot: 'only-on-failure', // Capture screenshots on test failure
    },
