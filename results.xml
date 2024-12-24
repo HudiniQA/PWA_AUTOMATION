@@ -1,104 +1,60 @@
-<testsuites id="" name="" tests="5" failures="0" skipped="0" errors="0" time="41.59837300000001">
-<testsuite name="Pages\login.spec.js" timestamp="2024-12-12T07:43:21.222Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.345" errors="0">
-<testcase name="To verify the login functionality › Verify the login" classname="Pages\login.spec.js" time="8.345">
-<system-out>
-<![CDATA[Chrome Browser launched successfully ✅ 
-Navigated to the https://cms.hudinielevate-stage.io successfully ✅ .
-Page has been closed ✅ 
-Context has been closed ✅ 
-Browser has been closed ✅ 
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="59.948642">
+<testsuite name="Tests\houseKeepingPageTest.spec.js" timestamp="2024-12-24T13:57:26.070Z" hostname="chromium" tests="1" failures="1" skipped="0" time="55.662" errors="0">
+<testcase name="To verify the houseKeeping services › Verify the houseKeeping page" classname="Tests\houseKeepingPageTest.spec.js" time="55.662">
+<failure message="houseKeepingPageTest.spec.js:20:9 Verify the houseKeeping page" type="FAILURE">
+<![CDATA[  [chromium] › Tests\houseKeepingPageTest.spec.js:20:9 › To verify the houseKeeping services › Verify the houseKeeping page 
+
+    Error: page.waitForTimeout: Target page, context or browser has been closed
+
+       at Pages\houseKeepingPage.js:135
+
+      133 |                         const maxQuantityToast=this.page.locator('div').filter({ hasText: 'Max limit exceeded!Max limit' }).nth(1);
+      134 |                         expect(await maxQuantityToast.isVisible()).toBeTruthy();
+    > 135 |                         this.page.waitForTimeout(3000)
+          |                                   ^
+      136 |                     }
+      137 |                 }
+      138 |                 for(let i=0;i<maxQuantity;i++)
+        at HouseKeepingPage.verifyTheHouseKeepingPage (C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Pages\houseKeepingPage.js:135:35)
+        at C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Tests\houseKeepingPageTest.spec.js:22:9
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test was interrupted.
+
+    Error: apiRequestContext.post: Target page, context or browser has been closed
+
+       at Pages\houseKeepingPage.js:83
+
+      81 |
+      82 |         // Make API request to capture the actual data
+    > 83 |         const response = await this.page.request.post(endPoint, {
+         |                                                  ^
+      84 |             data: {
+      85 |                 query: query,
+      86 |                 variables: variables
+        at HouseKeepingPage.captureThegetServiceRequestDetailsApiResponse (C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Pages\houseKeepingPage.js:83:50)
+        at HouseKeepingPage.verifyTheHouseKeepingPage (C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Pages\houseKeepingPage.js:105:40)
+        at C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Tests\houseKeepingPageTest.spec.js:22:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\videos\Tests-houseKeepingPageTest-f6bda-erify-the-houseKeeping-page-chromium-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="Tests\aboutHotelPageTest.spec.js" timestamp="2024-12-12T07:43:21.222Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.672" errors="0">
-<testcase name="To verify the hotel info  › Verify the hotel info popup" classname="Tests\aboutHotelPageTest.spec.js" time="7.672">
+</failure>
 <system-out>
 <![CDATA[Chrome Browser launched successfully ✅ 
-Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
  API call was successful.✅ 
-Phone CTA is visible for Fairmont Makkah ✅ 
-Redirect link verfied successfully ✅ 
-Location pin is visible for Fairmont Makkah ✅ 
+Page has been closed ✅ 
+Context has been closed ✅ 
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
 Page has been closed ✅ 
 Context has been closed ✅ 
 Browser has been closed ✅ 
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="Tests\offersPageTest.spec.js" timestamp="2024-12-12T07:43:21.222Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.706" errors="0">
-<testcase name="To verify the offers page  › Verify the offerstypes and corrosponding offers" classname="Tests\offersPageTest.spec.js" time="4.706">
-<system-out>
-<![CDATA[Chrome Browser launched successfully ✅ 
-Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .
- API call was successful.✅ 
-Unique Offer Types: [ [32m'Stay'[39m ]
-Opened the Fairmont Makkah Advance Saver 15% offer successfully ✅
-No email provided for Fairmont Makkah Advance Saver 15%. Skipping email CTA check.
-No phone provided for Fairmont Makkah Advance Saver 15%. Skipping phone CTA check.
-Verified and closing the Fairmont Makkah Advance Saver 15% offer modal under Stay
-Page has been closed ✅ 
-Context has been closed ✅ 
-Browser has been closed ✅ 
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="Tests\restaurantsPageTest.spec.js" timestamp="2024-12-12T07:43:21.222Z" hostname="chromium" tests="1" failures="0" skipped="0" time="9.272" errors="0">
-<testcase name="To verify the restaurants are displayed › Verify the restaurants" classname="Tests\restaurantsPageTest.spec.js" time="9.272">
-<system-out>
-<![CDATA[Chrome Browser launched successfully ✅ 
-Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .
- API call was successful.✅ 
-Phone CTA is visible for THE GRILL restaurant ✅ 
-Email CTA is visible for THE GRILL restaurant✅
-Contents verified and closing the THE GRILL restaurant Modal ✅
-Phone CTA is visible for MAZAQ EXPRESS restaurant ✅ 
-Email CTA is visible for MAZAQ EXPRESS restaurant✅
-Contents verified and closing the MAZAQ EXPRESS restaurant Modal ✅
-Phone CTA is visible for Al Dira restaurant ✅ 
-Email CTA is visible for Al Dira restaurant✅
-Contents verified and closing the Al Dira restaurant Modal ✅
-Phone CTA is visible for ATYAF restaurant ✅ 
-Contents verified and closing the ATYAF restaurant Modal ✅
-Phone CTA is visible for AL DAR restaurant ✅ 
-Contents verified and closing the AL DAR restaurant Modal ✅
-Phone CTA is visible for Aja restaurant ✅ 
-Email CTA is visible for Aja restaurant✅
-Contents verified and closing the Aja restaurant Modal ✅
-Phone CTA is visible for MAZEDAR restaurant ✅ 
-Email CTA is visible for MAZEDAR restaurant✅
-Contents verified and closing the MAZEDAR restaurant Modal ✅
-Phone CTA is visible for MIRKAZ restaurant ✅ 
-Email CTA is visible for MIRKAZ restaurant✅
-Contents verified and closing the MIRKAZ restaurant Modal ✅
-Page has been closed ✅ 
-Context has been closed ✅ 
-Browser has been closed ✅ 
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="Tests\thingsToDoPageTest.spec.js" timestamp="2024-12-12T07:43:21.222Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.288" errors="0">
-<testcase name="To verify the things to do page › Verify the things to do activities and categories" classname="Tests\thingsToDoPageTest.spec.js" time="7.288">
-<system-out>
-<![CDATA[Chrome Browser launched successfully ✅ 
-Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .
- API call was successful.✅
-Opened the Family Travel activity successfully ✅
-Email CTA is visible for Family Travel ✅
-Phone CTA is visible for Family Travel ✅
-Contents verified and closing the Family Travel activity Modal ✅
-Opened the Meetings activity successfully ✅
-Contents verified and closing the Meetings activity Modal ✅
-Opened the Social Events activity successfully ✅
-Contents verified and closing the Social Events activity Modal ✅
-Opened the Weddings activity successfully ✅
-Contents verified and closing the Weddings activity Modal ✅
-Page has been closed ✅ 
-Context has been closed ✅ 
-Browser has been closed ✅ 
+
+[[ATTACHMENT|test-results\videos\Tests-houseKeepingPageTest-f6bda-erify-the-houseKeeping-page-chromium-retry1\test-failed-1.png]]
 ]]>
 </system-out>
 </testcase>

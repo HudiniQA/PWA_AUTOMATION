@@ -1,28 +1,30 @@
 {
-    "fairmontMakkahPWA":
-    {
-        "hotelId": "9bcdef3a-e0b7-45bd-908d-d555db8bd4be",
-        "endPoint":"https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/",
-        "getRestaurantDetailsEndpoint":"https://api-properties-a.hudini.io/graphql",
-        "getPropertyDetailsByHotelIdEndpont":"https://api-properties-a.hudini.io/graphql",
-        "aboutHotel":
-        {
-            "getPropertyDetailsByHotelIdEndpont":"https://api-properties-a.hudini.io/graphql",
-            "getPropertyDetailsByHotelIdQuery":"query MyQuery($hotelId:String!) { getPropertyDetailsByHotelId(input: {hotelId: $hotelId}) { brand { code createdAt createdBy description groupId gsi1pk gsi1sk id images { fileName index master ratio16to9 ratio1to1 ratio21to9 } name pk sk updatedAt updatedBy version } group { code createdAt createdBy customSenderEmail description firebaseToken id name sk pk updatedAt updatedBy version whiteLabellingConfigurations { appConfigs region userPoolId userPoolWebClientId } } hotel { brandId cancellationPolicy { name type url } checkInTime checkOutTime code covid19Regulations { name type url } createdAt createdBy currency dataProtection { name type url } description devicesEndpoint features groupId gsi1pk gsi1sk gsi2pk gsi2sk id images { fileName index master ratio16to9 ratio1to1 ratio21to9 } information { displayTitle field index type value } interests isDevicesEnabled isUIBuilderEnabled location { addressLine1 addressLine2 area city country latitude longitude postalCode state timezone } maxdevices name phoneNumber pk privacyLaws { name type url } sk starRating termsAndConditions { name type url } travelType updatedAt version updatedBy } } }",
-            "getPropertyDetailsByHotelIdApiKey":"da2-6czgvkngsrhenerfydlymzprsa"
+    "fairmontMakkahPWA": {
+        "hotelId": "1d210111-07b7-4a7f-bbc5-10328a193d41",
+        "endPoint": "https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/",
+        "getRestaurantDetailsEndpoint": "https://api-properties-a.hudini.io/graphql",
+        "roomNo":"3223",
+        "lastName":"Raviteja",
+        "aboutHotel": {
+            "getPropertyDetailsByHotelIdEndpont": "https://api-properties-a.hudini.io/graphql",
+            "getPropertyDetailsByHotelIdQuery": "query MyQuery($hotelId:String!) { getPropertyDetailsByHotelId(input: {hotelId: $hotelId}) { brand { code createdAt createdBy description groupId gsi1pk gsi1sk id images { fileName index master ratio16to9 ratio1to1 ratio21to9 } name pk sk updatedAt updatedBy version } group { code createdAt createdBy customSenderEmail description firebaseToken id name sk pk updatedAt updatedBy version whiteLabellingConfigurations { appConfigs region userPoolId userPoolWebClientId } } hotel { brandId cancellationPolicy { name type url } checkInTime checkOutTime code covid19Regulations { name type url } createdAt createdBy currency dataProtection { name type url } description devicesEndpoint features groupId gsi1pk gsi1sk gsi2pk gsi2sk id images { fileName index master ratio16to9 ratio1to1 ratio21to9 } information { displayTitle field index type value } interests isDevicesEnabled isUIBuilderEnabled location { addressLine1 addressLine2 area city country latitude longitude postalCode state timezone } maxdevices name phoneNumber pk privacyLaws { name type url } sk starRating termsAndConditions { name type url } travelType updatedAt version updatedBy } } }",
+            "getPropertyDetailsByHotelIdApiKey": "da2-6czgvkngsrhenerfydlymzprsa"
         },
-        "thingsToDo":
-        {
-            "getHotelAmenityDetailsEndpoint":"https://api-properties-a.hudini.io/graphql",
+        "thingsToDo": {
+            "getHotelAmenityDetailsEndpoint": "https://api-properties-a.hudini.io/graphql",
             "getHotelAmenityDetailsQuery": "query MyQuery($hotelId: String!, $lang: String) {\n  getHotelAmenityDetails(input: {hotelId: $hotelId, lang: $lang}) {\n    amenities {\n      categoryId\n      categoryIds\n      createdAt\n      createdBy\n      description\n      highlights\n      hotelId\n      id\n      images {\n        fileName\n        index\n        master\n        ratio16to9\n        ratio1to1\n        ratio21to9\n      }\n      information {\n        displayTitle\n        field\n        index\n        type\n        value\n      }\n      isActive\n      name\n      pk\n      sk\n      updatedAt\n      updatedBy\n      version\n    }\n    categories {\n      createdAt\n      createdBy\n      hotelId\n      id\n      name\n      sk\n      pk\n      updatedAt\n      updatedBy\n      version\n    }\n  }\n}",
-            "getHotelAmenityDetailsApiKey":"da2-6czgvkngsrhenerfydlymzprsa"
+            "getHotelAmenityDetailsApiKey": "da2-6czgvkngsrhenerfydlymzprsa"
         },
-        "offers":
+        "offers": {
+            "getOffersDetailsEndpoint": "https://api-properties-c.hudini.io/graphql",
+            "getOffersDetailsQuery": "query MyQuery($hotelId: String!, $lang: String) {\n  getOffersDetails(input: {hotelId: $hotelId, lang: $lang}) {\n    createdAt\n    createdBy\n    description\n    isActive\n    name\n    hotelId\n    id\n    highLights\n    customAttributes {\n      key\n      value\n    }\n    CTA {\n      URL\n      cardPlacement\n      contact\n      emailId\n      phoneCode\n      phoneNumber\n      redirectTo\n      type\n      status\n      displayCTATitle\n      redirectData\n    }\n    duration {\n      alwaysActive\n      endDate\n      endTime\n      startDate\n      startTime\n      timings {\n        day\n        offerTime\n      }\n    }\n    notification {\n      createdAt\n      description\n      devices\n      name\n    }\n    images {\n      fileName\n      index\n      master\n      ratio16to9\n      ratio1to1\n      ratio21to9\n    }\n    contact {\n      email\n      phoneNumber\n    }\n    pk\n    sk\n    type\n    updatedAt\n    updatedBy\n    version\n  }\n}",
+            "getOffersDetailsApiKey": "da2-trnqedbpgzcnhikdt4ziqmjm6q"
+        },
+        "houseKeeping": 
         {
-            "getOffersDetailsEndpoint":"https://api-properties-c.hudini.io/graphql",
-            "getOffersDetailsQuery":"query MyQuery($hotelId: String!, $lang: String) {\n  getOffersDetails(input: {hotelId: $hotelId, lang: $lang}) {\n    createdAt\n    createdBy\n    description\n    isActive\n    name\n    hotelId\n    id\n    highLights\n    customAttributes {\n      key\n      value\n    }\n    CTA {\n      URL\n      cardPlacement\n      contact\n      emailId\n      phoneCode\n      phoneNumber\n      redirectTo\n      type\n      status\n      displayCTATitle\n      redirectData\n    }\n    duration {\n      alwaysActive\n      endDate\n      endTime\n      startDate\n      startTime\n      timings {\n        day\n        offerTime\n      }\n    }\n    notification {\n      createdAt\n      description\n      devices\n      name\n    }\n    images {\n      fileName\n      index\n      master\n      ratio16to9\n      ratio1to1\n      ratio21to9\n    }\n    contact {\n      email\n      phoneNumber\n    }\n    pk\n    sk\n    type\n    updatedAt\n    updatedBy\n    version\n  }\n}",
-            "getOffersDetailsApiKey":"da2-trnqedbpgzcnhikdt4ziqmjm6q"
+            "getHouseKeepingDetailsEndpoint": "https://m4sueqllivg4ncwh3nbtjbctcu.appsync-api.ap-south-1.amazonaws.com/graphql",
+            "getHouseKeepingDetailsQuery": "query MyQuery($hotelId: String!, $lang: String) {\n  getServiceRequestDetails(input: {hotelId: $hotelId, lang: $lang}) {\n    houseKeeping {\n      code\n      confirmationMessage\n      customAttributes {\n        key\n        value\n        __typename\n      }\n      customSchedule\n      description\n      hotelId\n      hours {\n        allTime\n        close\n        day\n        everyday\n        open\n        __typename\n      }\n      icon\n      id\n      images {\n        index\n        master\n        __typename\n      }\n      isActive\n      isItemActive\n      items {\n        description\n        id\n        maxQuantityActive\n        maxQuantity\n        name\n        __typename\n      }\n      maxQuantity\n      maxQuantityActive\n      name\n      schedule\n      scheduleActive\n      __typename\n    }\n    concierge {\n      code\n      createdAt\n      confirmationMessage\n      createdBy\n      customSchedule\n      description\n      hotelId\n      hours {\n        allTime\n        close\n        everyday\n        day\n        open\n        __typename\n      }\n      icon\n      id\n      images {\n        fileName\n        index\n        master\n        ratio16to9\n        ratio1to1\n        ratio21to9\n        __typename\n      }\n      isActive\n      isItemActive\n      items {\n        description\n        id\n        maxQuantity\n        maxQuantityActive\n        name\n        __typename\n      }\n      maxQuantity\n      maxQuantityActive\n      name\n      pk\n      resident\n      schedule\n      scheduleActive\n      sk\n      updatedAt\n      updatedBy\n      version\n      __typename\n    }\n    __typename\n  }\n}",
+            "getHouseKeepingDetailsApiKey": "da2-xb4znkx7dveyjfnebg6n6xpjsm"
         }
-
     }
 }

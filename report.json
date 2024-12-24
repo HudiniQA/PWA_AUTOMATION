@@ -39,7 +39,9 @@
       ],
       [
         "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
-        null
+        {
+          "open": "always"
+        }
       ],
       [
         "dot",
@@ -55,7 +57,7 @@
       {
         "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 3,
         "metadata": {},
         "id": "chromium",
         "name": "chromium",
@@ -69,7 +71,7 @@
       {
         "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 3,
         "metadata": {},
         "id": "firefox",
         "name": "firefox",
@@ -83,7 +85,7 @@
       {
         "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 3,
         "metadata": {},
         "id": "webkit",
         "name": "webkit",
@@ -98,91 +100,26 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.49.0",
-    "workers": 1,
+    "workers": 4,
     "webServer": null
   },
   "suites": [
     {
-      "title": "Pages\\login.spec.js",
-      "file": "Pages/login.spec.js",
+      "title": "Tests\\houseKeepingPageTest.spec.js",
+      "file": "Tests/houseKeepingPageTest.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "To verify the login functionality",
-          "file": "Pages/login.spec.js",
-          "line": 4,
-          "column": 6,
-          "specs": [
-            {
-              "title": "Verify the login",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 300000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 8345,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Chrome Browser launched successfully ✅ \n"
-                        },
-                        {
-                          "text": "Navigated to the https://cms.hudinielevate-stage.io successfully ✅ .\n"
-                        },
-                        {
-                          "text": "Page has been closed ✅ \n"
-                        },
-                        {
-                          "text": "Context has been closed ✅ \n"
-                        },
-                        {
-                          "text": "Browser has been closed ✅ \n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-12-12T07:43:22.997Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "445e329fe30acf5cc5b4-9d3c82cc6403d04ef900",
-              "file": "Pages/login.spec.js",
-              "line": 19,
-              "column": 9
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Tests\\aboutHotelPageTest.spec.js",
-      "file": "Tests/aboutHotelPageTest.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "To verify the hotel info ",
-          "file": "Tests/aboutHotelPageTest.spec.js",
+          "title": "To verify the houseKeeping services",
+          "file": "Tests/houseKeepingPageTest.spec.js",
           "line": 5,
           "column": 6,
           "specs": [
             {
-              "title": "Verify the hotel info popup",
-              "ok": true,
+              "title": "Verify the houseKeeping page",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -194,110 +131,85 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 7672,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 43031,
+                      "error": {
+                        "message": "Error: page.waitForTimeout: Target page, context or browser has been closed",
+                        "stack": "Error: page.waitForTimeout: Target page, context or browser has been closed\n    at HouseKeepingPage.verifyTheHouseKeepingPage (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:135:35)\n    at C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Tests\\houseKeepingPageTest.spec.js:22:9",
+                        "location": {
+                          "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
+                          "column": 35,
+                          "line": 135
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mPages\\houseKeepingPage.js:135\n\n\u001b[0m \u001b[90m 133 |\u001b[39m                         \u001b[36mconst\u001b[39m maxQuantityToast\u001b[33m=\u001b[39m\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[32m'Max limit exceeded!Max limit'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 134 |\u001b[39m                         expect(\u001b[36mawait\u001b[39m maxQuantityToast\u001b[33m.\u001b[39misVisible())\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 135 |\u001b[39m                         \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m3000\u001b[39m)\n \u001b[90m     |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 136 |\u001b[39m                     }\n \u001b[90m 137 |\u001b[39m                 }\n \u001b[90m 138 |\u001b[39m                 \u001b[36mfor\u001b[39m(\u001b[36mlet\u001b[39m i\u001b[33m=\u001b[39m\u001b[35m0\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m<\u001b[39m\u001b[33mmaxQuantity\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m++\u001b[39m)\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
+                            "column": 35,
+                            "line": 135
+                          },
+                          "message": "Error: page.waitForTimeout: Target page, context or browser has been closed\n\n\u001b[90m   at \u001b[39mPages\\houseKeepingPage.js:135\n\n\u001b[0m \u001b[90m 133 |\u001b[39m                         \u001b[36mconst\u001b[39m maxQuantityToast\u001b[33m=\u001b[39m\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[32m'Max limit exceeded!Max limit'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 134 |\u001b[39m                         expect(\u001b[36mawait\u001b[39m maxQuantityToast\u001b[33m.\u001b[39misVisible())\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 135 |\u001b[39m                         \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m3000\u001b[39m)\n \u001b[90m     |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 136 |\u001b[39m                     }\n \u001b[90m 137 |\u001b[39m                 }\n \u001b[90m 138 |\u001b[39m                 \u001b[36mfor\u001b[39m(\u001b[36mlet\u001b[39m i\u001b[33m=\u001b[39m\u001b[35m0\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m<\u001b[39m\u001b[33mmaxQuantity\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m++\u001b[39m)\u001b[0m\n\u001b[2m    at HouseKeepingPage.verifyTheHouseKeepingPage (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:135:35)\u001b[22m\n\u001b[2m    at C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Tests\\houseKeepingPageTest.spec.js:22:9\u001b[22m"
+                        }
+                      ],
                       "stdout": [
                         {
                           "text": "Chrome Browser launched successfully ✅ \n"
                         },
                         {
-                          "text": "Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .\n"
+                          "text": "Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .\n"
                         },
                         {
                           "text": " API call was successful.✅ \n"
                         },
                         {
-                          "text": "Phone CTA is visible for Fairmont Makkah ✅ \n"
-                        },
-                        {
-                          "text": "Redirect link verfied successfully ✅ \n"
-                        },
-                        {
-                          "text": "Location pin is visible for Fairmont Makkah ✅ \n"
-                        },
-                        {
                           "text": "Page has been closed ✅ \n"
                         },
                         {
                           "text": "Context has been closed ✅ \n"
-                        },
-                        {
-                          "text": "Browser has been closed ✅ \n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-12-12T07:43:31.727Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "9b765dce6ad4a8a3dd7d-9c4b211b520452388428",
-              "file": "Tests/aboutHotelPageTest.spec.js",
-              "line": 20,
-              "column": 9
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Tests\\offersPageTest.spec.js",
-      "file": "Tests/offersPageTest.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "To verify the offers page ",
-          "file": "Tests/offersPageTest.spec.js",
-          "line": 5,
-          "column": 6,
-          "specs": [
-            {
-              "title": "Verify the offerstypes and corrosponding offers",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 300000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
+                      "startTime": "2024-12-24T13:57:26.862Z",
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
+                        "column": 35,
+                        "line": 135
+                      }
+                    },
                     {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 4706,
-                      "errors": [],
+                      "workerIndex": 1,
+                      "status": "interrupted",
+                      "duration": 12631,
+                      "error": {
+                        "message": "Error: apiRequestContext.post: Target page, context or browser has been closed",
+                        "stack": "Error: apiRequestContext.post: Target page, context or browser has been closed\n    at HouseKeepingPage.captureThegetServiceRequestDetailsApiResponse (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:83:50)\n    at HouseKeepingPage.verifyTheHouseKeepingPage (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:105:40)\n    at C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Tests\\houseKeepingPageTest.spec.js:22:9",
+                        "location": {
+                          "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
+                          "column": 50,
+                          "line": 83
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mPages\\houseKeepingPage.js:83\n\n\u001b[0m \u001b[90m 81 |\u001b[39m\n \u001b[90m 82 |\u001b[39m         \u001b[90m// Make API request to capture the actual data\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m         \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mrequest\u001b[33m.\u001b[39mpost(endPoint\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 84 |\u001b[39m             data\u001b[33m:\u001b[39m {\n \u001b[90m 85 |\u001b[39m                 query\u001b[33m:\u001b[39m query\u001b[33m,\u001b[39m\n \u001b[90m 86 |\u001b[39m                 variables\u001b[33m:\u001b[39m variables\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
+                            "column": 50,
+                            "line": 83
+                          },
+                          "message": "Error: apiRequestContext.post: Target page, context or browser has been closed\n\n\u001b[90m   at \u001b[39mPages\\houseKeepingPage.js:83\n\n\u001b[0m \u001b[90m 81 |\u001b[39m\n \u001b[90m 82 |\u001b[39m         \u001b[90m// Make API request to capture the actual data\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m         \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mrequest\u001b[33m.\u001b[39mpost(endPoint\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 84 |\u001b[39m             data\u001b[33m:\u001b[39m {\n \u001b[90m 85 |\u001b[39m                 query\u001b[33m:\u001b[39m query\u001b[33m,\u001b[39m\n \u001b[90m 86 |\u001b[39m                 variables\u001b[33m:\u001b[39m variables\u001b[0m\n\u001b[2m    at HouseKeepingPage.captureThegetServiceRequestDetailsApiResponse (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:83:50)\u001b[22m\n\u001b[2m    at HouseKeepingPage.verifyTheHouseKeepingPage (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:105:40)\u001b[22m\n\u001b[2m    at C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Tests\\houseKeepingPageTest.spec.js:22:9\u001b[22m"
+                        }
+                      ],
                       "stdout": [
                         {
                           "text": "Chrome Browser launched successfully ✅ \n"
                         },
                         {
-                          "text": "Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .\n"
-                        },
-                        {
-                          "text": " API call was successful.✅ \n"
-                        },
-                        {
-                          "text": "Unique Offer Types: [ \u001b[32m'Stay'\u001b[39m ]\n"
-                        },
-                        {
-                          "text": "Opened the Fairmont Makkah Advance Saver 15% offer successfully ✅\n"
-                        },
-                        {
-                          "text": "No email provided for Fairmont Makkah Advance Saver 15%. Skipping email CTA check.\n"
-                        },
-                        {
-                          "text": "No phone provided for Fairmont Makkah Advance Saver 15%. Skipping phone CTA check.\n"
-                        },
-                        {
-                          "text": "Verified and closing the Fairmont Makkah Advance Saver 15% offer modal under Stay\n"
+                          "text": "Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .\n"
                         },
                         {
                           "text": "Page has been closed ✅ \n"
@@ -310,250 +222,29 @@
                         }
                       ],
                       "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-12-12T07:43:39.423Z",
-                      "attachments": []
+                      "retry": 1,
+                      "startTime": "2024-12-24T13:58:12.501Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\test-results\\videos\\Tests-houseKeepingPageTest-f6bda-erify-the-houseKeeping-page-chromium-retry1\\test-failed-1.png"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
+                        "column": 50,
+                        "line": 83
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
-              "id": "74ce8ef509865c9dc92b-5ac40ea75e473f0c9105",
-              "file": "Tests/offersPageTest.spec.js",
+              "id": "4f1b2f5587898d8b684b-dd5e604caba76469b89a",
+              "file": "Tests/houseKeepingPageTest.spec.js",
               "line": 20,
               "column": 9
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Tests\\restaurantsPageTest.spec.js",
-      "file": "Tests/restaurantsPageTest.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "To verify the restaurants are displayed",
-          "file": "Tests/restaurantsPageTest.spec.js",
-          "line": 5,
-          "column": 6,
-          "specs": [
-            {
-              "title": "Verify the restaurants",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 300000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 9272,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Chrome Browser launched successfully ✅ \n"
-                        },
-                        {
-                          "text": "Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .\n"
-                        },
-                        {
-                          "text": " API call was successful.✅ \n"
-                        },
-                        {
-                          "text": "Phone CTA is visible for THE GRILL restaurant ✅ \n"
-                        },
-                        {
-                          "text": "Email CTA is visible for THE GRILL restaurant✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the THE GRILL restaurant Modal ✅\n"
-                        },
-                        {
-                          "text": "Phone CTA is visible for MAZAQ EXPRESS restaurant ✅ \n"
-                        },
-                        {
-                          "text": "Email CTA is visible for MAZAQ EXPRESS restaurant✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the MAZAQ EXPRESS restaurant Modal ✅\n"
-                        },
-                        {
-                          "text": "Phone CTA is visible for Al Dira restaurant ✅ \n"
-                        },
-                        {
-                          "text": "Email CTA is visible for Al Dira restaurant✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the Al Dira restaurant Modal ✅\n"
-                        },
-                        {
-                          "text": "Phone CTA is visible for ATYAF restaurant ✅ \n"
-                        },
-                        {
-                          "text": "Contents verified and closing the ATYAF restaurant Modal ✅\n"
-                        },
-                        {
-                          "text": "Phone CTA is visible for AL DAR restaurant ✅ \n"
-                        },
-                        {
-                          "text": "Contents verified and closing the AL DAR restaurant Modal ✅\n"
-                        },
-                        {
-                          "text": "Phone CTA is visible for Aja restaurant ✅ \n"
-                        },
-                        {
-                          "text": "Email CTA is visible for Aja restaurant✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the Aja restaurant Modal ✅\n"
-                        },
-                        {
-                          "text": "Phone CTA is visible for MAZEDAR restaurant ✅ \n"
-                        },
-                        {
-                          "text": "Email CTA is visible for MAZEDAR restaurant✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the MAZEDAR restaurant Modal ✅\n"
-                        },
-                        {
-                          "text": "Phone CTA is visible for MIRKAZ restaurant ✅ \n"
-                        },
-                        {
-                          "text": "Email CTA is visible for MIRKAZ restaurant✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the MIRKAZ restaurant Modal ✅\n"
-                        },
-                        {
-                          "text": "Page has been closed ✅ \n"
-                        },
-                        {
-                          "text": "Context has been closed ✅ \n"
-                        },
-                        {
-                          "text": "Browser has been closed ✅ \n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-12-12T07:43:44.160Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "9fc3685dcb5375ddd347-b360e9b2cfdcd31542c3",
-              "file": "Tests/restaurantsPageTest.spec.js",
-              "line": 20,
-              "column": 9
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Tests\\thingsToDoPageTest.spec.js",
-      "file": "Tests/thingsToDoPageTest.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "To verify the things to do page",
-          "file": "Tests/thingsToDoPageTest.spec.js",
-          "line": 5,
-          "column": 6,
-          "specs": [
-            {
-              "title": "Verify the things to do activities and categories",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 300000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 7288,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Chrome Browser launched successfully ✅ \n"
-                        },
-                        {
-                          "text": "Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .\n"
-                        },
-                        {
-                          "text": " API call was successful.✅\n"
-                        },
-                        {
-                          "text": "Opened the Family Travel activity successfully ✅\n"
-                        },
-                        {
-                          "text": "Email CTA is visible for Family Travel ✅\n"
-                        },
-                        {
-                          "text": "Phone CTA is visible for Family Travel ✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the Family Travel activity Modal ✅\n"
-                        },
-                        {
-                          "text": "Opened the Meetings activity successfully ✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the Meetings activity Modal ✅\n"
-                        },
-                        {
-                          "text": "Opened the Social Events activity successfully ✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the Social Events activity Modal ✅\n"
-                        },
-                        {
-                          "text": "Opened the Weddings activity successfully ✅\n"
-                        },
-                        {
-                          "text": "Contents verified and closing the Weddings activity Modal ✅\n"
-                        },
-                        {
-                          "text": "Page has been closed ✅ \n"
-                        },
-                        {
-                          "text": "Context has been closed ✅ \n"
-                        },
-                        {
-                          "text": "Browser has been closed ✅ \n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-12-12T07:43:53.460Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "98d11ed1690a35184fe7-b9c2ef0b8a8af3daae4c",
-              "file": "Tests/thingsToDoPageTest.spec.js",
-              "line": 20,
-              "column": 7
             }
           ]
         }
@@ -562,11 +253,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-12-12T07:43:19.271Z",
-    "duration": 41598.37300000001,
-    "expected": 5,
+    "startTime": "2024-12-24T13:57:25.873Z",
+    "duration": 59948.642,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
