@@ -1,60 +1,13 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="59.948642">
-<testsuite name="Tests\houseKeepingPageTest.spec.js" timestamp="2024-12-24T13:57:26.070Z" hostname="chromium" tests="1" failures="1" skipped="0" time="55.662" errors="0">
-<testcase name="To verify the houseKeeping services › Verify the houseKeeping page" classname="Tests\houseKeepingPageTest.spec.js" time="55.662">
-<failure message="houseKeepingPageTest.spec.js:20:9 Verify the houseKeeping page" type="FAILURE">
-<![CDATA[  [chromium] › Tests\houseKeepingPageTest.spec.js:20:9 › To verify the houseKeeping services › Verify the houseKeeping page 
-
-    Error: page.waitForTimeout: Target page, context or browser has been closed
-
-       at Pages\houseKeepingPage.js:135
-
-      133 |                         const maxQuantityToast=this.page.locator('div').filter({ hasText: 'Max limit exceeded!Max limit' }).nth(1);
-      134 |                         expect(await maxQuantityToast.isVisible()).toBeTruthy();
-    > 135 |                         this.page.waitForTimeout(3000)
-          |                                   ^
-      136 |                     }
-      137 |                 }
-      138 |                 for(let i=0;i<maxQuantity;i++)
-        at HouseKeepingPage.verifyTheHouseKeepingPage (C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Pages\houseKeepingPage.js:135:35)
-        at C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Tests\houseKeepingPageTest.spec.js:22:9
-
-    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Test was interrupted.
-
-    Error: apiRequestContext.post: Target page, context or browser has been closed
-
-       at Pages\houseKeepingPage.js:83
-
-      81 |
-      82 |         // Make API request to capture the actual data
-    > 83 |         const response = await this.page.request.post(endPoint, {
-         |                                                  ^
-      84 |             data: {
-      85 |                 query: query,
-      86 |                 variables: variables
-        at HouseKeepingPage.captureThegetServiceRequestDetailsApiResponse (C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Pages\houseKeepingPage.js:83:50)
-        at HouseKeepingPage.verifyTheHouseKeepingPage (C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Pages\houseKeepingPage.js:105:40)
-        at C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Tests\houseKeepingPageTest.spec.js:22:9
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    test-results\videos\Tests-houseKeepingPageTest-f6bda-erify-the-houseKeeping-page-chromium-retry1\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="66.71311">
+<testsuite name="Tests\houseKeepingPageTest.spec.js" timestamp="2024-12-25T13:03:17.438Z" hostname="chromium" tests="1" failures="0" skipped="0" time="65.027" errors="0">
+<testcase name="To verify the houseKeeping services › Verify the houseKeeping page" classname="Tests\houseKeepingPageTest.spec.js" time="65.027">
 <system-out>
 <![CDATA[Chrome Browser launched successfully ✅ 
 Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
  API call was successful.✅ 
 Page has been closed ✅ 
 Context has been closed ✅ 
-Chrome Browser launched successfully ✅ 
-Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
-Page has been closed ✅ 
-Context has been closed ✅ 
 Browser has been closed ✅ 
-
-[[ATTACHMENT|test-results\videos\Tests-houseKeepingPageTest-f6bda-erify-the-houseKeeping-page-chromium-retry1\test-failed-1.png]]
 ]]>
 </system-out>
 </testcase>

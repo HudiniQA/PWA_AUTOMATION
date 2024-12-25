@@ -39,9 +39,7 @@
       ],
       [
         "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
-        {
-          "open": "always"
-        }
+        null
       ],
       [
         "dot",
@@ -119,7 +117,7 @@
           "specs": [
             {
               "title": "Verify the houseKeeping page",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -131,28 +129,9 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "failed",
-                      "duration": 43031,
-                      "error": {
-                        "message": "Error: page.waitForTimeout: Target page, context or browser has been closed",
-                        "stack": "Error: page.waitForTimeout: Target page, context or browser has been closed\n    at HouseKeepingPage.verifyTheHouseKeepingPage (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:135:35)\n    at C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Tests\\houseKeepingPageTest.spec.js:22:9",
-                        "location": {
-                          "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
-                          "column": 35,
-                          "line": 135
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39mPages\\houseKeepingPage.js:135\n\n\u001b[0m \u001b[90m 133 |\u001b[39m                         \u001b[36mconst\u001b[39m maxQuantityToast\u001b[33m=\u001b[39m\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[32m'Max limit exceeded!Max limit'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 134 |\u001b[39m                         expect(\u001b[36mawait\u001b[39m maxQuantityToast\u001b[33m.\u001b[39misVisible())\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 135 |\u001b[39m                         \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m3000\u001b[39m)\n \u001b[90m     |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 136 |\u001b[39m                     }\n \u001b[90m 137 |\u001b[39m                 }\n \u001b[90m 138 |\u001b[39m                 \u001b[36mfor\u001b[39m(\u001b[36mlet\u001b[39m i\u001b[33m=\u001b[39m\u001b[35m0\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m<\u001b[39m\u001b[33mmaxQuantity\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m++\u001b[39m)\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
-                            "column": 35,
-                            "line": 135
-                          },
-                          "message": "Error: page.waitForTimeout: Target page, context or browser has been closed\n\n\u001b[90m   at \u001b[39mPages\\houseKeepingPage.js:135\n\n\u001b[0m \u001b[90m 133 |\u001b[39m                         \u001b[36mconst\u001b[39m maxQuantityToast\u001b[33m=\u001b[39m\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[32m'Max limit exceeded!Max limit'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 134 |\u001b[39m                         expect(\u001b[36mawait\u001b[39m maxQuantityToast\u001b[33m.\u001b[39misVisible())\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 135 |\u001b[39m                         \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m3000\u001b[39m)\n \u001b[90m     |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 136 |\u001b[39m                     }\n \u001b[90m 137 |\u001b[39m                 }\n \u001b[90m 138 |\u001b[39m                 \u001b[36mfor\u001b[39m(\u001b[36mlet\u001b[39m i\u001b[33m=\u001b[39m\u001b[35m0\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m<\u001b[39m\u001b[33mmaxQuantity\u001b[39m\u001b[33m;\u001b[39mi\u001b[33m++\u001b[39m)\u001b[0m\n\u001b[2m    at HouseKeepingPage.verifyTheHouseKeepingPage (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:135:35)\u001b[22m\n\u001b[2m    at C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Tests\\houseKeepingPageTest.spec.js:22:9\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 65027,
+                      "errors": [],
                       "stdout": [
                         {
                           "text": "Chrome Browser launched successfully ✅ \n"
@@ -168,83 +147,24 @@
                         },
                         {
                           "text": "Context has been closed ✅ \n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-12-24T13:57:26.862Z",
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
-                        "column": 35,
-                        "line": 135
-                      }
-                    },
-                    {
-                      "workerIndex": 1,
-                      "status": "interrupted",
-                      "duration": 12631,
-                      "error": {
-                        "message": "Error: apiRequestContext.post: Target page, context or browser has been closed",
-                        "stack": "Error: apiRequestContext.post: Target page, context or browser has been closed\n    at HouseKeepingPage.captureThegetServiceRequestDetailsApiResponse (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:83:50)\n    at HouseKeepingPage.verifyTheHouseKeepingPage (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:105:40)\n    at C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Tests\\houseKeepingPageTest.spec.js:22:9",
-                        "location": {
-                          "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
-                          "column": 50,
-                          "line": 83
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39mPages\\houseKeepingPage.js:83\n\n\u001b[0m \u001b[90m 81 |\u001b[39m\n \u001b[90m 82 |\u001b[39m         \u001b[90m// Make API request to capture the actual data\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m         \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mrequest\u001b[33m.\u001b[39mpost(endPoint\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 84 |\u001b[39m             data\u001b[33m:\u001b[39m {\n \u001b[90m 85 |\u001b[39m                 query\u001b[33m:\u001b[39m query\u001b[33m,\u001b[39m\n \u001b[90m 86 |\u001b[39m                 variables\u001b[33m:\u001b[39m variables\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
-                            "column": 50,
-                            "line": 83
-                          },
-                          "message": "Error: apiRequestContext.post: Target page, context or browser has been closed\n\n\u001b[90m   at \u001b[39mPages\\houseKeepingPage.js:83\n\n\u001b[0m \u001b[90m 81 |\u001b[39m\n \u001b[90m 82 |\u001b[39m         \u001b[90m// Make API request to capture the actual data\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m         \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mrequest\u001b[33m.\u001b[39mpost(endPoint\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 84 |\u001b[39m             data\u001b[33m:\u001b[39m {\n \u001b[90m 85 |\u001b[39m                 query\u001b[33m:\u001b[39m query\u001b[33m,\u001b[39m\n \u001b[90m 86 |\u001b[39m                 variables\u001b[33m:\u001b[39m variables\u001b[0m\n\u001b[2m    at HouseKeepingPage.captureThegetServiceRequestDetailsApiResponse (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:83:50)\u001b[22m\n\u001b[2m    at HouseKeepingPage.verifyTheHouseKeepingPage (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js:105:40)\u001b[22m\n\u001b[2m    at C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Tests\\houseKeepingPageTest.spec.js:22:9\u001b[22m"
-                        }
-                      ],
-                      "stdout": [
-                        {
-                          "text": "Chrome Browser launched successfully ✅ \n"
-                        },
-                        {
-                          "text": "Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .\n"
-                        },
-                        {
-                          "text": "Page has been closed ✅ \n"
-                        },
-                        {
-                          "text": "Context has been closed ✅ \n"
                         },
                         {
                           "text": "Browser has been closed ✅ \n"
                         }
                       ],
                       "stderr": [],
-                      "retry": 1,
-                      "startTime": "2024-12-24T13:58:12.501Z",
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\test-results\\videos\\Tests-houseKeepingPageTest-f6bda-erify-the-houseKeeping-page-chromium-retry1\\test-failed-1.png"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\houseKeepingPage.js",
-                        "column": 50,
-                        "line": 83
-                      }
+                      "retry": 0,
+                      "startTime": "2024-12-25T13:03:18.267Z",
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "4f1b2f5587898d8b684b-dd5e604caba76469b89a",
               "file": "Tests/houseKeepingPageTest.spec.js",
               "line": 20,
-              "column": 9
+              "column": 10
             }
           ]
         }
@@ -253,11 +173,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-12-24T13:57:25.873Z",
-    "duration": 59948.642,
-    "expected": 0,
+    "startTime": "2024-12-25T13:03:17.229Z",
+    "duration": 66713.11,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

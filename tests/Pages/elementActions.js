@@ -1,6 +1,6 @@
-import{test} from'@playwright/test'
-import{BaseClass} from './baseClass'
-export class ElementActions extends BaseClass  {
+import { test } from '@playwright/test'
+import { BaseClass } from './baseClass'
+export class ElementActions extends BaseClass {
 
     /**
      * @param {object} page - Playwright's page object
@@ -40,7 +40,7 @@ export class ElementActions extends BaseClass  {
         await locator.waitFor({ state: 'visible' });
         const text = await locator.textContent();
         const normalizeText = (text) => text.replace(/\s+/g, ' ').trim();
-        const normilizedText=normalizeText(text)
+        const normilizedText = normalizeText(text)
         // console.log(`Text from element: ${text}`);
         return normilizedText;
     }
@@ -124,18 +124,43 @@ export class ElementActions extends BaseClass  {
  * Press a key on the keyboard globally
  * @param {string} key - The key to press (e.g., 'Escape', 'Enter', 'Tab', etc.)
  */
-async pressKey(key) {
-    await this.page.keyboard.press(key);
-    // console.log(`Pressed the key '${key}'.`);
-}
-/**
- * Wait for an element to be visible
- * @param {Locator} locator - The locator for the element
- */
-async waitForVisibility(locator) {
-    await locator.waitFor({ state: 'visible' });
-    // console.log(`Element is visible: ${locator}`);
-}
+    async pressKey(key) {
+        await this.page.keyboard.press(key);
+        // console.log(`Pressed the key '${key}'.`);
+    }
+    /**
+     * Wait for an element to be visible
+     * @param {Locator} locator - The locator for the element
+     */
+    async waitForVisibility(locator) {
+        await locator.waitFor({ state: 'visible' });
+        // console.log(`Element is visible: ${locator}`);
+    }
+     /**
+     * Check a checkbox
+     * @param {Locator} locator - The locator for the checkbox
+     */
+     async checkTheCheckbox(locator) {
+        await locator.waitFor({ state: 'visible' });
+        const isChecked = await locator.isChecked();
+        if (!isChecked) {
+            await locator.check();
+            // console.log(`Checked the checkbox: ${locator}`);
+        }
+    }
+
+    /**
+     * Uncheck a checkbox
+     * @param {Locator} locator - The locator for the checkbox
+     */
+    async uncheckTheCheckbox(locator) {
+        await locator.waitFor({ state: 'visible' });
+        const isChecked = await locator.isChecked();
+        if (isChecked) {
+            await locator.uncheck();
+            // console.log(`Unchecked the checkbox: ${locator}`);
+        }
+    }
 
 
 }

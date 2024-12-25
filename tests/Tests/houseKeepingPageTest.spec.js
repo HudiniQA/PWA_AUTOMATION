@@ -17,8 +17,13 @@ test.describe('To verify the houseKeeping services', () => {
         }
     });
 
-    test('Verify the houseKeeping page', async () => {
+    test.only('Verify the houseKeeping page', async () => {
         await houseKeepingPage.navigateToPostCheckInPage();
         await houseKeepingPage.verifyTheHouseKeepingPage();
+
+    });
+    test.skip('Verify the housekeeping order by placing request', async () => {
+        await houseKeepingPage.placeTheHouseKeepingRequest();
+
     });
 });

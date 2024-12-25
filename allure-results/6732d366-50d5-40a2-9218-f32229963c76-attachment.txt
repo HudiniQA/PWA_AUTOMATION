@@ -3,3 +3,4 @@ Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ suc
  API call was successful.✅ 
 Page has been closed ✅ 
 Context has been closed ✅ 
+Browser has been closed ✅ 
