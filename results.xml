@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="66.71311">
-<testsuite name="Tests\houseKeepingPageTest.spec.js" timestamp="2024-12-25T13:03:17.438Z" hostname="chromium" tests="1" failures="0" skipped="0" time="65.027" errors="0">
-<testcase name="To verify the houseKeeping services › Verify the houseKeeping page" classname="Tests\houseKeepingPageTest.spec.js" time="65.027">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="52.245498">
+<testsuite name="Tests\inRoomDiningPageTest.spec.js" timestamp="2024-12-28T05:35:47.015Z" hostname="chromium" tests="1" failures="0" skipped="0" time="50.134" errors="0">
+<testcase name="To verify the In-Room Dining service › Verify the houseKeeping page" classname="Tests\inRoomDiningPageTest.spec.js" time="50.134">
 <system-out>
 <![CDATA[Chrome Browser launched successfully ✅ 
 Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .

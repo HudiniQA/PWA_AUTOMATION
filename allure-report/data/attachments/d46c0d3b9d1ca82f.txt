@@ -1,0 +1,6 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
+ API call was successful.✅ 
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

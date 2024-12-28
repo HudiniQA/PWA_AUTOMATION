@@ -208,8 +208,8 @@ export class OffersPage extends BaseClass {
                 const expectedOfferName = normalizeText(name);
                 const expectedOfferDescription = normalizeText(description);
 
-                expect(actualOfferName).toBe(expectedOfferName);
-                expect(actualOfferDescription).toBe(expectedOfferDescription);
+                expect.soft(actualOfferName).toBe(expectedOfferName);
+                expect.soft(actualOfferDescription).toBe(expectedOfferDescription);
 
                
 
@@ -218,7 +218,7 @@ export class OffersPage extends BaseClass {
 
                 if (email) {
                     const emailCTAVisible = await this.elementActions.isVisible(this.getemailCTA());
-                    expect(emailCTAVisible).toBeTruthy();
+                    expect.soft(emailCTAVisible).toBeTruthy();
                     console.log(`Email CTA is visible for ${actualOfferName} ✅`);
                 } else {
                     console.log(`No email provided for ${actualOfferName}. Skipping email CTA check.`);
@@ -226,7 +226,7 @@ export class OffersPage extends BaseClass {
 
                 if (phoneNumber) {
                     const phoneCTAVisible = await this.elementActions.isVisible(this.getphoneCTA());
-                    expect(phoneCTAVisible).toBeTruthy();
+                    expect.soft(phoneCTAVisible).toBeTruthy();
                     console.log(`Phone CTA is visible for ${actualOfferName} ✅`);
                 } else {
                     console.log(`No phone provided for ${actualOfferName}. Skipping phone CTA check.`);

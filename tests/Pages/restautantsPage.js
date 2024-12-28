@@ -122,25 +122,25 @@ export class RestaurantPage extends BaseClass {
                 const normalizeText = (text) => text.replace(/\s+/g, ' ').trim();
                 const normalizedExpectedDescription = normalizeText(restaurantDescription);//Removing extra spaces,tab spaces globally in
 
-                expect(actualRestaurantName).toEqual(restaurantName);
-                expect(actualRestaurantDescription).toEqual(normalizedExpectedDescription);
+                expect.soft(actualRestaurantName).toEqual(restaurantName);
+                expect.soft(actualRestaurantDescription).toEqual(normalizedExpectedDescription);
 
                 if(restaurant.contactNumber)
                 {  
                     const isPhoneCTAVisible=await this.elementActions.isVisible(this.getphoneCTA())
-                    expect(isPhoneCTAVisible).toBeTruthy()
+                    expect.soft(isPhoneCTAVisible).toBeTruthy()
                     console.log(`Phone CTA is visible for ${actualRestaurantName} restaurant ✅ `)
                 }
                 if(restaurant.email)
                 {
                     const isEmailCTAVisible=await this.elementActions.isVisible(this.getemailCTA())
-                    expect(isEmailCTAVisible).toBeTruthy()
+                    expect.soft(isEmailCTAVisible).toBeTruthy()
                     console.log(`Email CTA is visible for ${actualRestaurantName} restaurant✅`)
                 }
                 if(restaurant.menu && restaurant.menu.url)
                 {
                     const isMenuCTAVisible=await this.elementActions.isVisible(this.getmenuCTA())
-                    expect(isMenuCTAVisible).toBeTruthy()
+                    expect.soft(isMenuCTAVisible).toBeTruthy()
                     console.log(`Menu CTA is visible for ${actualRestaurantName} restaurant✅ `)
                 }
                 await this.page.keyboard.press('Escape')

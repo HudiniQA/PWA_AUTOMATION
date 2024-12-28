@@ -1,9 +1,0 @@
-Chrome Browser launched successfully ✅ 
-Navigated to the https://fairmont.hudini.app/en/fairmont-makkah-clock-royal-tower/ successfully ✅ .
- API call was successful.✅ 
-Phone CTA is visible for Fairmont Makkah ✅ 
-Redirect link verfied successfully ✅ 
-Location pin is visible for Fairmont Makkah ✅ 
-Page has been closed ✅ 
-Context has been closed ✅ 
-Browser has been closed ✅ 

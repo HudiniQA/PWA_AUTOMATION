@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 0,
+    "maxFailures": 1,
     "metadata": {
       "actualWorkers": 1
     },
@@ -64,7 +64,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 300000
+        "timeout": 0
       },
       {
         "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
@@ -78,7 +78,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 300000
+        "timeout": 0
       },
       {
         "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
@@ -92,26 +92,26 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 300000
+        "timeout": 0
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.49.0",
-    "workers": 4,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
     {
-      "title": "Tests\\houseKeepingPageTest.spec.js",
-      "file": "Tests/houseKeepingPageTest.spec.js",
+      "title": "Tests\\inRoomDiningPageTest.spec.js",
+      "file": "Tests/inRoomDiningPageTest.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "To verify the houseKeeping services",
-          "file": "Tests/houseKeepingPageTest.spec.js",
+          "title": "To verify the In-Room Dining service",
+          "file": "Tests/inRoomDiningPageTest.spec.js",
           "line": 5,
           "column": 6,
           "specs": [
@@ -121,7 +121,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 300000,
+                  "timeout": 0,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -130,7 +130,7 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 65027,
+                      "duration": 50134,
                       "errors": [],
                       "stdout": [
                         {
@@ -154,15 +154,15 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-12-25T13:03:18.267Z",
+                      "startTime": "2024-12-28T05:35:47.810Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "4f1b2f5587898d8b684b-dd5e604caba76469b89a",
-              "file": "Tests/houseKeepingPageTest.spec.js",
+              "id": "efde06d67beb6c7f567a-28a3e024b7aeba0d514c",
+              "file": "Tests/inRoomDiningPageTest.spec.js",
               "line": 20,
               "column": 10
             }
@@ -173,8 +173,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-12-25T13:03:17.229Z",
-    "duration": 66713.11,
+    "startTime": "2024-12-28T05:35:46.800Z",
+    "duration": 52245.498,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

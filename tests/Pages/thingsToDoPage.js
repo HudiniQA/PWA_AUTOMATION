@@ -155,8 +155,8 @@ export class ThingsToDoPage extends BaseClass {
                 const expectedDescription=normalizeText(description)
                 const expectedActivityName=normalizeText(activityName)
                 
-                expect(actualActivityName).toBe(expectedActivityName);
-                expect(actualDescription).toBe(expectedDescription);
+                expect.soft(actualActivityName).toBe(expectedActivityName);
+                expect.soft(actualDescription).toBe(expectedDescription);
 
                 // Validating email and phone CTA
                 const emailInfo = information.find((info) => info.type === 'EMAIL');
@@ -164,12 +164,12 @@ export class ThingsToDoPage extends BaseClass {
 
                 if (emailInfo) {
                     const isEmailCTAVisible=await this.elementActions.isVisible(this.getemailCTA())
-                    expect(isEmailCTAVisible).toBeTruthy()
+                    expect.soft(isEmailCTAVisible).toBeTruthy()
                     console.log(`Email CTA is visible for ${actualActivityName} ✅`);
                 }
                 if (phoneInfo) {
                     const isPhoneCTAVisible=await this.elementActions.isVisible(this.getphoneCTA())
-                    expect(isPhoneCTAVisible).toBeTruthy()
+                    expect.soft(isPhoneCTAVisible).toBeTruthy()
                     console.log(`Phone CTA is visible for ${actualActivityName} ✅`);
                 }
 

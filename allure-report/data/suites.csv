@@ -1,2 +1,2 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","10740","Verify the hotel info popup","chromium","Fri Dec 13 13:02:40 IST 2024","passed","Fri Dec 13 13:02:51 IST 2024","To verify the hotel info ","Tests\aboutHotelPageTest.spec.js","",""
+"","14095","Verify the houseKeeping page","chromium","Thu Dec 26 16:22:01 IST 2024","passed","Thu Dec 26 16:22:15 IST 2024","To verify the In-Room Dining service","Tests\inRoomDiningPageTest.spec.js","",""

@@ -129,8 +129,8 @@ export class HouseKeepingPage extends BaseClass {
             const normalizeText = (text) => text.replace(/\s+/g, ' ').trim();
             const expectedServiceTitle = normalizeText(housekeeping.name);
             const expectedServiceDescription = normalizeText(housekeeping.description);
-            expect(actualServiceTitle).toContain(expectedServiceTitle);
-            expect(actualServiceDescription).toContain(expectedServiceDescription);
+            expect.soft(actualServiceTitle).toContain(expectedServiceTitle);
+            expect.soft(actualServiceDescription).toContain(expectedServiceDescription);
             for (let item of housekeeping.items) {
                 const maxQuantityActive = item.maxQuantityActive;
                 const maxQuantity = item.maxQuantity;
@@ -140,7 +140,7 @@ export class HouseKeepingPage extends BaseClass {
                     }
                     await this.elementActions.click(this.getplusCouterBtn(item.name));
                     const maxQuantityToastMsg = await this.getmaxQuantityToastMsg();
-                    expect(maxQuantityToastMsg.isVisible()).toBeTruthy();
+                    expect.soft(maxQuantityToastMsg.isVisible()).toBeTruthy();
                     await maxQuantityToastMsg.waitFor({ state: 'hidden' })
                     for (let i = 0; i < maxQuantity; i++) {
                         await this.elementActions.click(this.getminusCounterBtn(item.name));
