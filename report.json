@@ -1,10 +1,10 @@
 {
   "config": {
-    "configFile": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\playwright.config.js",
-    "rootDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/tests",
+    "configFile": "C:\\Users\\LoganathanM\\Desktop\\Latest PWA\\PWA_AUTOMATION\\playwright.config.js",
+    "rootDir": "C:/Users/LoganathanM/Desktop/Latest PWA/PWA_AUTOMATION/tests",
     "forbidOnly": false,
     "fullyParallel": false,
-    "globalSetup": "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\allureGlobalSetup.js",
+    "globalSetup": "C:\\Users\\LoganathanM\\Desktop\\Latest PWA\\PWA_AUTOMATION\\allureGlobalSetup.js",
     "globalTeardown": null,
     "globalTimeout": 0,
     "grep": {},
@@ -38,7 +38,7 @@
         }
       ],
       [
-        "C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        "C:\\Users\\LoganathanM\\Desktop\\Latest PWA\\PWA_AUTOMATION\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
         null
       ],
       [
@@ -53,13 +53,13 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
+        "outputDir": "C:/Users/LoganathanM/Desktop/Latest PWA/PWA_AUTOMATION/test-results/videos",
         "repeatEach": 1,
         "retries": 3,
         "metadata": {},
         "id": "chromium",
         "name": "chromium",
-        "testDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/tests",
+        "testDir": "C:/Users/LoganathanM/Desktop/Latest PWA/PWA_AUTOMATION/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -67,13 +67,13 @@
         "timeout": 0
       },
       {
-        "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
+        "outputDir": "C:/Users/LoganathanM/Desktop/Latest PWA/PWA_AUTOMATION/test-results/videos",
         "repeatEach": 1,
         "retries": 3,
         "metadata": {},
         "id": "firefox",
         "name": "firefox",
-        "testDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/tests",
+        "testDir": "C:/Users/LoganathanM/Desktop/Latest PWA/PWA_AUTOMATION/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -81,13 +81,13 @@
         "timeout": 0
       },
       {
-        "outputDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/test-results/videos",
+        "outputDir": "C:/Users/LoganathanM/Desktop/Latest PWA/PWA_AUTOMATION/test-results/videos",
         "repeatEach": 1,
         "retries": 3,
         "metadata": {},
         "id": "webkit",
         "name": "webkit",
-        "testDir": "C:/Users/UpparaRaviteja/Desktop/PWA_AUTOMATION/tests",
+        "testDir": "C:/Users/LoganathanM/Desktop/Latest PWA/PWA_AUTOMATION/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -103,20 +103,20 @@
   },
   "suites": [
     {
-      "title": "Tests\\inRoomDiningPageTest.spec.js",
-      "file": "Tests/inRoomDiningPageTest.spec.js",
+      "title": "Tests\\testSpa.spec.js",
+      "file": "Tests/testSpa.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "To verify the In-Room Dining service",
-          "file": "Tests/inRoomDiningPageTest.spec.js",
+          "title": "To verify the spa are displayed",
+          "file": "Tests/testSpa.spec.js",
           "line": 5,
           "column": 6,
           "specs": [
             {
-              "title": "Verify the houseKeeping page",
+              "title": "Verify the spa",
               "ok": true,
               "tags": [],
               "tests": [
@@ -130,17 +130,341 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 50134,
+                      "duration": 56166,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Chrome Browser launched successfully ✅ \n"
                         },
                         {
-                          "text": "Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .\n"
+                          "text": "Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-nile-city/ successfully ✅ .\n"
+                        },
+                        {
+                          "text": "Total spa found: 2\n"
+                        },
+                        {
+                          "text": "Spa list 1: Fairmont Nile City - Fairmont Spa\n"
+                        },
+                        {
+                          "text": "Spa list 2: TestSpa\n"
+                        },
+                        {
+                          "text": "All spa lists--->: [ \u001b[32m'Fairmont Nile City - Fairmont Spa'\u001b[39m, \u001b[32m'TestSpa'\u001b[39m ]\n"
+                        },
+                        {
+                          "text": "Spa Data: {\n  spa_1: [ \u001b[32m'Fairmont Nile City - Fairmont Spa'\u001b[39m ],\n  spa_2: [ \u001b[32m'TestSpa'\u001b[39m ]\n}\n"
+                        },
+                        {
+                          "text": "List of Spa: { spa_1: \u001b[32m'Fairmont Nile City - Fairmont Spa'\u001b[39m, spa_2: \u001b[32m'TestSpa'\u001b[39m }\n"
                         },
                         {
                           "text": " API call was successful.✅ \n"
+                        },
+                        {
+                          "text": "[ \u001b[32m'Fairmont Nile City - Fairmont Spa'\u001b[39m, \u001b[32m'TestSpa'\u001b[39m ]\n"
+                        },
+                        {
+                          "text": "Spa lists validation passed, executing further actions...\n"
+                        },
+                        {
+                          "text": "Spa Name: Fairmont Nile City - Fairmont Spa, Spa ID: 1e9c3b2b-343b-4e1f-80df-41908ba4ae16\n"
+                        },
+                        {
+                          "text": "Spa Name: TestSpa, Spa ID: ef75f02f-37b7-4693-b1ab-a3bcc399aa3d\n"
+                        },
+                        {
+                          "text": "All Spa IDs: [\n  \u001b[32m'1e9c3b2b-343b-4e1f-80df-41908ba4ae16'\u001b[39m,\n  \u001b[32m'ef75f02f-37b7-4693-b1ab-a3bcc399aa3d'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Total spa found: 2\n"
+                        },
+                        {
+                          "text": "Clicking on spa 1\n"
+                        },
+                        {
+                          "text": "Text of spa 1: Fairmont Nile City - Fairmont Spa\n"
+                        },
+                        {
+                          "text": "Spa Description: At Fairmont Nile City, spa treatments bring an unrivaled sense of emotional and physical well-being to your stay on the banks of the mighty Nile River. An oasis of soothing Saharan tones, Fairmont Spa evokes Egypt’s natural beauty while inviting you to benefit from the time-honored beauty traditions of its ancient cultures. Expect separate relaxation and changing areas for men and women, luxury treatment rooms (including a dedicated couples’ suite and private hammam), extensive hydrotherapy facilities and a professional hair and nail salon.\n\nAllow us to take you on a journey of guided self- discovery and well-being at Fairmont Spa, your connection to self, others and nature in the heart of Cairo.\n"
+                        },
+                        {
+                          "text": " API call was successful.✅ \n"
+                        },
+                        {
+                          "text": "API Response: At Fairmont Nile City, spa treatments bring an unrivaled sense of emotional and physical well-being to your stay on the banks of the mighty Nile River. An oasis of soothing Saharan tones, Fairmont Spa evokes Egypt’s natural beauty while inviting you to benefit from the time-honored beauty traditions of its ancient cultures. Expect separate relaxation and changing areas for men and women, luxury treatment rooms (including a dedicated couples’ suite and private hammam), extensive hydrotherapy facilities and a professional hair and nail salon.\n\nAllow us to take you on a journey of guided self- discovery and well-being at Fairmont Spa, your connection to self, others and nature in the heart of Cairo.\n"
+                        },
+                        {
+                          "text": "At Fairmont Nile City, spa treatments bring an unrivaled sense of emotional and physical well-being to your stay on the banks of the mighty Nile River. An oasis of soothing Saharan tones, Fairmont Spa evokes Egypt’s natural beauty while inviting you to benefit from the time-honored beauty traditions of its ancient cultures. Expect separate relaxation and changing areas for men and women, luxury treatment rooms (including a dedicated couples’ suite and private hammam), extensive hydrotherapy facilities and a professional hair and nail salon.\n\nAllow us to take you on a journey of guided self- discovery and well-being at Fairmont Spa, your connection to self, others and nature in the heart of Cairo.\n"
+                        },
+                        {
+                          "text": "View Treatments button is visible\n"
+                        },
+                        {
+                          "text": "Text of view Treatment Button: View Treatments\n"
+                        },
+                        {
+                          "text": "Clicking on View Treatments button\n"
+                        },
+                        {
+                          "text": "category button is now visible\n"
+                        },
+                        {
+                          "text": "Total elements found: 7\n"
+                        },
+                        {
+                          "text": "Category 1: SIGNATURE EXPRESSIONS\n"
+                        },
+                        {
+                          "text": "Category 2: BODY MASSAGE\n"
+                        },
+                        {
+                          "text": "Category 3: HEALTH and FITNESS\n"
+                        },
+                        {
+                          "text": "Category 4: BODY TREATMENT\n"
+                        },
+                        {
+                          "text": "Category 5: COUPLE'S TREATMENTS\n"
+                        },
+                        {
+                          "text": "Category 6: CLASSIC FACIAL\n"
+                        },
+                        {
+                          "text": "Category 7: BATH TREATMENT\n"
+                        },
+                        {
+                          "text": "All Categories: [\n  \u001b[32m'SIGNATURE EXPRESSIONS'\u001b[39m,\n  \u001b[32m'BODY MASSAGE'\u001b[39m,\n  \u001b[32m'HEALTH and FITNESS'\u001b[39m,\n  \u001b[32m'BODY TREATMENT'\u001b[39m,\n  \u001b[32m\"COUPLE'S TREATMENTS\"\u001b[39m,\n  \u001b[32m'CLASSIC FACIAL'\u001b[39m,\n  \u001b[32m'BATH TREATMENT'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": " API call was successful.✅ \n"
+                        },
+                        {
+                          "text": "[\n  \u001b[32m'Test Category'\u001b[39m,\n  \u001b[32m'SIGNATURE EXPRESSIONS'\u001b[39m,\n  \u001b[32m'BODY MASSAGE'\u001b[39m,\n  \u001b[32m'HEALTH and FITNESS'\u001b[39m,\n  \u001b[32m'Testing category1'\u001b[39m,\n  \u001b[32m'BODY TREATMENT'\u001b[39m,\n  \u001b[32m\"COUPLE'S TREATMENTS\"\u001b[39m,\n  \u001b[32m'TG68'\u001b[39m,\n  \u001b[32m'CLASSIC FACIAL'\u001b[39m,\n  \u001b[32m'BATH TREATMENT'\u001b[39m,\n  \u001b[32m'TS2'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Matching Categories: SIGNATURE EXPRESSIONS,BODY MASSAGE,HEALTH and FITNESS,BODY TREATMENT,COUPLE'S TREATMENTS,CLASSIC FACIAL,BATH TREATMENT\n"
+                        },
+                        {
+                          "text": "Total Matches: 7\n"
+                        },
+                        {
+                          "text": "Matches: [\n  \u001b[32m'SIGNATURE EXPRESSIONS'\u001b[39m,\n  \u001b[32m'BODY MASSAGE'\u001b[39m,\n  \u001b[32m'HEALTH and FITNESS'\u001b[39m,\n  \u001b[32m'BODY TREATMENT'\u001b[39m,\n  \u001b[32m\"COUPLE'S TREATMENTS\"\u001b[39m,\n  \u001b[32m'CLASSIC FACIAL'\u001b[39m,\n  \u001b[32m'BATH TREATMENT'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Number of Matches: \u001b[33m7\u001b[39m\n"
+                        },
+                        {
+                          "text": "Category lists validation passed, executing further actions...\n"
+                        },
+                        {
+                          "text": "Clicking category: SIGNATURE EXPRESSIONS\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: SIGNATURE EXPRESSIONS\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"SIGNATURE EXPRESSIONS\": 3\n"
+                        },
+                        {
+                          "text": "Items under Category \"SIGNATURE EXPRESSIONS\": [\n  \u001b[32m'Hammam Heaven 120 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'(S) Heart Of Cairo 120 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Egypt Energy 120 Minutes (Corporate)'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Clicking category: BODY MASSAGE\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: BODY MASSAGE\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"BODY MASSAGE\": 15\n"
+                        },
+                        {
+                          "text": "Items under Category \"BODY MASSAGE\": [\n  \u001b[32m'Sport Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stone Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Thai Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Thai Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stone Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stress Relief Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Relaxation Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Reflexology Massage (30 Minutes)'\u001b[39m,\n  \u001b[32m'Relaxation Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Maternity Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Head ,Neck and Shoulders 30 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Sport Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Reflexology Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Reflexology Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stress Relief Massage 90 Minutes (Corporate)'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Clicking category: HEALTH and FITNESS\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: HEALTH and FITNESS\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"HEALTH and FITNESS\": 2\n"
+                        },
+                        {
+                          "text": "Items under Category \"HEALTH and FITNESS\": [ \u001b[32m'Private - Fitness Class (60 Minutes)'\u001b[39m, \u001b[32m'Spa - Day Use'\u001b[39m ]\n"
+                        },
+                        {
+                          "text": "Clicking category: BODY TREATMENT\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: BODY TREATMENT\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"BODY TREATMENT\": 5\n"
+                        },
+                        {
+                          "text": "Items under Category \"BODY TREATMENT\": [\n  \u001b[32m'Body Scrub And Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Essential Sculpting Body Care 90 Min (Corporate)'\u001b[39m,\n  \u001b[32m'Marine Body Contouring Wrap 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Sea Holistic Body Treatment And Facial (Corporate)'\u001b[39m,\n  \u001b[32m'Hammam Energy 60 Minutes (Corporate)'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Clicking category: COUPLE'S TREATMENTS\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: COUPLE'S TREATMENTS\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"COUPLE'S TREATMENTS\": 2\n"
+                        },
+                        {
+                          "text": "Items under Category \"COUPLE'S TREATMENTS\": [\n  \u001b[32m'Side-by-Side Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Side-by-Side Massage 90 Minutes (Corporate)'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Clicking category: CLASSIC FACIAL\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: CLASSIC FACIAL\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"CLASSIC FACIAL\": 5\n"
+                        },
+                        {
+                          "text": "Items under Category \"CLASSIC FACIAL\": [\n  \u001b[32m'Youth Revealing pioneer 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Marine Breeze Facial 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Extended Youth Facial 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'White Lumination Pioneer 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Skin Escape Facial 90 Minutes (Corporate)'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Clicking category: BATH TREATMENT\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: BATH TREATMENT\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"BATH TREATMENT\": 2\n"
+                        },
+                        {
+                          "text": "Items under Category \"BATH TREATMENT\": [\n  \u001b[32m'Cleopatra Bath 30 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Mineral Bath 30 Minutes (Corporate)'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Clicking on spa 2\n"
+                        },
+                        {
+                          "text": "Text of spa 2: TestSpa\n"
+                        },
+                        {
+                          "text": "Spa Description: In 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\n\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\n\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm....\n"
+                        },
+                        {
+                          "text": " API call was successful.✅ \n"
+                        },
+                        {
+                          "text": "API Response: In 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\n\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\n\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm....\n"
+                        },
+                        {
+                          "text": "In 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\n\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\n\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm.\nIn 2018, we ignited a mission to electrify transportation, evolving from a Charge Point Operator to manufacturing our chargers. In 2021, Magenta Mobility emerged, pioneering all-electric logistics and shaping the sector's future. Each electric delivery moved us closer to making sustainable logistics the norm....\n"
+                        },
+                        {
+                          "text": "View Treatments button is visible\n"
+                        },
+                        {
+                          "text": "Text of view Treatment Button: View Treatments\n"
+                        },
+                        {
+                          "text": "Clicking on View Treatments button\n"
+                        },
+                        {
+                          "text": "category button is now visible\n"
+                        },
+                        {
+                          "text": "Total elements found: 4\n"
+                        },
+                        {
+                          "text": "Category 1: Test Category\n"
+                        },
+                        {
+                          "text": "Category 2: Testing category1\n"
+                        },
+                        {
+                          "text": "Category 3: TG68\n"
+                        },
+                        {
+                          "text": "Category 4: TS2\n"
+                        },
+                        {
+                          "text": "All Categories: [ \u001b[32m'Test Category'\u001b[39m, \u001b[32m'Testing category1'\u001b[39m, \u001b[32m'TG68'\u001b[39m, \u001b[32m'TS2'\u001b[39m ]\n"
+                        },
+                        {
+                          "text": " API call was successful.✅ \n"
+                        },
+                        {
+                          "text": "[\n  \u001b[32m'Test Category'\u001b[39m,\n  \u001b[32m'SIGNATURE EXPRESSIONS'\u001b[39m,\n  \u001b[32m'BODY MASSAGE'\u001b[39m,\n  \u001b[32m'HEALTH and FITNESS'\u001b[39m,\n  \u001b[32m'Testing category1'\u001b[39m,\n  \u001b[32m'BODY TREATMENT'\u001b[39m,\n  \u001b[32m\"COUPLE'S TREATMENTS\"\u001b[39m,\n  \u001b[32m'TG68'\u001b[39m,\n  \u001b[32m'CLASSIC FACIAL'\u001b[39m,\n  \u001b[32m'BATH TREATMENT'\u001b[39m,\n  \u001b[32m'TS2'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Matching Categories: Test Category,Testing category1,TG68,TS2\n"
+                        },
+                        {
+                          "text": "Total Matches: 4\n"
+                        },
+                        {
+                          "text": "Matches: [ \u001b[32m'Test Category'\u001b[39m, \u001b[32m'Testing category1'\u001b[39m, \u001b[32m'TG68'\u001b[39m, \u001b[32m'TS2'\u001b[39m ]\n"
+                        },
+                        {
+                          "text": "Number of Matches: \u001b[33m4\u001b[39m\n"
+                        },
+                        {
+                          "text": "Category lists validation passed, executing further actions...\n"
+                        },
+                        {
+                          "text": "Clicking category: Test Category\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: Test Category\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"Test Category\": 1\n"
+                        },
+                        {
+                          "text": "Items under Category \"Test Category\": [ \u001b[32m'TestTreatment3'\u001b[39m ]\n"
+                        },
+                        {
+                          "text": "Clicking category: Testing category1\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: Testing category1\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"Testing category1\": 1\n"
+                        },
+                        {
+                          "text": "Items under Category \"Testing category1\": [ \u001b[32m'TestTreatment1'\u001b[39m ]\n"
+                        },
+                        {
+                          "text": "Clicking category: TG68\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: TG68\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"TG68\": 1\n"
+                        },
+                        {
+                          "text": "Items under Category \"TG68\": [ \u001b[32m'TestTreatment4'\u001b[39m ]\n"
+                        },
+                        {
+                          "text": "Clicking category: TS2\n"
+                        },
+                        {
+                          "text": "Validating treatments for category: TS2\n"
+                        },
+                        {
+                          "text": "Number of treatments found for \"TS2\": 1\n"
+                        },
+                        {
+                          "text": "Items under Category \"TS2\": [ \u001b[32m'TestTreatment2'\u001b[39m ]\n"
+                        },
+                        {
+                          "text": "All Treatments across all categories: [\n  \u001b[32m'Hammam Heaven 120 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'(S) Heart Of Cairo 120 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Egypt Energy 120 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Sport Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stone Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Thai Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Thai Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stone Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stress Relief Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Relaxation Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Reflexology Massage (30 Minutes)'\u001b[39m,\n  \u001b[32m'Relaxation Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Maternity Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Head ,Neck and Shoulders 30 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Sport Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Reflexology Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Reflexology Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stress Relief Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Private - Fitness Class (60 Minutes)'\u001b[39m,\n  \u001b[32m'Spa - Day Use'\u001b[39m,\n  \u001b[32m'Body Scrub And Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Essential Sculpting Body Care 90 Min (Corporate)'\u001b[39m,\n  \u001b[32m'Marine Body Contouring Wrap 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Sea Holistic Body Treatment And Facial (Corporate)'\u001b[39m,\n  \u001b[32m'Hammam Energy 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Side-by-Side Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Side-by-Side Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Youth Revealing pioneer 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Marine Breeze Facial 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Extended Youth Facial 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'White Lumination Pioneer 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Skin Escape Facial 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Cleopatra Bath 30 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Mineral Bath 30 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'TestTreatment3'\u001b[39m,\n  \u001b[32m'TestTreatment1'\u001b[39m,\n  \u001b[32m'TestTreatment4'\u001b[39m,\n  \u001b[32m'TestTreatment2'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": " API call was successful.✅ \n"
+                        },
+                        {
+                          "text": "[\n  \u001b[32m'Body Scrub And Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'TestTreatment1'\u001b[39m,\n  \u001b[32m'Hammam Heaven 120 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Sport Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Essential Sculpting Body Care 90 Min (Corporate)'\u001b[39m,\n  \u001b[32m'Marine Body Contouring Wrap 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'(S) Heart Of Cairo 120 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stone Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Side-by-Side Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Youth Revealing pioneer 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Thai Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Thai Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Marine Breeze Facial 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'TestTreatment2'\u001b[39m,\n  \u001b[32m'Cleopatra Bath 30 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Side-by-Side Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stone Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Stress Relief Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Mineral Bath 30 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Private - Fitness Class (60 Minutes)'\u001b[39m,\n  \u001b[32m'Sea Holistic Body Treatment And Facial (Corporate)'\u001b[39m,\n  \u001b[32m'Relaxation Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Reflexology Massage (30 Minutes)'\u001b[39m,\n  \u001b[32m'Extended Youth Facial 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'White Lumination Pioneer 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Relaxation Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'TestTreatment3'\u001b[39m,\n  \u001b[32m'Skin Escape Facial 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Maternity Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'TestTreatment4'\u001b[39m,\n  \u001b[32m'Hammam Energy 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Head ,Neck and Shoulders 30 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Sport Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Reflexology Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Reflexology Massage 60 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Spa - Day Use'\u001b[39m,\n  \u001b[32m'Stress Relief Massage 90 Minutes (Corporate)'\u001b[39m,\n  \u001b[32m'Egypt Energy 120 Minutes (Corporate)'\u001b[39m\n]\n"
                         },
                         {
                           "text": "Page has been closed ✅ \n"
@@ -154,17 +478,17 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-12-28T05:35:47.810Z",
+                      "startTime": "2024-12-31T09:29:17.859Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "efde06d67beb6c7f567a-28a3e024b7aeba0d514c",
-              "file": "Tests/inRoomDiningPageTest.spec.js",
-              "line": 20,
-              "column": 10
+              "id": "4b71a24d0857f2acbd6a-d2d3ec439274b58e8c4e",
+              "file": "Tests/testSpa.spec.js",
+              "line": 18,
+              "column": 9
             }
           ]
         }
@@ -173,8 +497,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-12-28T05:35:46.800Z",
-    "duration": 52245.498,
+    "startTime": "2024-12-31T09:29:15.802Z",
+    "duration": 59181.011999999995,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

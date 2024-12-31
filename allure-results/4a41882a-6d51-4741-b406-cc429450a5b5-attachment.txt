@@ -1,26 +1,22 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="59.181011999999996">
-<testsuite name="Tests\testSpa.spec.js" timestamp="2024-12-31T09:29:15.893Z" hostname="chromium" tests="1" failures="0" skipped="0" time="56.166" errors="0">
-<testcase name="To verify the spa are displayed › Verify the spa" classname="Tests\testSpa.spec.js" time="56.166">
-<system-out>
-<![CDATA[Chrome Browser launched successfully ✅ 
+Chrome Browser launched successfully ✅ 
 Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-nile-city/ successfully ✅ .
 Total spa found: 2
 Spa list 1: Fairmont Nile City - Fairmont Spa
 Spa list 2: TestSpa
-All spa lists--->: [ [32m'Fairmont Nile City - Fairmont Spa'[39m, [32m'TestSpa'[39m ]
+All spa lists--->: [ 'Fairmont Nile City - Fairmont Spa', 'TestSpa' ]
 Spa Data: {
-  spa_1: [ [32m'Fairmont Nile City - Fairmont Spa'[39m ],
-  spa_2: [ [32m'TestSpa'[39m ]
+  spa_1: [ 'Fairmont Nile City - Fairmont Spa' ],
+  spa_2: [ 'TestSpa' ]
 }
-List of Spa: { spa_1: [32m'Fairmont Nile City - Fairmont Spa'[39m, spa_2: [32m'TestSpa'[39m }
+List of Spa: { spa_1: 'Fairmont Nile City - Fairmont Spa', spa_2: 'TestSpa' }
  API call was successful.✅ 
-[ [32m'Fairmont Nile City - Fairmont Spa'[39m, [32m'TestSpa'[39m ]
+[ 'Fairmont Nile City - Fairmont Spa', 'TestSpa' ]
 Spa lists validation passed, executing further actions...
 Spa Name: Fairmont Nile City - Fairmont Spa, Spa ID: 1e9c3b2b-343b-4e1f-80df-41908ba4ae16
 Spa Name: TestSpa, Spa ID: ef75f02f-37b7-4693-b1ab-a3bcc399aa3d
 All Spa IDs: [
-  [32m'1e9c3b2b-343b-4e1f-80df-41908ba4ae16'[39m,
-  [32m'ef75f02f-37b7-4693-b1ab-a3bcc399aa3d'[39m
+  '1e9c3b2b-343b-4e1f-80df-41908ba4ae16',
+  'ef75f02f-37b7-4693-b1ab-a3bcc399aa3d'
 ]
 Total spa found: 2
 Clicking on spa 1
@@ -48,106 +44,106 @@ Category 5: COUPLE'S TREATMENTS
 Category 6: CLASSIC FACIAL
 Category 7: BATH TREATMENT
 All Categories: [
-  [32m'SIGNATURE EXPRESSIONS'[39m,
-  [32m'BODY MASSAGE'[39m,
-  [32m'HEALTH and FITNESS'[39m,
-  [32m'BODY TREATMENT'[39m,
-  [32m"COUPLE'S TREATMENTS"[39m,
-  [32m'CLASSIC FACIAL'[39m,
-  [32m'BATH TREATMENT'[39m
+  'SIGNATURE EXPRESSIONS',
+  'BODY MASSAGE',
+  'HEALTH and FITNESS',
+  'BODY TREATMENT',
+  "COUPLE'S TREATMENTS",
+  'CLASSIC FACIAL',
+  'BATH TREATMENT'
 ]
  API call was successful.✅ 
 [
-  [32m'Test Category'[39m,
-  [32m'SIGNATURE EXPRESSIONS'[39m,
-  [32m'BODY MASSAGE'[39m,
-  [32m'HEALTH and FITNESS'[39m,
-  [32m'Testing category1'[39m,
-  [32m'BODY TREATMENT'[39m,
-  [32m"COUPLE'S TREATMENTS"[39m,
-  [32m'TG68'[39m,
-  [32m'CLASSIC FACIAL'[39m,
-  [32m'BATH TREATMENT'[39m,
-  [32m'TS2'[39m
+  'Test Category',
+  'SIGNATURE EXPRESSIONS',
+  'BODY MASSAGE',
+  'HEALTH and FITNESS',
+  'Testing category1',
+  'BODY TREATMENT',
+  "COUPLE'S TREATMENTS",
+  'TG68',
+  'CLASSIC FACIAL',
+  'BATH TREATMENT',
+  'TS2'
 ]
 Matching Categories: SIGNATURE EXPRESSIONS,BODY MASSAGE,HEALTH and FITNESS,BODY TREATMENT,COUPLE'S TREATMENTS,CLASSIC FACIAL,BATH TREATMENT
 Total Matches: 7
 Matches: [
-  [32m'SIGNATURE EXPRESSIONS'[39m,
-  [32m'BODY MASSAGE'[39m,
-  [32m'HEALTH and FITNESS'[39m,
-  [32m'BODY TREATMENT'[39m,
-  [32m"COUPLE'S TREATMENTS"[39m,
-  [32m'CLASSIC FACIAL'[39m,
-  [32m'BATH TREATMENT'[39m
+  'SIGNATURE EXPRESSIONS',
+  'BODY MASSAGE',
+  'HEALTH and FITNESS',
+  'BODY TREATMENT',
+  "COUPLE'S TREATMENTS",
+  'CLASSIC FACIAL',
+  'BATH TREATMENT'
 ]
-Number of Matches: [33m7[39m
+Number of Matches: 7
 Category lists validation passed, executing further actions...
 Clicking category: SIGNATURE EXPRESSIONS
 Validating treatments for category: SIGNATURE EXPRESSIONS
 Number of treatments found for "SIGNATURE EXPRESSIONS": 3
 Items under Category "SIGNATURE EXPRESSIONS": [
-  [32m'Hammam Heaven 120 Minutes (Corporate)'[39m,
-  [32m'(S) Heart Of Cairo 120 Minutes (Corporate)'[39m,
-  [32m'Egypt Energy 120 Minutes (Corporate)'[39m
+  'Hammam Heaven 120 Minutes (Corporate)',
+  '(S) Heart Of Cairo 120 Minutes (Corporate)',
+  'Egypt Energy 120 Minutes (Corporate)'
 ]
 Clicking category: BODY MASSAGE
 Validating treatments for category: BODY MASSAGE
 Number of treatments found for "BODY MASSAGE": 15
 Items under Category "BODY MASSAGE": [
-  [32m'Sport Massage 90 Minutes (Corporate)'[39m,
-  [32m'Stone Massage 60 Minutes (Corporate)'[39m,
-  [32m'Thai Massage 90 Minutes (Corporate)'[39m,
-  [32m'Thai Massage 60 Minutes (Corporate)'[39m,
-  [32m'Stone Massage 90 Minutes (Corporate)'[39m,
-  [32m'Stress Relief Massage 60 Minutes (Corporate)'[39m,
-  [32m'Relaxation Massage 90 Minutes (Corporate)'[39m,
-  [32m'Reflexology Massage (30 Minutes)'[39m,
-  [32m'Relaxation Massage 60 Minutes (Corporate)'[39m,
-  [32m'Maternity Massage 60 Minutes (Corporate)'[39m,
-  [32m'Head ,Neck and Shoulders 30 Minutes (Corporate)'[39m,
-  [32m'Sport Massage 60 Minutes (Corporate)'[39m,
-  [32m'Reflexology Massage 90 Minutes (Corporate)'[39m,
-  [32m'Reflexology Massage 60 Minutes (Corporate)'[39m,
-  [32m'Stress Relief Massage 90 Minutes (Corporate)'[39m
+  'Sport Massage 90 Minutes (Corporate)',
+  'Stone Massage 60 Minutes (Corporate)',
+  'Thai Massage 90 Minutes (Corporate)',
+  'Thai Massage 60 Minutes (Corporate)',
+  'Stone Massage 90 Minutes (Corporate)',
+  'Stress Relief Massage 60 Minutes (Corporate)',
+  'Relaxation Massage 90 Minutes (Corporate)',
+  'Reflexology Massage (30 Minutes)',
+  'Relaxation Massage 60 Minutes (Corporate)',
+  'Maternity Massage 60 Minutes (Corporate)',
+  'Head ,Neck and Shoulders 30 Minutes (Corporate)',
+  'Sport Massage 60 Minutes (Corporate)',
+  'Reflexology Massage 90 Minutes (Corporate)',
+  'Reflexology Massage 60 Minutes (Corporate)',
+  'Stress Relief Massage 90 Minutes (Corporate)'
 ]
 Clicking category: HEALTH and FITNESS
 Validating treatments for category: HEALTH and FITNESS
 Number of treatments found for "HEALTH and FITNESS": 2
-Items under Category "HEALTH and FITNESS": [ [32m'Private - Fitness Class (60 Minutes)'[39m, [32m'Spa - Day Use'[39m ]
+Items under Category "HEALTH and FITNESS": [ 'Private - Fitness Class (60 Minutes)', 'Spa - Day Use' ]
 Clicking category: BODY TREATMENT
 Validating treatments for category: BODY TREATMENT
 Number of treatments found for "BODY TREATMENT": 5
 Items under Category "BODY TREATMENT": [
-  [32m'Body Scrub And Massage 60 Minutes (Corporate)'[39m,
-  [32m'Essential Sculpting Body Care 90 Min (Corporate)'[39m,
-  [32m'Marine Body Contouring Wrap 90 Minutes (Corporate)'[39m,
-  [32m'Sea Holistic Body Treatment And Facial (Corporate)'[39m,
-  [32m'Hammam Energy 60 Minutes (Corporate)'[39m
+  'Body Scrub And Massage 60 Minutes (Corporate)',
+  'Essential Sculpting Body Care 90 Min (Corporate)',
+  'Marine Body Contouring Wrap 90 Minutes (Corporate)',
+  'Sea Holistic Body Treatment And Facial (Corporate)',
+  'Hammam Energy 60 Minutes (Corporate)'
 ]
 Clicking category: COUPLE'S TREATMENTS
 Validating treatments for category: COUPLE'S TREATMENTS
 Number of treatments found for "COUPLE'S TREATMENTS": 2
 Items under Category "COUPLE'S TREATMENTS": [
-  [32m'Side-by-Side Massage 60 Minutes (Corporate)'[39m,
-  [32m'Side-by-Side Massage 90 Minutes (Corporate)'[39m
+  'Side-by-Side Massage 60 Minutes (Corporate)',
+  'Side-by-Side Massage 90 Minutes (Corporate)'
 ]
 Clicking category: CLASSIC FACIAL
 Validating treatments for category: CLASSIC FACIAL
 Number of treatments found for "CLASSIC FACIAL": 5
 Items under Category "CLASSIC FACIAL": [
-  [32m'Youth Revealing pioneer 90 Minutes (Corporate)'[39m,
-  [32m'Marine Breeze Facial 60 Minutes (Corporate)'[39m,
-  [32m'Extended Youth Facial 90 Minutes (Corporate)'[39m,
-  [32m'White Lumination Pioneer 90 Minutes (Corporate)'[39m,
-  [32m'Skin Escape Facial 90 Minutes (Corporate)'[39m
+  'Youth Revealing pioneer 90 Minutes (Corporate)',
+  'Marine Breeze Facial 60 Minutes (Corporate)',
+  'Extended Youth Facial 90 Minutes (Corporate)',
+  'White Lumination Pioneer 90 Minutes (Corporate)',
+  'Skin Escape Facial 90 Minutes (Corporate)'
 ]
 Clicking category: BATH TREATMENT
 Validating treatments for category: BATH TREATMENT
 Number of treatments found for "BATH TREATMENT": 2
 Items under Category "BATH TREATMENT": [
-  [32m'Cleopatra Bath 30 Minutes (Corporate)'[39m,
-  [32m'Mineral Bath 30 Minutes (Corporate)'[39m
+  'Cleopatra Bath 30 Minutes (Corporate)',
+  'Mineral Bath 30 Minutes (Corporate)'
 ]
 Clicking on spa 2
 Text of spa 2: TestSpa
@@ -188,128 +184,123 @@ Category 1: Test Category
 Category 2: Testing category1
 Category 3: TG68
 Category 4: TS2
-All Categories: [ [32m'Test Category'[39m, [32m'Testing category1'[39m, [32m'TG68'[39m, [32m'TS2'[39m ]
+All Categories: [ 'Test Category', 'Testing category1', 'TG68', 'TS2' ]
  API call was successful.✅ 
 [
-  [32m'Test Category'[39m,
-  [32m'SIGNATURE EXPRESSIONS'[39m,
-  [32m'BODY MASSAGE'[39m,
-  [32m'HEALTH and FITNESS'[39m,
-  [32m'Testing category1'[39m,
-  [32m'BODY TREATMENT'[39m,
-  [32m"COUPLE'S TREATMENTS"[39m,
-  [32m'TG68'[39m,
-  [32m'CLASSIC FACIAL'[39m,
-  [32m'BATH TREATMENT'[39m,
-  [32m'TS2'[39m
+  'Test Category',
+  'SIGNATURE EXPRESSIONS',
+  'BODY MASSAGE',
+  'HEALTH and FITNESS',
+  'Testing category1',
+  'BODY TREATMENT',
+  "COUPLE'S TREATMENTS",
+  'TG68',
+  'CLASSIC FACIAL',
+  'BATH TREATMENT',
+  'TS2'
 ]
 Matching Categories: Test Category,Testing category1,TG68,TS2
 Total Matches: 4
-Matches: [ [32m'Test Category'[39m, [32m'Testing category1'[39m, [32m'TG68'[39m, [32m'TS2'[39m ]
-Number of Matches: [33m4[39m
+Matches: [ 'Test Category', 'Testing category1', 'TG68', 'TS2' ]
+Number of Matches: 4
 Category lists validation passed, executing further actions...
 Clicking category: Test Category
 Validating treatments for category: Test Category
 Number of treatments found for "Test Category": 1
-Items under Category "Test Category": [ [32m'TestTreatment3'[39m ]
+Items under Category "Test Category": [ 'TestTreatment3' ]
 Clicking category: Testing category1
 Validating treatments for category: Testing category1
 Number of treatments found for "Testing category1": 1
-Items under Category "Testing category1": [ [32m'TestTreatment1'[39m ]
+Items under Category "Testing category1": [ 'TestTreatment1' ]
 Clicking category: TG68
 Validating treatments for category: TG68
 Number of treatments found for "TG68": 1
-Items under Category "TG68": [ [32m'TestTreatment4'[39m ]
+Items under Category "TG68": [ 'TestTreatment4' ]
 Clicking category: TS2
 Validating treatments for category: TS2
 Number of treatments found for "TS2": 1
-Items under Category "TS2": [ [32m'TestTreatment2'[39m ]
+Items under Category "TS2": [ 'TestTreatment2' ]
 All Treatments across all categories: [
-  [32m'Hammam Heaven 120 Minutes (Corporate)'[39m,
-  [32m'(S) Heart Of Cairo 120 Minutes (Corporate)'[39m,
-  [32m'Egypt Energy 120 Minutes (Corporate)'[39m,
-  [32m'Sport Massage 90 Minutes (Corporate)'[39m,
-  [32m'Stone Massage 60 Minutes (Corporate)'[39m,
-  [32m'Thai Massage 90 Minutes (Corporate)'[39m,
-  [32m'Thai Massage 60 Minutes (Corporate)'[39m,
-  [32m'Stone Massage 90 Minutes (Corporate)'[39m,
-  [32m'Stress Relief Massage 60 Minutes (Corporate)'[39m,
-  [32m'Relaxation Massage 90 Minutes (Corporate)'[39m,
-  [32m'Reflexology Massage (30 Minutes)'[39m,
-  [32m'Relaxation Massage 60 Minutes (Corporate)'[39m,
-  [32m'Maternity Massage 60 Minutes (Corporate)'[39m,
-  [32m'Head ,Neck and Shoulders 30 Minutes (Corporate)'[39m,
-  [32m'Sport Massage 60 Minutes (Corporate)'[39m,
-  [32m'Reflexology Massage 90 Minutes (Corporate)'[39m,
-  [32m'Reflexology Massage 60 Minutes (Corporate)'[39m,
-  [32m'Stress Relief Massage 90 Minutes (Corporate)'[39m,
-  [32m'Private - Fitness Class (60 Minutes)'[39m,
-  [32m'Spa - Day Use'[39m,
-  [32m'Body Scrub And Massage 60 Minutes (Corporate)'[39m,
-  [32m'Essential Sculpting Body Care 90 Min (Corporate)'[39m,
-  [32m'Marine Body Contouring Wrap 90 Minutes (Corporate)'[39m,
-  [32m'Sea Holistic Body Treatment And Facial (Corporate)'[39m,
-  [32m'Hammam Energy 60 Minutes (Corporate)'[39m,
-  [32m'Side-by-Side Massage 60 Minutes (Corporate)'[39m,
-  [32m'Side-by-Side Massage 90 Minutes (Corporate)'[39m,
-  [32m'Youth Revealing pioneer 90 Minutes (Corporate)'[39m,
-  [32m'Marine Breeze Facial 60 Minutes (Corporate)'[39m,
-  [32m'Extended Youth Facial 90 Minutes (Corporate)'[39m,
-  [32m'White Lumination Pioneer 90 Minutes (Corporate)'[39m,
-  [32m'Skin Escape Facial 90 Minutes (Corporate)'[39m,
-  [32m'Cleopatra Bath 30 Minutes (Corporate)'[39m,
-  [32m'Mineral Bath 30 Minutes (Corporate)'[39m,
-  [32m'TestTreatment3'[39m,
-  [32m'TestTreatment1'[39m,
-  [32m'TestTreatment4'[39m,
-  [32m'TestTreatment2'[39m
+  'Hammam Heaven 120 Minutes (Corporate)',
+  '(S) Heart Of Cairo 120 Minutes (Corporate)',
+  'Egypt Energy 120 Minutes (Corporate)',
+  'Sport Massage 90 Minutes (Corporate)',
+  'Stone Massage 60 Minutes (Corporate)',
+  'Thai Massage 90 Minutes (Corporate)',
+  'Thai Massage 60 Minutes (Corporate)',
+  'Stone Massage 90 Minutes (Corporate)',
+  'Stress Relief Massage 60 Minutes (Corporate)',
+  'Relaxation Massage 90 Minutes (Corporate)',
+  'Reflexology Massage (30 Minutes)',
+  'Relaxation Massage 60 Minutes (Corporate)',
+  'Maternity Massage 60 Minutes (Corporate)',
+  'Head ,Neck and Shoulders 30 Minutes (Corporate)',
+  'Sport Massage 60 Minutes (Corporate)',
+  'Reflexology Massage 90 Minutes (Corporate)',
+  'Reflexology Massage 60 Minutes (Corporate)',
+  'Stress Relief Massage 90 Minutes (Corporate)',
+  'Private - Fitness Class (60 Minutes)',
+  'Spa - Day Use',
+  'Body Scrub And Massage 60 Minutes (Corporate)',
+  'Essential Sculpting Body Care 90 Min (Corporate)',
+  'Marine Body Contouring Wrap 90 Minutes (Corporate)',
+  'Sea Holistic Body Treatment And Facial (Corporate)',
+  'Hammam Energy 60 Minutes (Corporate)',
+  'Side-by-Side Massage 60 Minutes (Corporate)',
+  'Side-by-Side Massage 90 Minutes (Corporate)',
+  'Youth Revealing pioneer 90 Minutes (Corporate)',
+  'Marine Breeze Facial 60 Minutes (Corporate)',
+  'Extended Youth Facial 90 Minutes (Corporate)',
+  'White Lumination Pioneer 90 Minutes (Corporate)',
+  'Skin Escape Facial 90 Minutes (Corporate)',
+  'Cleopatra Bath 30 Minutes (Corporate)',
+  'Mineral Bath 30 Minutes (Corporate)',
+  'TestTreatment3',
+  'TestTreatment1',
+  'TestTreatment4',
+  'TestTreatment2'
 ]
  API call was successful.✅ 
 [
-  [32m'Body Scrub And Massage 60 Minutes (Corporate)'[39m,
-  [32m'TestTreatment1'[39m,
-  [32m'Hammam Heaven 120 Minutes (Corporate)'[39m,
-  [32m'Sport Massage 90 Minutes (Corporate)'[39m,
-  [32m'Essential Sculpting Body Care 90 Min (Corporate)'[39m,
-  [32m'Marine Body Contouring Wrap 90 Minutes (Corporate)'[39m,
-  [32m'(S) Heart Of Cairo 120 Minutes (Corporate)'[39m,
-  [32m'Stone Massage 60 Minutes (Corporate)'[39m,
-  [32m'Side-by-Side Massage 60 Minutes (Corporate)'[39m,
-  [32m'Youth Revealing pioneer 90 Minutes (Corporate)'[39m,
-  [32m'Thai Massage 90 Minutes (Corporate)'[39m,
-  [32m'Thai Massage 60 Minutes (Corporate)'[39m,
-  [32m'Marine Breeze Facial 60 Minutes (Corporate)'[39m,
-  [32m'TestTreatment2'[39m,
-  [32m'Cleopatra Bath 30 Minutes (Corporate)'[39m,
-  [32m'Side-by-Side Massage 90 Minutes (Corporate)'[39m,
-  [32m'Stone Massage 90 Minutes (Corporate)'[39m,
-  [32m'Stress Relief Massage 60 Minutes (Corporate)'[39m,
-  [32m'Mineral Bath 30 Minutes (Corporate)'[39m,
-  [32m'Private - Fitness Class (60 Minutes)'[39m,
-  [32m'Sea Holistic Body Treatment And Facial (Corporate)'[39m,
-  [32m'Relaxation Massage 90 Minutes (Corporate)'[39m,
-  [32m'Reflexology Massage (30 Minutes)'[39m,
-  [32m'Extended Youth Facial 90 Minutes (Corporate)'[39m,
-  [32m'White Lumination Pioneer 90 Minutes (Corporate)'[39m,
-  [32m'Relaxation Massage 60 Minutes (Corporate)'[39m,
-  [32m'TestTreatment3'[39m,
-  [32m'Skin Escape Facial 90 Minutes (Corporate)'[39m,
-  [32m'Maternity Massage 60 Minutes (Corporate)'[39m,
-  [32m'TestTreatment4'[39m,
-  [32m'Hammam Energy 60 Minutes (Corporate)'[39m,
-  [32m'Head ,Neck and Shoulders 30 Minutes (Corporate)'[39m,
-  [32m'Sport Massage 60 Minutes (Corporate)'[39m,
-  [32m'Reflexology Massage 90 Minutes (Corporate)'[39m,
-  [32m'Reflexology Massage 60 Minutes (Corporate)'[39m,
-  [32m'Spa - Day Use'[39m,
-  [32m'Stress Relief Massage 90 Minutes (Corporate)'[39m,
-  [32m'Egypt Energy 120 Minutes (Corporate)'[39m
+  'Body Scrub And Massage 60 Minutes (Corporate)',
+  'TestTreatment1',
+  'Hammam Heaven 120 Minutes (Corporate)',
+  'Sport Massage 90 Minutes (Corporate)',
+  'Essential Sculpting Body Care 90 Min (Corporate)',
+  'Marine Body Contouring Wrap 90 Minutes (Corporate)',
+  '(S) Heart Of Cairo 120 Minutes (Corporate)',
+  'Stone Massage 60 Minutes (Corporate)',
+  'Side-by-Side Massage 60 Minutes (Corporate)',
+  'Youth Revealing pioneer 90 Minutes (Corporate)',
+  'Thai Massage 90 Minutes (Corporate)',
+  'Thai Massage 60 Minutes (Corporate)',
+  'Marine Breeze Facial 60 Minutes (Corporate)',
+  'TestTreatment2',
+  'Cleopatra Bath 30 Minutes (Corporate)',
+  'Side-by-Side Massage 90 Minutes (Corporate)',
+  'Stone Massage 90 Minutes (Corporate)',
+  'Stress Relief Massage 60 Minutes (Corporate)',
+  'Mineral Bath 30 Minutes (Corporate)',
+  'Private - Fitness Class (60 Minutes)',
+  'Sea Holistic Body Treatment And Facial (Corporate)',
+  'Relaxation Massage 90 Minutes (Corporate)',
+  'Reflexology Massage (30 Minutes)',
+  'Extended Youth Facial 90 Minutes (Corporate)',
+  'White Lumination Pioneer 90 Minutes (Corporate)',
+  'Relaxation Massage 60 Minutes (Corporate)',
+  'TestTreatment3',
+  'Skin Escape Facial 90 Minutes (Corporate)',
+  'Maternity Massage 60 Minutes (Corporate)',
+  'TestTreatment4',
+  'Hammam Energy 60 Minutes (Corporate)',
+  'Head ,Neck and Shoulders 30 Minutes (Corporate)',
+  'Sport Massage 60 Minutes (Corporate)',
+  'Reflexology Massage 90 Minutes (Corporate)',
+  'Reflexology Massage 60 Minutes (Corporate)',
+  'Spa - Day Use',
+  'Stress Relief Massage 90 Minutes (Corporate)',
+  'Egypt Energy 120 Minutes (Corporate)'
 ]
 Page has been closed ✅ 
 Context has been closed ✅ 
 Browser has been closed ✅ 
-]]>
-</system-out>
-</testcase>
-</testsuite>
-</testsuites>
