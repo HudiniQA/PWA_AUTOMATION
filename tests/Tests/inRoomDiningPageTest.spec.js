@@ -2,7 +2,7 @@ import { InRoomDinig } from '../Pages/inRoomDiningPage';
 import { test } from '@playwright/test';
 const testData = JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
-test.describe('To verify the In-Room Dining service', () => {
+test.describe('To verify the In-Room Dining service @post-checkin', () => {
     let inRoomDining;
 
     test.beforeEach(async ({ browser }) => {

@@ -1,0 +1,12 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
+ API call was successful.✅ 
+Phone CTA is visible for The Merchants BBQ Restaurant restaurant ✅ 
+Email CTA is visible for The Merchants BBQ Restaurant restaurant✅
+Contents verified and closing the The Merchants BBQ Restaurant restaurant Modal ✅
+Phone CTA is visible for Madeliene de Proust restaurant ✅ 
+Email CTA is visible for Madeliene de Proust restaurant✅
+Contents verified and closing the Madeliene de Proust restaurant Modal ✅
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

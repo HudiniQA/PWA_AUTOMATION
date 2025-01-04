@@ -1,2 +1,6 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","14095","Verify the houseKeeping page","chromium","Thu Dec 26 16:22:01 IST 2024","passed","Thu Dec 26 16:22:15 IST 2024","To verify the In-Room Dining service","Tests\inRoomDiningPageTest.spec.js","",""
+"","6961","Verify the restaurants","firefox","Fri Jan 03 18:02:05 IST 2025","passed","Fri Jan 03 18:02:12 IST 2025","To verify the restaurants are displayed @pre-checkin","Tests\restaurantsPageTest.spec.js","",""
+"","8226","Verify the things to do activities and categories","firefox","Fri Jan 03 18:02:29 IST 2025","passed","Fri Jan 03 18:02:37 IST 2025","To verify the things to do page @pre-checkin","Tests\thingsToDoPageTest.spec.js","",""
+"","17659","Verify the spa","firefox","Fri Jan 03 18:02:12 IST 2025","passed","Fri Jan 03 18:02:29 IST 2025","To verify the spa are displayed @pre-checkin","Tests\testSpa.spec.js","",""
+"","8395","Verify the offerstypes and corrosponding offers","firefox","Fri Jan 03 18:01:56 IST 2025","passed","Fri Jan 03 18:02:05 IST 2025","To verify the offers page @pre-checkin","Tests\offersPageTest.spec.js","",""
+"","11714","Verify the hotel info popup","firefox","Fri Jan 03 18:01:43 IST 2025","passed","Fri Jan 03 18:01:55 IST 2025","To verify the hotel info @pre-checkin","Tests\aboutHotelPageTest.spec.js","",""

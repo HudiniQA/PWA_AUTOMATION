@@ -2,7 +2,7 @@ import { HouseKeepingPage } from '../Pages/houseKeepingPage';
 import { test } from '@playwright/test';
 const testData = JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
-test.describe('To verify the houseKeeping services', () => {
+test.describe('To verify the houseKeeping services @post-checkin', () => {
     let houseKeepingPage;
 
     test.beforeEach(async ({ browser }) => {

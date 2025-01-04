@@ -1,0 +1,42 @@
+Error during spa list validation or interaction: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//button[text()=\'View Treatments\']') to be visible
+
+    at TsSpa.verifyTheSpa (C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Pages\tsSpa.js:249:40)
+    at C:\Users\UpparaRaviteja\Desktop\PWA_AUTOMATION\tests\Tests\testSpa.spec.js:20:9 {
+  name: 'TimeoutError',
+  [Symbol(step)]: {
+    stepId: 'pw:api@34',
+    location: {
+      file: 'C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\tsSpa.js',
+      line: 249,
+      column: 40,
+      function: 'TsSpa.verifyTheSpa'
+    },
+    category: 'pw:api',
+    title: "locator.waitFor(//button[text()='View Treatments'])",
+    apiName: 'locator.waitFor',
+    params: {
+      selector: "//button[text()='View Treatments']",
+      strict: true,
+      omitReturnValue: true,
+      state: 'visible'
+    },
+    boxedStack: undefined,
+    steps: [],
+    complete: [Function: complete],
+    endWallTime: 1735976694072,
+    error: {
+      message: 'TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\n' +
+        'Call log:\n' +
+        "\x1B[2m  - waiting for locator('//button[text()=\\'View Treatments\\']') to be visible\x1B[22m\n",
+      stack: 'TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\n' +
+        'Call log:\n' +
+        "\x1B[2m  - waiting for locator('//button[text()=\\'View Treatments\\']') to be visible\x1B[22m\n" +
+        '\n' +
+        '    at TsSpa.verifyTheSpa (C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Pages\\tsSpa.js:249:40)\n' +
+        '    at C:\\Users\\UpparaRaviteja\\Desktop\\PWA_AUTOMATION\\tests\\Tests\\testSpa.spec.js:20:9',
+      cause: undefined
+    }
+  }
+}

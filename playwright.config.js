@@ -48,6 +48,7 @@ module.exports = defineConfig({
   },
   
   outputDir: 'test-results/videos',
+  grep: /pre-checkin|post-checkin/,
 
   /* Configure projects for major browsers */
   projects: [
@@ -58,7 +59,7 @@ module.exports = defineConfig({
         viewport:null,
         deviceScaleFactor: undefined,
         launchOptions: {
-          args: [ '--start-maximized' ]
+          args: [ '--start-maximized' ],
         },
 
       },

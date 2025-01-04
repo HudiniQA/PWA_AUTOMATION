@@ -1,0 +1,14 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
+ API call was successful.✅
+Opened the Aqua Sports activity successfully ✅
+Contents verified and closing the Aqua Sports activity Modal ✅
+Opened the Yoga activity successfully ✅
+Contents verified and closing the Yoga activity Modal ✅
+Opened the Palm Courtyard activity successfully ✅
+Contents verified and closing the Palm Courtyard activity Modal ✅
+Opened the The Boardroom activity successfully ✅
+Contents verified and closing the The Boardroom activity Modal ✅
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

@@ -2,7 +2,7 @@ import { ThingsToDoPage } from '../Pages/thingsToDoPage';
 import { test } from '@playwright/test';
 const testData = JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
-test.describe('To verify the things to do page', () => {
+test.describe('To verify the things to do page @pre-checkin', () => {
   let thingsToDo;
 
   test.beforeEach(async ({ browser }) => {

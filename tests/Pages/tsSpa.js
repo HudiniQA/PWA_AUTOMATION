@@ -352,7 +352,7 @@ export class TsSpa extends BaseClass {
             const sortedTreatmentlist = [...treatmentlist].sort();
 
             expect(sortedAllTreatments).toStrictEqual(sortedTreatmentlist);
-        } catch {
+        } catch (error){
             console.error("Error during spa list validation or interaction:", error);
         }
 

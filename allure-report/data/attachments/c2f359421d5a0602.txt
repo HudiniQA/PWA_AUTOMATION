@@ -1,0 +1,15 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
+ API call was successful.✅ 
+Unique Offer Types: [ 'Festive', 'Stay' ]
+Opened the Ramadan Iftar offer successfully ✅
+No email provided for Ramadan Iftar. Skipping email CTA check.
+No phone provided for Ramadan Iftar. Skipping phone CTA check.
+Verified and closing the Ramadan Iftar offer modal under Festive
+Opened the 4 Nights Golf Package offer successfully ✅
+No email provided for 4 Nights Golf Package. Skipping email CTA check.
+No phone provided for 4 Nights Golf Package. Skipping phone CTA check.
+Verified and closing the 4 Nights Golf Package offer modal under Stay
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

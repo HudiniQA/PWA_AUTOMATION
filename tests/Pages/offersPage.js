@@ -20,9 +20,14 @@ export class OffersPage extends BaseClass {
         this.#offersIcon = this.page.getByText('Offers', { exact: true });
         this.#phoneCTA = this.page.getByRole('link', { name: 'Phone' })
         this.#emailCTA = this.page.getByRole('link', { name: 'Email' })
-        this.#categoryBtn = this.page.getByRole('button').first();//this.page.locator("//button[@id=':r1q:']")
-        this.#offerTitle = this.page.locator("//h2[@class='OffersCarousel_listComponentTitle__7Sqcs']")
-        this.#offerDescription = this.page.locator("(//p[@class='OffersCarousel_listComponentDataTitle__nnGbR']/following-sibling::p)[1]")
+        this.#categoryBtn = this.page.locator("//div[@class='BottomMenu_bottomMenuWrapper__2YmoK']//button[1]");//this.page.getByRole('button').first();
+        //stage offer title and description locators
+        this.#offerTitle = this.page.locator('h2.OfferDetail_listComponentTitle__XRJUg')
+        this.#offerDescription = this.page.locator("(//p[@class='OfferDetail_listComponentDataTitle__xox7N']/following-sibling::p)[1]")
+
+        //UAT offer title and description locators
+        // this.#offerTitle = this.page.locator("//h2[@class='OffersCarousel_listComponentTitle__7Sqcs']")
+        // this.#offerDescription = this.page.locator("(//p[@class='OffersCarousel_listComponentDataTitle__nnGbR']/following-sibling::p)[1]")
     }
     gethamburgerMenu() {
         return this.#hamburgerMenu;
@@ -168,7 +173,7 @@ export class OffersPage extends BaseClass {
                     if (buttonTxt !== offerType) {
                         await this.elementActions.click(this.getcategoryBtn());
                         await this.elementActions.click(
-                            this.page.locator(`//p[normalize-space(text())='${offerType}']`)
+                        this.page.locator(`//p[normalize-space(text())='${offerType}']`)
                         );
                     }
                     break;

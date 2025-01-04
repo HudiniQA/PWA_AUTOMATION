@@ -20,7 +20,7 @@ export class ThingsToDoPage extends BaseClass {
     async initializeSelectors() {
         this.#hamburgerMenu = this.page.locator('.hamburger-react');
         this.#thingsToDoIcon = this.page.locator('p').filter({ hasText: 'Things To Do' });
-        this.#categoryBtn = this.page.getByRole('button').first();
+        this.#categoryBtn = this.page.locator("//div[@class='BottomMenu_bottomMenuWrapper__2YmoK']//button[1]")
         this.#activityTitle = this.page.locator('p.hotel-compendium_title__ECdl7');
         this.#activitytDescription = this.page.locator('p.hotel-compendium_description__n_HmG');
         this.#emailCTA = this.page.getByRole('link', { name: 'Email' });
@@ -101,7 +101,12 @@ export class ThingsToDoPage extends BaseClass {
         if (!categories || !amenities) {
             throw new Error('Invalid API response: missing categories or amenities.');
             }
-        for (const category of categories) {
+            const filteredCategories = categories.filter((category) => 
+                amenities.some((amenity) => 
+                    amenity.categoryIds.includes(category.id) && amenity.isActive
+                )
+            );
+        for (const category of filteredCategories) {
             const { name: categoryName, id: categoryId } = category;
 
             let maxRetries = 3;
@@ -114,8 +119,9 @@ export class ThingsToDoPage extends BaseClass {
                     if (buttonText !== categoryName)
                          {
                             await this.getcategoryBtn().click();
-                            await this.page.getByText(categoryName, { exact: true }).click();
-                            // await this.elementActions.click(this.getcategoryOption().filter({hasText:categoryName}));
+                            await this.elementActions.click(this.page.locator(`//p[normalize-space(text())='${categoryName}']`));
+                            // await this.page.locator('p').filter({hasText:categoryName}).click();
+                            
                         }
                     break;
                     }
@@ -142,7 +148,7 @@ export class ThingsToDoPage extends BaseClass {
                 const { name: activityName, description, information } = amenity;
 
                 // Click on the activity
-                const activityLink = this.page.getByRole('heading', { name: activityName });
+                const activityLink = this.page.getByRole('heading', { name: activityName ,exact:true});
                 await this.elementActions.waitForVisibility(activityLink)
                 await this.elementActions.click(activityLink)
                 console.log(`Opened the ${activityName} activity successfully ✅`);

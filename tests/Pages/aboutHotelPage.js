@@ -21,11 +21,11 @@ export class AboutHotel extends BaseClass {
     async initializeSelectors() {
         this.#hamburgerMenu = this.page.locator('.hamburger-react');
         this.#aboutHotelIcon = this.page.getByText('About Us');
-        this.#hotelTitle = this.page.locator('.HotelInfoDrawer_title__Djjb3');
+        this.#hotelTitle = this.page.locator('h2.HotelInfoDrawer_title__Djjb3');
         this.#hotelDescription = this.page.locator('.HotelInfoDrawer_body__h1M_G');
         this.#redirectionLink = this.page.getByLabel('Link');
-        this.#phoneCTA = this.page.getByLabel('Phone');
-        this.#emailCTA = this.page.getByLabel('Email');
+        this.#phoneCTA = this.page.getByRole('link',{name:'Phone'});
+        this.#emailCTA = this.page.getByRole('link',{name:'Email'});
         this.#locationPinCTA = this.page.locator('.HotelInfoDrawer_phoneEmailCtaWrapper__M3B4h > div:nth-child(5)');
     }
 

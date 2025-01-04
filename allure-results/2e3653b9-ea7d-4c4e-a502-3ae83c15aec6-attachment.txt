@@ -1,0 +1,9 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-le-montreux-palace/ successfully ✅ .
+ API call was successful.✅ 
+Redirect link verified successfully ✅ 
+Phone CTA is visible for Fairmont Le Montreux Palace ✅ 
+Location pin is visible for Fairmont Le Montreux Palace ✅ 
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

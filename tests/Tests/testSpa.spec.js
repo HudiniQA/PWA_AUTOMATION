@@ -2,7 +2,7 @@ import { TsSpa } from '../Pages/tsSpa';
 import { test } from '@playwright/test';
 const testData=JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
-test.describe('To verify the spa are displayed', () => {
+test.describe('To verify the spa are displayed @pre-checkin', () => {
     let tsSpa;
 
     test.beforeEach(async ({ browser }) => {

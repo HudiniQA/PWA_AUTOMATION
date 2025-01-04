@@ -1,6 +1,9 @@
 Chrome Browser launched successfully ✅ 
 Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
  API call was successful.✅ 
+Phone CTA is visible for Fairmont Mumbai ✅ 
+Redirect link verified successfully ✅ 
+Location pin is visible for Fairmont Mumbai ✅ 
 Page has been closed ✅ 
 Context has been closed ✅ 
 Browser has been closed ✅ 

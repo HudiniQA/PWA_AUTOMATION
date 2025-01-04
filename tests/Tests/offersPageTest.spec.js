@@ -2,7 +2,7 @@ import { OffersPage } from '../Pages/offersPage';
 import { test, request } from '@playwright/test';
 const testData = JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
-test.describe('To verify the offers page ', () => {
+test.describe('To verify the offers page @pre-checkin', () => {
     let offersPage;
 
     test.beforeEach(async ({ browser }) => {

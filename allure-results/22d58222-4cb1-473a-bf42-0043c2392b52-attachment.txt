@@ -1,0 +1,19 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-le-montreux-palace/ successfully ✅ .
+ API call was successful.✅ 
+Unique Offer Types: [ 'Festive', 'Others' ]
+Opened the Festive Season  offer successfully ✅
+No email provided for Festive Season. Skipping email CTA check.
+Phone CTA is visible for Festive Season ✅
+Verified and closing the Festive Season offer modal under Festive
+Opened the Montreux Christmas Market offer successfully ✅
+No email provided for Montreux Christmas Market. Skipping email CTA check.
+No phone provided for Montreux Christmas Market. Skipping phone CTA check.
+Verified and closing the Montreux Christmas Market offer modal under Festive
+Opened the Sustainability offer successfully ✅
+No email provided for Sustainability. Skipping email CTA check.
+No phone provided for Sustainability. Skipping phone CTA check.
+Verified and closing the Sustainability offer modal under Others
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

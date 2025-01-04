@@ -1,0 +1,29 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-le-montreux-palace/ successfully ✅ .
+ API call was successful.✅ 
+Phone CTA is visible for La Palmeraie restaurant ✅ 
+Email CTA is visible for La Palmeraie restaurant✅
+Contents verified and closing the La Palmeraie restaurant Modal ✅
+Phone CTA is visible for The Lounge restaurant ✅ 
+Email CTA is visible for The Lounge restaurant✅
+Contents verified and closing the The Lounge restaurant Modal ✅
+Phone CTA is visible for Funky Claude's Bar restaurant ✅ 
+Email CTA is visible for Funky Claude's Bar restaurant✅
+Contents verified and closing the Funky Claude's Bar restaurant Modal ✅
+Phone CTA is visible for Pureaty Café restaurant ✅ 
+Email CTA is visible for Pureaty Café restaurant✅
+Contents verified and closing the Pureaty Café restaurant Modal ✅
+Phone CTA is visible for Montreux Jazz Café restaurant ✅ 
+Email CTA is visible for Montreux Jazz Café restaurant✅
+Contents verified and closing the Montreux Jazz Café restaurant Modal ✅
+Phone CTA is visible for Terrasse du Petit Palais restaurant ✅ 
+Email CTA is visible for Terrasse du Petit Palais restaurant✅
+Contents verified and closing the Terrasse du Petit Palais restaurant Modal ✅
+Phone CTA is visible for Sunday Brunch restaurant ✅ 
+Email CTA is visible for Sunday Brunch restaurant✅
+Contents verified and closing the Sunday Brunch restaurant Modal ✅
+Email CTA is visible for In Room Dining restaurant✅
+Contents verified and closing the In Room Dining restaurant Modal ✅
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

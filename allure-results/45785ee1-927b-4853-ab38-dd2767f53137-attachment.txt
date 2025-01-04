@@ -1,0 +1,52 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-le-montreux-palace/ successfully ✅ .
+Total spa found: 4
+Spa list 1: Fairmont Spa
+Spa list 2: Fitness Center
+Spa list 3: Fitness Classes
+Spa list 4: Montreu SPA
+All spa lists--->: [ 'Fairmont Spa', 'Fitness Center', 'Fitness Classes', 'Montreu SPA' ]
+Spa Data: {
+  spa_1: [ 'Fairmont Spa' ],
+  spa_2: [ 'Fitness Center' ],
+  spa_3: [ 'Fitness Classes' ],
+  spa_4: [ 'Montreu SPA' ]
+}
+List of Spa: {
+  spa_1: 'Fairmont Spa',
+  spa_2: 'Fitness Center',
+  spa_3: 'Fitness Classes',
+  spa_4: 'Montreu SPA'
+}
+ API call was successful.✅ 
+[ 'Fairmont Spa', 'Fitness Center', 'Fitness Classes', 'Montreu SPA' ]
+Spa lists validation passed, executing further actions...
+Spa Name: Fairmont Spa, Spa ID: 7016072d-fc9f-4698-9b86-eda9963c56b3
+Spa Name: Fitness Center, Spa ID: 485fa403-35ac-4a09-a015-4566ebd26c02
+Spa Name: Fitness Classes, Spa ID: 1153e847-3780-4bb0-87e1-ba31ec28cef8
+Spa Name: Montreu SPA, Spa ID: e48ddd02-1b5e-4c5e-b42a-38cea2f92afb
+All Spa IDs: [
+  '7016072d-fc9f-4698-9b86-eda9963c56b3',
+  '485fa403-35ac-4a09-a015-4566ebd26c02',
+  '1153e847-3780-4bb0-87e1-ba31ec28cef8',
+  'e48ddd02-1b5e-4c5e-b42a-38cea2f92afb'
+]
+Total spa found: 4
+Clicking on spa 1
+Text of spa 1: Fairmont Spa
+Spa Description: Step into Fairmont Spa, a 2'000 sqm oasis of luxury and tranquility. Our exceptional services, featuring massages, body treatments, and facials with Biologique Recherche and Niance products, promise an unparalleled spa experience.
+
+The Fairmont Spa and Fitness welcome you from 6:30 am to 10:00 pm every day.
+Treatments are available from 10:00 am to 6:00 pm.
+ API call was successful.✅ 
+API Response: Step into Fairmont Spa, a 2'000 sqm oasis of luxury and tranquility. Our exceptional services, featuring massages, body treatments, and facials with Biologique Recherche and Niance products, promise an unparalleled spa experience.
+
+The Fairmont Spa and Fitness welcome you from 6:30 am to 10:00 pm every day.
+Treatments are available from 10:00 am to 6:00 pm.
+Step into Fairmont Spa, a 2'000 sqm oasis of luxury and tranquility. Our exceptional services, featuring massages, body treatments, and facials with Biologique Recherche and Niance products, promise an unparalleled spa experience.
+
+The Fairmont Spa and Fitness welcome you from 6:30 am to 10:00 pm every day.
+Treatments are available from 10:00 am to 6:00 pm.
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

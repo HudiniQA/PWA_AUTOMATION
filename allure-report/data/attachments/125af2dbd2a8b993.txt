@@ -1,0 +1,48 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-mumbai/ successfully ✅ .
+Total spa found: 1
+Spa list 1: Fairmont Spa
+All spa lists--->: [ 'Fairmont Spa' ]
+Spa Data: { spa_1: [ 'Fairmont Spa' ] }
+List of Spa: { spa_1: 'Fairmont Spa' }
+ API call was successful.✅ 
+[ 'Fairmont Spa' ]
+Spa lists validation passed, executing further actions...
+Spa Name: Fairmont Spa, Spa ID: 58a64ef4-041d-4b80-8afc-e535234e8a16
+All Spa IDs: [ '58a64ef4-041d-4b80-8afc-e535234e8a16' ]
+Total spa found: 1
+Clicking on spa 1
+Text of spa 1: Fairmont Spa
+Spa Description: No matter how busy your schedule is, it’s easy to maintain your fitness regime at Fairmont SPA, where both health clubs include a fully equipped technogym. Use the state-of-the-art cardio and strength training equipment to work toward a new personal best, or clear your mind for another day of worship. Travelling with family? Carving out a quiet moment for yourself at the gym or in the spa is made easy by our Kids Club, where trained childcare professionals welcome your little ones with open arms and fun-filled, age-appropriate activities
+ API call was successful.✅ 
+API Response: No matter how busy your schedule is, it’s easy to maintain your fitness regime at Fairmont SPA, where both health clubs include a fully equipped technogym. Use the state-of-the-art cardio and strength training equipment to work toward a new personal best, or clear your mind for another day of worship. Travelling with family? Carving out a quiet moment for yourself at the gym or in the spa is made easy by our Kids Club, where trained childcare professionals welcome your little ones with open arms and fun-filled, age-appropriate activities
+No matter how busy your schedule is, it’s easy to maintain your fitness regime at Fairmont SPA, where both health clubs include a fully equipped technogym. Use the state-of-the-art cardio and strength training equipment to work toward a new personal best, or clear your mind for another day of worship. Travelling with family? Carving out a quiet moment for yourself at the gym or in the spa is made easy by our Kids Club, where trained childcare professionals welcome your little ones with open arms and fun-filled, age-appropriate activities
+View Treatments button is visible
+Text of view Treatment Button: View Treatments
+Clicking on View Treatments button
+category button is now visible
+Total elements found: 2
+Category 1: Serenity - Facials
+Category 2: Massage
+All Categories: [ 'Serenity - Facials', 'Massage' ]
+ API call was successful.✅ 
+[ 'Serenity - Facials', 'Massage' ]
+Matching Categories: Serenity - Facials,Massage
+Total Matches: 2
+Matches: [ 'Serenity - Facials', 'Massage' ]
+Number of Matches: 2
+Category lists validation passed, executing further actions...
+Clicking category: Serenity - Facials
+Validating treatments for category: Serenity - Facials
+Number of treatments found for "Serenity - Facials": 1
+Items under Category "Serenity - Facials": [ 'Purity SL, 60min' ]
+Clicking category: Massage
+Validating treatments for category: Massage
+Number of treatments found for "Massage": 2
+Items under Category "Massage": [ 'Facial massage', 'Detox' ]
+All Treatments across all categories: [ 'Purity SL, 60min', 'Facial massage', 'Detox' ]
+ API call was successful.✅ 
+[ 'Purity SL, 60min', 'Facial massage', 'Detox' ]
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

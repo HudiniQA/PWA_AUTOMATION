@@ -2,7 +2,7 @@ import { RestaurantPage } from '../Pages/restautantsPage'; // Corrected import n
 import { test, expect } from '@playwright/test';
 const testData=JSON.parse(JSON.stringify(require('../testData/testData.json')));
 
-test.describe('To verify the restaurants are displayed', () => {
+test.describe('To verify the restaurants are displayed @pre-checkin', () => {
     let restaurantPage;
 
     test.beforeEach(async ({ browser }) => {

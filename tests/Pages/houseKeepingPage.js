@@ -16,6 +16,7 @@ export class HouseKeepingPage extends BaseClass {
     #minusCounterBtn;
     #maxQuantityToastMsg;
     #placeRequestBtn;
+    #toastMsgCloseBtn;
 
 
     constructor(page) {
@@ -34,7 +35,8 @@ export class HouseKeepingPage extends BaseClass {
         this.#plusCouterBtn = `//text()[contains(., '{itemName}')]/following::button[2]`
         this.#minusCounterBtn = `//text()[contains(., '{itemName}')]/following::button[1]`
         this.#maxQuantityToastMsg = this.page.locator('div').filter({ hasText: 'Max limit exceeded!Max limit' }).nth(1);
-        this.#placeRequestBtn = this.page.getByRole('button', { name: 'Place Request' })
+        this.#placeRequestBtn = this.page.getByRole('button', { name: 'Place Request' });
+        this.#toastMsgCloseBtn = this.page.locator(`//*[@class='Notification_close__eOEx_']")`)
     }
     gethamburgerMenu() {
         return this.#hamburgerMenu;
@@ -74,6 +76,28 @@ export class HouseKeepingPage extends BaseClass {
     getplaceRequestBtn() {
         return this.#placeRequestBtn;
     }
+    async getToastMsgCloseBtn() {
+        return this.#toastMsgCloseBtn
+    }
+    async handleDynamicElements() {
+        const toastMsg = this.page.locator("//*[@class='Notification_close__eOEx_']")
+        const getStartedBtn = this.getgetStartedBtn();
+        // if (toastMsg) {
+        //     try {
+        //         await toastMsg.click();
+        //     } catch (error) {
+        //         console.log('Toast message is not available');
+
+        //     }
+        // }
+        if (getStartedBtn) {
+            try {
+                await getStartedBtn.click();
+            } catch (error) {
+                console.log('Get Started button is not available');
+            }
+        }
+    }
     async navigateToPostCheckInPage() {
         await this.initializeSelectors();
         await this.elementActions.click(this.getconnectToRoomBtn());
@@ -82,7 +106,7 @@ export class HouseKeepingPage extends BaseClass {
         await this.elementActions.click(this.getlastNameTxtBx());
         await this.elementActions.type(this.getlastNameTxtBx(), testData.fairmontMakkahPWA.lastName);
         await this.elementActions.click(this.getconnectToRoomBtn());
-        await this.elementActions.click(this.getgetStartedBtn());
+        await this.handleDynamicElements();
     }
     async captureThegetServiceRequestDetailsApiResponse() {
         const endPoint = testData.fairmontMakkahPWA.houseKeeping.getHouseKeepingDetailsEndpoint;
@@ -139,6 +163,8 @@ export class HouseKeepingPage extends BaseClass {
                         await this.elementActions.click(this.getplusCouterBtn(item.name));
                     }
                     await this.elementActions.click(this.getplusCouterBtn(item.name));
+                    const toastMsg = this.page.locator("//*[@class='Notification_close__eOEx_']")
+                    await this.elementActions.click(toastMsg)
                     const maxQuantityToastMsg = await this.getmaxQuantityToastMsg();
                     expect.soft(maxQuantityToastMsg.isVisible()).toBeTruthy();
                     await maxQuantityToastMsg.waitFor({ state: 'hidden' })

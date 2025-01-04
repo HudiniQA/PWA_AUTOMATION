@@ -1,0 +1,72 @@
+Chrome Browser launched successfully ✅ 
+Navigated to the https://fairmont.hudinielevate-stage.io/en/fairmont-le-montreux-palace/ successfully ✅ .
+ API call was successful.✅
+Opened the Tourbillon Boutique activity successfully ✅
+Contents verified and closing the Tourbillon Boutique activity Modal ✅
+Opened the Guillaume Bichet activity successfully ✅
+Contents verified and closing the Guillaume Bichet activity Modal ✅
+Opened the La Griffe Ausoni activity successfully ✅
+Contents verified and closing the La Griffe Ausoni activity Modal ✅
+Opened the Bobby & Friends activity successfully ✅
+Contents verified and closing the Bobby & Friends activity Modal ✅
+Opened the Montreux Jazz Festival Shop activity successfully ✅
+Contents verified and closing the Montreux Jazz Festival Shop activity Modal ✅
+Opened the Coiffeur du Palace activity successfully ✅
+Contents verified and closing the Coiffeur du Palace activity Modal ✅
+Opened the The Beauty Booth activity successfully ✅
+Contents verified and closing the The Beauty Booth activity Modal ✅
+Opened the Maison Cailler  activity successfully ✅
+Contents verified and closing the Maison Cailler activity Modal ✅
+Opened the Acquaparc activity successfully ✅
+Contents verified and closing the Acquaparc activity Modal ✅
+Opened the Swiss Vapeur Parc activity successfully ✅
+Contents verified and closing the Swiss Vapeur Parc activity Modal ✅
+Opened the Tobogganing Parc activity successfully ✅
+Contents verified and closing the Tobogganing Parc activity Modal ✅
+Opened the Babysitter services activity successfully ✅
+Contents verified and closing the Babysitter services activity Modal ✅
+Opened the Kids Access at Spa  activity successfully ✅
+Contents verified and closing the Kids Access at Spa activity Modal ✅
+Opened the Press Reader activity successfully ✅
+Contents verified and closing the Press Reader activity Modal ✅
+Opened the SYLPH Sound System activity successfully ✅
+Contents verified and closing the SYLPH Sound System activity Modal ✅
+Opened the Chrome Cast & TV Channels activity successfully ✅
+Contents verified and closing the Chrome Cast & TV Channels activity Modal ✅
+Opened the Chillon Castle activity successfully ✅
+Contents verified and closing the Chillon Castle activity Modal ✅
+Opened the Lavaux Vineyards activity successfully ✅
+Contents verified and closing the Lavaux Vineyards activity Modal ✅
+Opened the Lake cruise activity successfully ✅
+Contents verified and closing the Lake cruise activity Modal ✅
+Opened the Chaplin's World Musem activity successfully ✅
+Contents verified and closing the Chaplin's World Musem activity Modal ✅
+Opened the Montreux Jazz Festival activity successfully ✅
+Contents verified and closing the Montreux Jazz Festival activity Modal ✅
+Opened the Montreux Christmas Market activity successfully ✅
+Contents verified and closing the Montreux Christmas Market activity Modal ✅
+Opened the Glacier 3000 activity successfully ✅
+Contents verified and closing the Glacier 3000 activity Modal ✅
+Opened the Gruyères Town activity successfully ✅
+Contents verified and closing the Gruyères Town activity Modal ✅
+Opened the Maison Cailler activity successfully ✅
+Contents verified and closing the Maison Cailler activity Modal ✅
+Opened the The Olympic Museum activity successfully ✅
+Contents verified and closing the The Olympic Museum activity Modal ✅
+Opened the Bike Tour activity successfully ✅
+Contents verified and closing the Bike Tour activity Modal ✅
+Opened the Golf Club Montreux activity successfully ✅
+Contents verified and closing the Golf Club Montreux activity Modal ✅
+Opened the Rochers de Naye activity successfully ✅
+Contents verified and closing the Rochers de Naye activity Modal ✅
+Opened the Hot air balloon activity successfully ✅
+Contents verified and closing the Hot air balloon activity Modal ✅
+Opened the Paragliding activity successfully ✅
+Contents verified and closing the Paragliding activity Modal ✅
+Opened the Hikes activity successfully ✅
+Contents verified and closing the Hikes activity Modal ✅
+Opened the Watersports activity successfully ✅
+Contents verified and closing the Watersports activity Modal ✅
+Page has been closed ✅ 
+Context has been closed ✅ 
+Browser has been closed ✅ 

@@ -29,8 +29,8 @@ export class InRoomDinig extends BaseClass {
         this.#connectToRoomBtn = this.page.getByRole('button', { name: 'Connect to Room' })
         this.#getStartedBtn = this.page.getByRole('button', { name: 'Get Started' });
         this.#itemHeader = { role: 'heading', name: '{itemName}' }
-        this.#itemTitle = this.page.getByRole('heading')
-        this.#itemDescription = this.page.getByRole('paragraph')
+        this.#itemTitle = this.page.locator('.DiningDetailsDrawer_title__zeGhA')
+        this.#itemDescription = this.page.getByRole('paragraph').nth(0);
         this.#irdCategoryBtn = { role: 'button', name: '{categoryName}' }
 
 
@@ -62,7 +62,7 @@ export class InRoomDinig extends BaseClass {
             role: this.#itemHeader.role,
             name: itemName
         }
-        return this.page.getByRole(itemProperties.role, { name: itemProperties.name });
+        return this.page.getByRole(itemProperties.role, { name: itemProperties.name ,exact:true}).nth(0);
     }
     getcategoryBtn(categoryName) {
         const categoryProperties = {
@@ -77,6 +77,25 @@ export class InRoomDinig extends BaseClass {
     getitemDescription() {
         return this.#itemDescription;
     }
+    async handleDynamicElements() {
+        const toastMsg = this.page.locator("//*[@class='Notification_close__eOEx_']")
+        const getStartedBtn = this.getgetStartedBtn();
+        // if (toastMsg) {
+        //     try {
+        //         await toastMsg.click();
+        //     } catch (error) {
+        //         console.log('Toast message is not available');
+
+        //     }
+        // }
+        if (getStartedBtn) {
+            try {
+                await getStartedBtn.click();
+            } catch (error) {
+                console.log('Get Started button is not available');
+            }
+        }
+    }
     async navigateToPostCheckInPage() {
         await this.initilizeSelectors();
         await this.elementActions.click(this.getconnectToRoomBtn());
@@ -85,7 +104,7 @@ export class InRoomDinig extends BaseClass {
         await this.elementActions.click(this.getlastNameTxtBx());
         await this.elementActions.type(this.getlastNameTxtBx(), testData.fairmontMakkahPWA.lastName);
         await this.elementActions.click(this.getconnectToRoomBtn());
-        await this.elementActions.click(this.getgetStartedBtn());
+        await this.handleDynamicElements();
     }
     async captureGetIRDMenuOutputDetailsApiResponse() {
         const endPoint = testData.fairmontMakkahPWA.inRoomDinig.getIrdMenuOutputDetailsEndpoint;
@@ -143,7 +162,7 @@ export class InRoomDinig extends BaseClass {
                             await this.elementActions.click(this.getitemHeader(item.name));
 
                             // Validate Item Title
-                            const actualItemTitle = normalizeText(await this.elementActions.getText(this.getitemTitle()));
+                            const actualItemTitle = normalizeText(await this.getitemTitle().textContent());
                             const expectedItemTitle = normalizeText(item.name);
                             expect.soft(actualItemTitle).toBe(expectedItemTitle);
 
